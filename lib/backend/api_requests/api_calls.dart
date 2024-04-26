@@ -200,7 +200,7 @@ class GetAllGeneralInfoCall {
         response,
         r'''$.entity.DI''',
       ));
-  int? buss(dynamic response) => castToType<int>(getJsonField(
+  double? buss(dynamic response) => castToType<double>(getJsonField(
         response,
         r'''$.entity.BUSS''',
       ));

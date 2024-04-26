@@ -857,6 +857,8 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget>
                                                                         .override(
                                                                           fontFamily:
                                                                               'Readex Pro',
+                                                                          fontSize:
+                                                                              30.0,
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
@@ -981,6 +983,8 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget>
                                                                       .override(
                                                                         fontFamily:
                                                                             'Readex Pro',
+                                                                        fontSize:
+                                                                            30.0,
                                                                         letterSpacing:
                                                                             0.0,
                                                                       ),
@@ -1098,6 +1102,8 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget>
                                                                       .override(
                                                                         fontFamily:
                                                                             'Readex Pro',
+                                                                        fontSize:
+                                                                            30.0,
                                                                         letterSpacing:
                                                                             0.0,
                                                                       ),
@@ -1215,6 +1221,8 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget>
                                                                       .override(
                                                                         fontFamily:
                                                                             'Readex Pro',
+                                                                        fontSize:
+                                                                            30.0,
                                                                         letterSpacing:
                                                                             0.0,
                                                                       ),
@@ -1523,6 +1531,8 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget>
                                                                     .override(
                                                                       fontFamily:
                                                                           'Readex Pro',
+                                                                      fontSize:
+                                                                          20.0,
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),
