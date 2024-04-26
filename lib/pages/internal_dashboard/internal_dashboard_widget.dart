@@ -840,7 +840,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget>
                                                                       formatNumber(
                                                                         SynergyGroup
                                                                             .getAllGeneralInfoCall
-                                                                            .acc(
+                                                                            .coti(
                                                                           internalDashboardGetAllGeneralInfoResponse
                                                                               .jsonBody,
                                                                         ),
@@ -850,7 +850,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget>
                                                                             DecimalType.commaDecimal,
                                                                       ),
                                                                       '0',
-                                                                    )} Euro',
+                                                                    )} Euros',
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .displaySmall
@@ -958,8 +958,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget>
                                                                             4.0,
                                                                             0.0),
                                                                 child: Text(
-                                                                  valueOrDefault<
-                                                                      String>(
+                                                                  '${valueOrDefault<String>(
                                                                     formatNumber(
                                                                       SynergyGroup
                                                                           .getAllGeneralInfoCall
@@ -975,7 +974,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget>
                                                                               .commaDecimal,
                                                                     ),
                                                                     '0',
-                                                                  ),
+                                                                  )} Euros',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .displaySmall
@@ -1342,8 +1341,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget>
                                                                           4.0,
                                                                           0.0),
                                                               child: Text(
-                                                                valueOrDefault<
-                                                                    String>(
+                                                                '${valueOrDefault<String>(
                                                                   formatNumber(
                                                                     SynergyGroup
                                                                         .getAllGeneralInfoCall
@@ -1359,13 +1357,15 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget>
                                                                             .commaDecimal,
                                                                   ),
                                                                   '0',
-                                                                ),
+                                                                )} Euros',
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .displaySmall
                                                                     .override(
                                                                       fontFamily:
                                                                           'Readex Pro',
+                                                                      fontSize:
+                                                                          20.0,
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),
@@ -1509,19 +1509,13 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget>
                                                                           4.0,
                                                                           0.0),
                                                               child: Text(
-                                                                formatNumber(
-                                                                  SynergyGroup
-                                                                      .getAllGeneralInfoCall
-                                                                      .buss(
-                                                                    internalDashboardGetAllGeneralInfoResponse
-                                                                        .jsonBody,
-                                                                  ),
-                                                                  formatType:
-                                                                      FormatType
-                                                                          .decimal,
-                                                                  decimalType:
-                                                                      DecimalType
-                                                                          .commaDecimal,
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  '${SynergyGroup.getAllGeneralInfoCall.buss(
+                                                                        internalDashboardGetAllGeneralInfoResponse
+                                                                            .jsonBody,
+                                                                      )?.toString()} Euros',
+                                                                  '0',
                                                                 ),
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
