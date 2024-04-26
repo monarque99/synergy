@@ -708,7 +708,9 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget>
                                                                 ),
                                                       ),
                                                       Text(
-                                                        '.${FFAppState().userName}',
+                                                        '.${FFAppState().userName}'
+                                                            .maybeHandleOverflow(
+                                                                maxChars: 2),
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)

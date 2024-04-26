@@ -136,7 +136,7 @@ class _Login1WidgetState extends State<Login1Widget> {
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 12.0, 0.0, 24.0),
                                       child: Text(
-                                        'Merci de vous connecter',
+                                        'Merci de vous connecter !',
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -425,8 +425,11 @@ class _Login1WidgetState extends State<Login1Widget> {
                                               builder: (alertDialogContext) {
                                                 return AlertDialog(
                                                   title: const Text('Information'),
-                                                  content: const Text(
-                                                      'Identifiants de connexion incorrecte'),
+                                                  content: Text((_model
+                                                              .loginresult
+                                                              ?.jsonBody ??
+                                                          '')
+                                                      .toString()),
                                                   actions: [
                                                     TextButton(
                                                       onPressed: () =>
@@ -481,36 +484,47 @@ class _Login1WidgetState extends State<Login1Widget> {
                                     Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 12.0, 0.0, 12.0),
-                                      child: RichText(
-                                        textScaler:
-                                            MediaQuery.of(context).textScaler,
-                                        text: TextSpan(
-                                          children: [
-                                            const TextSpan(
-                                              text: 'Pas de compte? ',
-                                              style: TextStyle(),
-                                            ),
-                                            TextSpan(
-                                              text: 'Inscrivez-vous',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'Inter',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w600,
-                                                  ),
-                                            )
-                                          ],
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Inter',
-                                                letterSpacing: 0.0,
+                                      child: InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          await launchURL(
+                                              'https://www.google.com/');
+                                        },
+                                        child: RichText(
+                                          textScaler:
+                                              MediaQuery.of(context).textScaler,
+                                          text: TextSpan(
+                                            children: [
+                                              const TextSpan(
+                                                text: 'Pas de compte? ',
+                                                style: TextStyle(),
                                               ),
+                                              TextSpan(
+                                                text: 'Inscrivez-vous',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                        ),
+                                              )
+                                            ],
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Inter',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -545,6 +559,7 @@ class _Login1WidgetState extends State<Login1Widget> {
                               ).image,
                             ),
                             borderRadius: BorderRadius.circular(16.0),
+                            shape: BoxShape.rectangle,
                           ),
                         ),
                       ),

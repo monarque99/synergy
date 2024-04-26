@@ -31,15 +31,15 @@
 
   <!-- Open Graph & SEO tags -->
   <meta property="og:title" content="synergy" />
-  <meta property="og:description" content="synergy accompagnement" />
+  <meta property="og:description" content="Synergy" />
   <meta property="og:image" content="/assets/assets/images/logoSynergy.png" /> 
   <meta name="twitter:title" content="synergy" />
-  <meta name="twitter:description" content="synergy accompagnement" />
+  <meta name="twitter:description" content="Synergy" />
   <meta name="twitter:image" content="/assets/assets/images/logoSynergy.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <title> synergy </title>
-  <meta name="description" content="synergy accompagnement" />
+  <meta name="description" content="Synergy" />
     
 
   <!-- Status Bar color in Safari browser (iOS) and PWA -->
@@ -47,12 +47,7 @@
   <meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#1d2428">
 
   <link rel="manifest" href="manifest.json">
-  <script>
-    // The value below is injected by flutter build, do not touch.
-    var serviceWorkerVersion = null;
-  </script>
-  <!-- This script adds the flutter initialization JS code -->
-  <script src="flutter.js" defer></script>
+  
 </head>
 <body>
   
@@ -61,22 +56,13 @@
   
   
   <script>
-    window.addEventListener('load', function (ev) {
-      // Download main.dart.js
-      _flutter.loader.loadEntrypoint({
-        entrypointUrl: 'main.dart.js',
-        serviceWorker: {
-          serviceWorkerUrl: 'flutter_service_worker.js?v=',
-          serviceWorkerVersion: serviceWorkerVersion,
-        },
-        onEntrypointLoaded: async function(engineInitializer) {
-          // Initialize the Flutter engine
-          let appRunner = await engineInitializer.initializeEngine({});
-          // Run the app
-          await appRunner.runApp();
-        }
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('flutter-first-frame', function () {
+        navigator.serviceWorker.register('flutter_service_worker.js?v=');
       });
-    });
+    }
   </script>
+  <script src="main.dart.js" type="application/javascript"></script>
+
 </body>
 </html>
