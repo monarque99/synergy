@@ -1,5 +1,4 @@
 import '/backend/api_requests/api_calls.dart';
-import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'update_accompagnement_widget.dart' show UpdateAccompagnementWidget;
@@ -28,38 +27,31 @@ class UpdateAccompagnementModel
   TextEditingController? amountTextController;
   String? Function(BuildContext, String?)? amountTextControllerValidator;
   // State field(s) for linkcontart widget.
-  FocusNode? linkcontartFocusNode;
-  TextEditingController? linkcontartTextController;
-  String? Function(BuildContext, String?)? linkcontartTextControllerValidator;
+  FocusNode? linkcontartFocusNode1;
+  TextEditingController? linkcontartTextController1;
+  String? Function(BuildContext, String?)? linkcontartTextController1Validator;
   // State field(s) for statut widget.
   String? statutValue;
   FormFieldController<String>? statutValueController;
   // State field(s) for RatingBar widget.
   double? ratingBarValue;
-  // State field(s) for startDate widget.
-  DateTimeRange? startDateSelectedDay;
-  // State field(s) for endDate widget.
-  DateTimeRange? endDateSelectedDay;
+  // State field(s) for linkcontart widget.
+  FocusNode? linkcontartFocusNode2;
+  TextEditingController? linkcontartTextController2;
+  String? Function(BuildContext, String?)? linkcontartTextController2Validator;
+  // State field(s) for linkcontart widget.
+  FocusNode? linkcontartFocusNode3;
+  TextEditingController? linkcontartTextController3;
+  String? Function(BuildContext, String?)? linkcontartTextController3Validator;
   // State field(s) for paiementDate widget.
-  DateTimeRange? paiementDateSelectedDay;
+  FocusNode? paiementDateFocusNode;
+  TextEditingController? paiementDateTextController;
+  String? Function(BuildContext, String?)? paiementDateTextControllerValidator;
   // Stores action output result for [Backend Call - API (updateAccompagnement)] action in Button widget.
   ApiCallResponse? apiResultf28;
 
   @override
-  void initState(BuildContext context) {
-    startDateSelectedDay = DateTimeRange(
-      start: DateTime.now().startOfDay,
-      end: DateTime.now().endOfDay,
-    );
-    endDateSelectedDay = DateTimeRange(
-      start: DateTime.now().startOfDay,
-      end: DateTime.now().endOfDay,
-    );
-    paiementDateSelectedDay = DateTimeRange(
-      start: DateTime.now().startOfDay,
-      end: DateTime.now().endOfDay,
-    );
-  }
+  void initState(BuildContext context) {}
 
   @override
   void dispose() {
@@ -75,7 +67,16 @@ class UpdateAccompagnementModel
     amountFocusNode?.dispose();
     amountTextController?.dispose();
 
-    linkcontartFocusNode?.dispose();
-    linkcontartTextController?.dispose();
+    linkcontartFocusNode1?.dispose();
+    linkcontartTextController1?.dispose();
+
+    linkcontartFocusNode2?.dispose();
+    linkcontartTextController2?.dispose();
+
+    linkcontartFocusNode3?.dispose();
+    linkcontartTextController3?.dispose();
+
+    paiementDateFocusNode?.dispose();
+    paiementDateTextController?.dispose();
   }
 }

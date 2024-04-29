@@ -2394,6 +2394,13 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                                                                   satisfactionClient: SynergyGroup.getAllAccompagnementCall.satisfactionClient(
                                                                                                     cardTable6GetAllAccompagnementResponse.jsonBody,
                                                                                                   )?[accompagnementsIndex],
+                                                                                                  startDate: SynergyGroup.getAllAccompagnementCall.startAt(
+                                                                                                    cardTable6GetAllAccompagnementResponse.jsonBody,
+                                                                                                  )?[accompagnementsIndex],
+                                                                                                  endDate: (SynergyGroup.getAllAccompagnementCall.endAt(
+                                                                                                    cardTable6GetAllAccompagnementResponse.jsonBody,
+                                                                                                  )?[accompagnementsIndex])
+                                                                                                      ?.toString(),
                                                                                                 ),
                                                                                               ),
                                                                                             );

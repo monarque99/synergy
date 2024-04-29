@@ -1,6 +1,5 @@
 import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_calendar.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -26,6 +25,8 @@ class UpdateAccompagnementWidget extends StatefulWidget {
     required this.accId,
     this.linkcontrat,
     this.satisfactionClient,
+    this.startDate,
+    this.endDate,
   });
 
   final String? nomAcc;
@@ -37,6 +38,8 @@ class UpdateAccompagnementWidget extends StatefulWidget {
   final String? accId;
   final String? linkcontrat;
   final int? satisfactionClient;
+  final String? startDate;
+  final String? endDate;
 
   @override
   State<UpdateAccompagnementWidget> createState() =>
@@ -76,9 +79,21 @@ class _UpdateAccompagnementWidgetState extends State<UpdateAccompagnementWidget>
         TextEditingController(text: widget.amount?.toString());
     _model.amountFocusNode ??= FocusNode();
 
-    _model.linkcontartTextController ??=
+    _model.linkcontartTextController1 ??=
         TextEditingController(text: widget.linkcontrat);
-    _model.linkcontartFocusNode ??= FocusNode();
+    _model.linkcontartFocusNode1 ??= FocusNode();
+
+    _model.linkcontartTextController2 ??=
+        TextEditingController(text: widget.startDate);
+    _model.linkcontartFocusNode2 ??= FocusNode();
+
+    _model.linkcontartTextController3 ??=
+        TextEditingController(text: widget.endDate);
+    _model.linkcontartFocusNode3 ??= FocusNode();
+
+    _model.paiementDateTextController ??=
+        TextEditingController(text: widget.paiementDate);
+    _model.paiementDateFocusNode ??= FocusNode();
 
     animationsMap.addAll({
       'containerOnPageLoadAnimation1': AnimationInfo(
@@ -825,9 +840,9 @@ class _UpdateAccompagnementWidgetState extends State<UpdateAccompagnementWidget>
                                                         0.0, 8.0, 0.0, 0.0),
                                                 child: TextFormField(
                                                   controller: _model
-                                                      .linkcontartTextController,
+                                                      .linkcontartTextController1,
                                                   focusNode: _model
-                                                      .linkcontartFocusNode,
+                                                      .linkcontartFocusNode1,
                                                   autofocus: true,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
@@ -949,7 +964,7 @@ class _UpdateAccompagnementWidgetState extends State<UpdateAccompagnementWidget>
                                                           .numberWithOptions(
                                                           decimal: true),
                                                   validator: _model
-                                                      .linkcontartTextControllerValidator
+                                                      .linkcontartTextController1Validator
                                                       .asValidator(context),
                                                 ),
                                               ),
@@ -1112,60 +1127,121 @@ class _UpdateAccompagnementWidgetState extends State<UpdateAccompagnementWidget>
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 20.0),
-                                  child: FlutterFlowCalendar(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    iconColor: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    weekFormat: false,
-                                    weekStartsMonday: true,
-                                    rowHeight: 35.0,
-                                    onChange: (DateTimeRange? newSelectedDate) {
-                                      setState(() =>
-                                          _model.startDateSelectedDay =
-                                              newSelectedDate);
-                                    },
-                                    titleStyle: FlutterFlowTheme.of(context)
-                                        .headlineSmall
-                                        .override(
-                                          fontFamily: 'Readex Pro',
-                                          fontSize: 20.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                    dayOfWeekStyle: FlutterFlowTheme.of(context)
-                                        .labelLarge
-                                        .override(
-                                          fontFamily: 'Inter',
-                                          color: FlutterFlowTheme.of(context)
-                                              .tertiary,
-                                          letterSpacing: 0.0,
-                                        ),
-                                    dateStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Inter',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    selectedDateStyle:
-                                        FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Lato',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
-                                              letterSpacing: 0.0,
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Expanded(
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 8.0, 0.0, 0.0),
+                                          child: TextFormField(
+                                            controller: _model
+                                                .linkcontartTextController2,
+                                            focusNode:
+                                                _model.linkcontartFocusNode2,
+                                            autofocus: true,
+                                            obscureText: false,
+                                            decoration: InputDecoration(
+                                              labelText: 'Date de début',
+                                              alignLabelWithHint: true,
+                                              hintText: 'Ex: 2025-03-02',
+                                              hintStyle: FlutterFlowTheme.of(
+                                                      context)
+                                                  .headlineMedium
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryText,
+                                                    fontSize: 20.0,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight:
+                                                        FontWeight.normal,
+                                                  ),
+                                              enabledBorder:
+                                                  UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .alternate,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    const BorderRadius.only(
+                                                  topLeft: Radius.circular(4.0),
+                                                  topRight:
+                                                      Radius.circular(4.0),
+                                                ),
+                                              ),
+                                              focusedBorder:
+                                                  UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    const BorderRadius.only(
+                                                  topLeft: Radius.circular(4.0),
+                                                  topRight:
+                                                      Radius.circular(4.0),
+                                                ),
+                                              ),
+                                              errorBorder: UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    const BorderRadius.only(
+                                                  topLeft: Radius.circular(4.0),
+                                                  topRight:
+                                                      Radius.circular(4.0),
+                                                ),
+                                              ),
+                                              focusedErrorBorder:
+                                                  UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    const BorderRadius.only(
+                                                  topLeft: Radius.circular(4.0),
+                                                  topRight:
+                                                      Radius.circular(4.0),
+                                                ),
+                                              ),
+                                              contentPadding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 24.0, 0.0, 24.0),
                                             ),
-                                    inactiveDateStyle:
-                                        FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .override(
-                                              fontFamily: 'Inter',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                              letterSpacing: 0.0,
-                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .headlineMedium
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  fontSize: 20.0,
+                                                  letterSpacing: 0.0,
+                                                ),
+                                            keyboardType: const TextInputType
+                                                .numberWithOptions(
+                                                decimal: true),
+                                            validator: _model
+                                                .linkcontartTextController2Validator
+                                                .asValidator(context),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                                 Text(
@@ -1180,118 +1256,211 @@ class _UpdateAccompagnementWidgetState extends State<UpdateAccompagnementWidget>
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 20.0),
-                                  child: FlutterFlowCalendar(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    iconColor: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    weekFormat: false,
-                                    weekStartsMonday: true,
-                                    rowHeight: 35.0,
-                                    onChange: (DateTimeRange? newSelectedDate) {
-                                      setState(() => _model.endDateSelectedDay =
-                                          newSelectedDate);
-                                    },
-                                    titleStyle: FlutterFlowTheme.of(context)
-                                        .headlineSmall
-                                        .override(
-                                          fontFamily: 'Readex Pro',
-                                          fontSize: 20.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                    dayOfWeekStyle: FlutterFlowTheme.of(context)
-                                        .labelLarge
-                                        .override(
-                                          fontFamily: 'Inter',
-                                          color: FlutterFlowTheme.of(context)
-                                              .tertiary,
-                                          letterSpacing: 0.0,
-                                        ),
-                                    dateStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Inter',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    selectedDateStyle:
-                                        FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              fontFamily: 'Lato',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
-                                              letterSpacing: 0.0,
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Expanded(
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 8.0, 0.0, 0.0),
+                                          child: TextFormField(
+                                            controller: _model
+                                                .linkcontartTextController3,
+                                            focusNode:
+                                                _model.linkcontartFocusNode3,
+                                            autofocus: true,
+                                            obscureText: false,
+                                            decoration: InputDecoration(
+                                              labelText: 'Date de fin ',
+                                              alignLabelWithHint: true,
+                                              hintText: 'Ex : 2024-06-23',
+                                              hintStyle: FlutterFlowTheme.of(
+                                                      context)
+                                                  .headlineMedium
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryText,
+                                                    fontSize: 20.0,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight:
+                                                        FontWeight.normal,
+                                                  ),
+                                              enabledBorder:
+                                                  UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .alternate,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    const BorderRadius.only(
+                                                  topLeft: Radius.circular(4.0),
+                                                  topRight:
+                                                      Radius.circular(4.0),
+                                                ),
+                                              ),
+                                              focusedBorder:
+                                                  UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    const BorderRadius.only(
+                                                  topLeft: Radius.circular(4.0),
+                                                  topRight:
+                                                      Radius.circular(4.0),
+                                                ),
+                                              ),
+                                              errorBorder: UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    const BorderRadius.only(
+                                                  topLeft: Radius.circular(4.0),
+                                                  topRight:
+                                                      Radius.circular(4.0),
+                                                ),
+                                              ),
+                                              focusedErrorBorder:
+                                                  UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    const BorderRadius.only(
+                                                  topLeft: Radius.circular(4.0),
+                                                  topRight:
+                                                      Radius.circular(4.0),
+                                                ),
+                                              ),
+                                              contentPadding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 24.0, 0.0, 24.0),
                                             ),
-                                    inactiveDateStyle:
-                                        FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .override(
-                                              fontFamily: 'Inter',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                              letterSpacing: 0.0,
-                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .headlineMedium
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  fontSize: 20.0,
+                                                  letterSpacing: 0.0,
+                                                ),
+                                            keyboardType: const TextInputType
+                                                .numberWithOptions(
+                                                decimal: true),
+                                            validator: _model
+                                                .linkcontartTextController3Validator
+                                                .asValidator(context),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 20.0),
-                                  child: Text(
-                                    'Date du paiment',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Inter',
-                                          letterSpacing: 0.0,
+                                Container(
+                                  height: 97.0,
+                                  decoration: const BoxDecoration(),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 8.0, 0.0, 0.0),
+                                    child: TextFormField(
+                                      controller:
+                                          _model.paiementDateTextController,
+                                      focusNode: _model.paiementDateFocusNode,
+                                      autofocus: true,
+                                      obscureText: false,
+                                      decoration: InputDecoration(
+                                        labelText: 'Date de paiement',
+                                        alignLabelWithHint: true,
+                                        hintText: 'ex : 2024-05-12 ',
+                                        hintStyle: FlutterFlowTheme.of(context)
+                                            .headlineMedium
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                              fontSize: 20.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.normal,
+                                            ),
+                                        enabledBorder: UnderlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .alternate,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius: const BorderRadius.only(
+                                            topLeft: Radius.circular(4.0),
+                                            topRight: Radius.circular(4.0),
+                                          ),
                                         ),
+                                        focusedBorder: UnderlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius: const BorderRadius.only(
+                                            topLeft: Radius.circular(4.0),
+                                            topRight: Radius.circular(4.0),
+                                          ),
+                                        ),
+                                        errorBorder: UnderlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius: const BorderRadius.only(
+                                            topLeft: Radius.circular(4.0),
+                                            topRight: Radius.circular(4.0),
+                                          ),
+                                        ),
+                                        focusedErrorBorder:
+                                            UnderlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius: const BorderRadius.only(
+                                            topLeft: Radius.circular(4.0),
+                                            topRight: Radius.circular(4.0),
+                                          ),
+                                        ),
+                                        contentPadding:
+                                            const EdgeInsetsDirectional.fromSTEB(
+                                                0.0, 24.0, 0.0, 24.0),
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .headlineMedium
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            fontSize: 20.0,
+                                            letterSpacing: 0.0,
+                                          ),
+                                      validator: _model
+                                          .paiementDateTextControllerValidator
+                                          .asValidator(context),
+                                    ),
                                   ),
-                                ),
-                                FlutterFlowCalendar(
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  iconColor: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  weekFormat: false,
-                                  weekStartsMonday: false,
-                                  rowHeight: 35.0,
-                                  onChange: (DateTimeRange? newSelectedDate) {
-                                    setState(() =>
-                                        _model.paiementDateSelectedDay =
-                                            newSelectedDate);
-                                  },
-                                  titleStyle: FlutterFlowTheme.of(context)
-                                      .headlineSmall
-                                      .override(
-                                        fontFamily: 'Readex Pro',
-                                        letterSpacing: 0.0,
-                                      ),
-                                  dayOfWeekStyle: FlutterFlowTheme.of(context)
-                                      .labelLarge
-                                      .override(
-                                        fontFamily: 'Inter',
-                                        letterSpacing: 0.0,
-                                      ),
-                                  dateStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Inter',
-                                        letterSpacing: 0.0,
-                                      ),
-                                  selectedDateStyle:
-                                      FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            letterSpacing: 0.0,
-                                          ),
-                                  inactiveDateStyle:
-                                      FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            letterSpacing: 0.0,
-                                          ),
                                 ),
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
@@ -1314,18 +1483,17 @@ class _UpdateAccompagnementWidgetState extends State<UpdateAccompagnementWidget>
                                                   .amountTextController.text),
                                               status: _model.statutValue,
                                               paymentDate: _model
-                                                  .paiementDateSelectedDay
-                                                  ?.start
-                                                  .toString(),
+                                                  .paiementDateTextController
+                                                  .text,
                                               linkContrat: _model
-                                                  .linkcontartTextController
+                                                  .linkcontartTextController1
                                                   .text,
                                               startAt: _model
-                                                  .startDateSelectedDay?.start
-                                                  .toString(),
+                                                  .linkcontartTextController2
+                                                  .text,
                                               endAt: _model
-                                                  .endDateSelectedDay?.end
-                                                  .toString(),
+                                                  .linkcontartTextController3
+                                                  .text,
                                               accompagnementUserName: _model
                                                   .porteurPRENameTextController
                                                   .text,
