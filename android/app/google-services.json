@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "808731476068",
+    "project_id": "synergy-e6v43n",
+    "storage_bucket": "synergy-e6v43n.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:808731476068:android:74d198db912b9a2cf19f71",
+        "android_client_info": {
+          "package_name": "com.synergy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCR3SDBPwdyMnrXmMFTbAy1-Cbo8gYkkyI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -3,25 +3,25 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'login1_model.dart';
-export 'login1_model.dart';
+import 'login_model.dart';
+export 'login_model.dart';
 
-class Login1Widget extends StatefulWidget {
-  const Login1Widget({super.key});
+class LoginWidget extends StatefulWidget {
+  const LoginWidget({super.key});
 
   @override
-  State<Login1Widget> createState() => _Login1WidgetState();
+  State<LoginWidget> createState() => _LoginWidgetState();
 }
 
-class _Login1WidgetState extends State<Login1Widget> {
-  late Login1Model _model;
+class _LoginWidgetState extends State<LoginWidget> {
+  late LoginModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => Login1Model());
+    _model = createModel(context, () => LoginModel());
 
     _model.emailAddressTextController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
@@ -42,7 +42,7 @@ class _Login1WidgetState extends State<Login1Widget> {
   @override
   Widget build(BuildContext context) {
     return Title(
-        title: 'Login1',
+        title: 'Login',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () => _model.unfocusNode.canRequestFocus
@@ -123,7 +123,8 @@ class _Login1WidgetState extends State<Login1Widget> {
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 20.0),
                                       child: Text(
-                                        'Bienvenue ',
+                                        'Bienvenue sur Synergy',
+                                        textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
                                             .displaySmall
                                             .override(
@@ -136,7 +137,7 @@ class _Login1WidgetState extends State<Login1Widget> {
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 12.0, 0.0, 24.0),
                                       child: Text(
-                                        'Merci de vous connecter !',
+                                        'Merci de vous connecter ',
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -425,11 +426,8 @@ class _Login1WidgetState extends State<Login1Widget> {
                                               builder: (alertDialogContext) {
                                                 return AlertDialog(
                                                   title: const Text('Information'),
-                                                  content: Text((_model
-                                                              .loginresult
-                                                              ?.jsonBody ??
-                                                          '')
-                                                      .toString()),
+                                                  content: const Text(
+                                                      'Identifiants incorrecte'),
                                                   actions: [
                                                     TextButton(
                                                       onPressed: () =>
@@ -491,7 +489,7 @@ class _Login1WidgetState extends State<Login1Widget> {
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           await launchURL(
-                                              'https://www.google.com/');
+                                              'https://217.160.213.124:8444/finance/allcotisation');
                                         },
                                         child: RichText(
                                           textScaler:

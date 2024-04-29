@@ -71,18 +71,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const Login1Widget() : const WelcomeWidget(),
+          appStateNotifier.loggedIn ? const LoginWidget() : const WelcomeWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? const Login1Widget() : const WelcomeWidget(),
+              appStateNotifier.loggedIn ? const LoginWidget() : const WelcomeWidget(),
         ),
         FFRoute(
-          name: 'Login1',
-          path: '/login1',
-          builder: (context, params) => const Login1Widget(),
+          name: 'Login',
+          path: '/login',
+          builder: (context, params) => const LoginWidget(),
         ),
         FFRoute(
           name: 'Welcome',
@@ -98,6 +98,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'AboutUs',
           path: '/aboutUs',
           builder: (context, params) => const AboutUsWidget(),
+        ),
+        FFRoute(
+          name: 'Cotisations',
+          path: '/Cotisations',
+          builder: (context, params) => const CotisationsWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -284,7 +289,7 @@ class FFRoute {
                   color: Colors.transparent,
                   child: Image.asset(
                     'assets/images/logoSynergy.png',
-                    fit: BoxFit.contain,
+                    fit: BoxFit.none,
                   ),
                 )
               : page;

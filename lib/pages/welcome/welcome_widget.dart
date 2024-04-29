@@ -644,7 +644,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget>
                                   16.0, 12.0, 16.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
-                                  context.pushNamed('Login1');
+                                  context.pushNamed('Login');
                                 },
                                 text: 'Connexion',
                                 options: FFButtonOptions(
@@ -680,7 +680,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget>
                                   16.0, 12.0, 16.0, 44.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
-                                  context.pushNamed('Login1');
+                                  context.pushNamed('Login');
                                 },
                                 text: 'S\'inscrire',
                                 options: FFButtonOptions(
