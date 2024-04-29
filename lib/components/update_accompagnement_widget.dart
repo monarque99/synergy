@@ -1316,20 +1316,15 @@ class _UpdateAccompagnementWidgetState extends State<UpdateAccompagnementWidget>
                                               paymentDate: _model
                                                   .paiementDateSelectedDay
                                                   ?.start
-                                                  .millisecondsSinceEpoch
                                                   .toString(),
                                               linkContrat: _model
                                                   .linkcontartTextController
                                                   .text,
                                               startAt: _model
-                                                  .startDateSelectedDay
-                                                  ?.start
-                                                  .millisecondsSinceEpoch
+                                                  .startDateSelectedDay?.start
                                                   .toString(),
                                               endAt: _model
-                                                  .endDateSelectedDay
-                                                  ?.start
-                                                  .millisecondsSinceEpoch
+                                                  .endDateSelectedDay?.end
                                                   .toString(),
                                               accompagnementUserName: _model
                                                   .porteurPRENameTextController
