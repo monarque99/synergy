@@ -334,152 +334,108 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                     Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
-                                      child: FutureBuilder<ApiCallResponse>(
-                                        future: SynergyGroup
-                                            .getAllSanctionsforUSERCall
-                                            .call(
-                                          userid: FFAppState().userId,
+                                      child: AnimatedContainer(
+                                        duration: const Duration(milliseconds: 200),
+                                        curve: Curves.easeInOut,
+                                        width: double.infinity,
+                                        height: 44.0,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .alternate,
+                                          boxShadow: const [
+                                            BoxShadow(
+                                              blurRadius: 4.0,
+                                              color: Color(0x33000000),
+                                              offset: Offset(
+                                                0.0,
+                                                2.0,
+                                              ),
+                                            )
+                                          ],
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                          shape: BoxShape.rectangle,
                                         ),
-                                        builder: (context, snapshot) {
-                                          // Customize what your widget looks like when it's loading.
-                                          if (!snapshot.hasData) {
-                                            return Center(
-                                              child: SizedBox(
-                                                width: 50.0,
-                                                height: 50.0,
-                                                child:
-                                                    CircularProgressIndicator(
-                                                  valueColor:
-                                                      AlwaysStoppedAnimation<
-                                                          Color>(
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  8.0, 0.0, 6.0, 0.0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            children: [
+                                              FaIcon(
+                                                FontAwesomeIcons.mixer,
+                                                color:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
+                                                size: 24.0,
+                                              ),
+                                              Expanded(
+                                                child: Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          12.0, 0.0, 0.0, 0.0),
+                                                  child: Text(
+                                                    'Mes sanctions',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                   ),
                                                 ),
                                               ),
-                                            );
-                                          }
-                                          final contentView1GetAllSanctionsforUSERResponse =
-                                              snapshot.data!;
-                                          return AnimatedContainer(
-                                            duration:
-                                                const Duration(milliseconds: 200),
-                                            curve: Curves.easeInOut,
-                                            width: double.infinity,
-                                            height: 44.0,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .alternate,
-                                              boxShadow: const [
-                                                BoxShadow(
-                                                  blurRadius: 4.0,
-                                                  color: Color(0x33000000),
-                                                  offset: Offset(
-                                                    0.0,
-                                                    2.0,
-                                                  ),
-                                                )
-                                              ],
-                                              borderRadius:
-                                                  BorderRadius.circular(12.0),
-                                              shape: BoxShape.rectangle,
-                                            ),
-                                            child: Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(8.0, 0.0, 6.0, 0.0),
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.max,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                children: [
-                                                  FaIcon(
-                                                    FontAwesomeIcons.mixer,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    size: 24.0,
-                                                  ),
-                                                  Expanded(
-                                                    child: Padding(
-                                                      padding:
-                                                          const EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  12.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
-                                                      child: Text(
-                                                        'Sanctions',
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Inter',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
+                                              Container(
+                                                height: 32.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
+                                                child: Align(
+                                                  alignment:
+                                                      const AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(8.0, 4.0,
+                                                                8.0, 4.0),
+                                                    child: Text(
+                                                      valueOrDefault<String>(
+                                                        SynergyGroup
+                                                            .getAllGeneralInfoCall
+                                                            .sanctioncount(
+                                                              internalDashboardGetAllGeneralInfoResponse
+                                                                  .jsonBody,
+                                                            )
+                                                            ?.toString(),
+                                                        '0',
                                                       ),
-                                                    ),
-                                                  ),
-                                                  Container(
-                                                    height: 32.0,
-                                                    decoration: BoxDecoration(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                    child: Align(
-                                                      alignment:
-                                                          const AlignmentDirectional(
-                                                              0.0, 0.0),
-                                                      child: Padding(
-                                                        padding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    8.0,
-                                                                    4.0,
-                                                                    8.0,
-                                                                    4.0),
-                                                        child: Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            SynergyGroup
-                                                                .getAllGeneralInfoCall
-                                                                .sanctioncount(
-                                                                  internalDashboardGetAllGeneralInfoResponse
-                                                                      .jsonBody,
-                                                                )
-                                                                ?.toString(),
-                                                            '0',
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily: 'Inter',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .info,
+                                                            letterSpacing: 0.0,
                                                           ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Inter',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .info,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                        ),
-                                                      ),
                                                     ),
                                                   ),
-                                                ],
+                                                ),
                                               ),
-                                            ),
-                                          );
-                                        },
+                                            ],
+                                          ),
+                                        ),
                                       ),
                                     ),
                                     Padding(
@@ -513,7 +469,8 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Icon(
-                                                  Icons.attach_money_rounded,
+                                                  Icons
+                                                      .monetization_on_outlined,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
@@ -563,12 +520,12 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
-                                                Icon(
-                                                  Icons.attach_money_rounded,
+                                                FaIcon(
+                                                  FontAwesomeIcons.ellipsisV,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
-                                                  size: 24.0,
+                                                  size: 25.0,
                                                 ),
                                                 Padding(
                                                   padding: const EdgeInsetsDirectional
@@ -614,12 +571,12 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
-                                                Icon(
-                                                  Icons.attach_money_rounded,
+                                                FaIcon(
+                                                  FontAwesomeIcons.ellipsisV,
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
-                                                  size: 24.0,
+                                                  size: 25.0,
                                                 ),
                                                 Padding(
                                                   padding: const EdgeInsetsDirectional
