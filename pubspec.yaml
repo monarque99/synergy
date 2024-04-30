@@ -33,6 +33,7 @@ dependencies:
   cloud_functions_web: 4.7.1
   collection: 1.18.0
   dropdown_button2: 2.3.9
+  easy_debounce: 2.0.1
   equatable: 2.0.5
   firebase_core: 2.26.0
   firebase_core_platform_interface: 5.0.0

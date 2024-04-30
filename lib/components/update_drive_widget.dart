@@ -2,6 +2,7 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'update_drive_model.dart';
@@ -227,12 +228,19 @@ class _UpdateDriveWidgetState extends State<UpdateDriveWidget> {
                                               Padding(
                                                 padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        8.0, 0.0, 8.0, 30.0),
+                                                        8.0, 30.0, 8.0, 30.0),
                                                 child: TextFormField(
                                                   controller:
                                                       _model.textController1,
                                                   focusNode: _model
                                                       .textFieldFocusNode1,
+                                                  onChanged: (_) =>
+                                                      EasyDebounce.debounce(
+                                                    '_model.textController1',
+                                                    const Duration(
+                                                        milliseconds: 2000),
+                                                    () => setState(() {}),
+                                                  ),
                                                   autofocus: true,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
@@ -303,6 +311,26 @@ class _UpdateDriveWidgetState extends State<UpdateDriveWidget> {
                                                           BorderRadius.circular(
                                                               8.0),
                                                     ),
+                                                    suffixIcon: _model
+                                                            .textController1!
+                                                            .text
+                                                            .isNotEmpty
+                                                        ? InkWell(
+                                                            onTap: () async {
+                                                              _model
+                                                                  .textController1
+                                                                  ?.clear();
+                                                              setState(() {});
+                                                            },
+                                                            child: Icon(
+                                                              Icons.clear,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .error,
+                                                              size: 22,
+                                                            ),
+                                                          )
+                                                        : null,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -325,6 +353,13 @@ class _UpdateDriveWidgetState extends State<UpdateDriveWidget> {
                                                       _model.textController2,
                                                   focusNode: _model
                                                       .textFieldFocusNode2,
+                                                  onChanged: (_) =>
+                                                      EasyDebounce.debounce(
+                                                    '_model.textController2',
+                                                    const Duration(
+                                                        milliseconds: 2000),
+                                                    () => setState(() {}),
+                                                  ),
                                                   autofocus: true,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
@@ -396,6 +431,26 @@ class _UpdateDriveWidgetState extends State<UpdateDriveWidget> {
                                                           BorderRadius.circular(
                                                               8.0),
                                                     ),
+                                                    suffixIcon: _model
+                                                            .textController2!
+                                                            .text
+                                                            .isNotEmpty
+                                                        ? InkWell(
+                                                            onTap: () async {
+                                                              _model
+                                                                  .textController2
+                                                                  ?.clear();
+                                                              setState(() {});
+                                                            },
+                                                            child: Icon(
+                                                              Icons.clear,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .error,
+                                                              size: 22,
+                                                            ),
+                                                          )
+                                                        : null,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -419,6 +474,13 @@ class _UpdateDriveWidgetState extends State<UpdateDriveWidget> {
                                                       _model.textController3,
                                                   focusNode: _model
                                                       .textFieldFocusNode3,
+                                                  onChanged: (_) =>
+                                                      EasyDebounce.debounce(
+                                                    '_model.textController3',
+                                                    const Duration(
+                                                        milliseconds: 2000),
+                                                    () => setState(() {}),
+                                                  ),
                                                   autofocus: true,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
@@ -489,6 +551,26 @@ class _UpdateDriveWidgetState extends State<UpdateDriveWidget> {
                                                           BorderRadius.circular(
                                                               8.0),
                                                     ),
+                                                    suffixIcon: _model
+                                                            .textController3!
+                                                            .text
+                                                            .isNotEmpty
+                                                        ? InkWell(
+                                                            onTap: () async {
+                                                              _model
+                                                                  .textController3
+                                                                  ?.clear();
+                                                              setState(() {});
+                                                            },
+                                                            child: Icon(
+                                                              Icons.clear,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .error,
+                                                              size: 22,
+                                                            ),
+                                                          )
+                                                        : null,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -512,7 +594,16 @@ class _UpdateDriveWidgetState extends State<UpdateDriveWidget> {
                                                       _model.textController4,
                                                   focusNode: _model
                                                       .textFieldFocusNode4,
+                                                  onChanged: (_) =>
+                                                      EasyDebounce.debounce(
+                                                    '_model.textController4',
+                                                    const Duration(
+                                                        milliseconds: 2000),
+                                                    () => setState(() {}),
+                                                  ),
                                                   autofocus: true,
+                                                  textInputAction:
+                                                      TextInputAction.next,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
                                                     labelText: 'Ajouter le ',
@@ -582,6 +673,26 @@ class _UpdateDriveWidgetState extends State<UpdateDriveWidget> {
                                                           BorderRadius.circular(
                                                               8.0),
                                                     ),
+                                                    suffixIcon: _model
+                                                            .textController4!
+                                                            .text
+                                                            .isNotEmpty
+                                                        ? InkWell(
+                                                            onTap: () async {
+                                                              _model
+                                                                  .textController4
+                                                                  ?.clear();
+                                                              setState(() {});
+                                                            },
+                                                            child: Icon(
+                                                              Icons.clear,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .error,
+                                                              size: 22,
+                                                            ),
+                                                          )
+                                                        : null,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -591,7 +702,6 @@ class _UpdateDriveWidgetState extends State<UpdateDriveWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                                   maxLines: 2,
-                                                  maxLength: 10,
                                                   validator: _model
                                                       .textController4Validator
                                                       .asValidator(context),
