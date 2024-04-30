@@ -97,7 +97,9 @@ async function _getFinanceDepenseInterneCall(context, ffVariables) {
 }
 
 async function _getAllGeneralInfoCall(context, ffVariables) {
-  var url = `${synergyGroup.baseUrl}/finance/allfinanceinfos`;
+  var userId = ffVariables["userId"];
+
+  var url = `${synergyGroup.baseUrl}/finance/allfinanceinfos/${userId}`;
   var headers = { "Content-Type": `application/json` };
   var params = {};
   var ffApiRequestBody = undefined;
@@ -327,6 +329,120 @@ async function _deleteDriveCall(context, ffVariables) {
   });
 }
 
+async function _deleteSanctionsCall(context, ffVariables) {
+  var id = ffVariables["id"];
+
+  var url = `${synergyGroup.baseUrl}/sanctions/${id}`;
+  var headers = { "Content-Type": `application/json` };
+  var params = {};
+  var ffApiRequestBody = undefined;
+
+  return makeApiRequest({
+    method: "delete",
+    url,
+    headers,
+    params,
+    returnBody: true,
+  });
+}
+
+async function _getAllSanctionsCall(context, ffVariables) {
+  var url = `${synergyGroup.baseUrl}/sanctions`;
+  var headers = { "Content-Type": `application/json` };
+  var params = {};
+  var ffApiRequestBody = undefined;
+
+  return makeApiRequest({
+    method: "get",
+    url,
+    headers,
+    params,
+    returnBody: true,
+  });
+}
+
+async function _getAllSanctionsforUSERCall(context, ffVariables) {
+  var userid = ffVariables["userid"];
+
+  var url = `${synergyGroup.baseUrl}/sanctions/user/${userid}`;
+  var headers = { "Content-Type": `application/json` };
+  var params = {};
+  var ffApiRequestBody = undefined;
+
+  return makeApiRequest({
+    method: "get",
+    url,
+    headers,
+    params,
+    returnBody: true,
+  });
+}
+
+async function _createSanctionsCall(context, ffVariables) {
+  var userId = ffVariables["userId"];
+  var point = ffVariables["point"];
+  var titre = ffVariables["titre"];
+  var at = ffVariables["at"];
+
+  var url = `${synergyGroup.baseUrl}/sanctions`;
+  var headers = { "Content-Type": `application/json` };
+  var params = {};
+  var ffApiRequestBody = `
+{
+  "user": {
+    "id": "${userId}"
+  },
+  "points": "${point}",
+  "titre": "${titre}",
+  "at": "${at}"
+}`;
+
+  return makeApiRequest({
+    method: "post",
+    url,
+    headers,
+    params,
+    body: createBody({
+      headers,
+      params,
+      body: ffApiRequestBody,
+      bodyType: "JSON",
+    }),
+    returnBody: true,
+  });
+}
+
+async function _updatesanctionsCall(context, ffVariables) {
+  var sanctionid = ffVariables["sanctionid"];
+  var point = ffVariables["point"];
+  var titre = ffVariables["titre"];
+  var at = ffVariables["at"];
+
+  var url = `${synergyGroup.baseUrl}/sanctions/${sanctionid}`;
+  var headers = { "Content-Type": `application/json` };
+  var params = {};
+  var ffApiRequestBody = `
+{
+  "points": "${point}",
+  "titre": "${titre}",
+  "at": "${at}"
+}`;
+
+  return makeApiRequest({
+    method: "put",
+    url,
+    headers,
+    params,
+    body: createBody({
+      headers,
+      params,
+      body: ffApiRequestBody,
+      bodyType: "JSON",
+    }),
+    returnBody: true,
+  });
+}
+
 /// End synergy Group Code
 
 /// Helper functions to route to the appropriate API Call.
@@ -350,6 +466,11 @@ async function makeApiCall(context, data) {
     CreateDriveCall: _createDriveCall,
     UpdateDriveCall: _updateDriveCall,
     DeleteDriveCall: _deleteDriveCall,
+    DeleteSanctionsCall: _deleteSanctionsCall,
+    GetAllSanctionsCall: _getAllSanctionsCall,
+    GetAllSanctionsforUSERCall: _getAllSanctionsforUSERCall,
+    CreateSanctionsCall: _createSanctionsCall,
+    UpdatesanctionsCall: _updatesanctionsCall,
   };
 
   if (!(callName in callMap)) {

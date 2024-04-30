@@ -32,6 +32,12 @@ class SynergyGroup {
   static CreateDriveCall createDriveCall = CreateDriveCall();
   static UpdateDriveCall updateDriveCall = UpdateDriveCall();
   static DeleteDriveCall deleteDriveCall = DeleteDriveCall();
+  static DeleteSanctionsCall deleteSanctionsCall = DeleteSanctionsCall();
+  static GetAllSanctionsCall getAllSanctionsCall = GetAllSanctionsCall();
+  static GetAllSanctionsforUSERCall getAllSanctionsforUSERCall =
+      GetAllSanctionsforUSERCall();
+  static CreateSanctionsCall createSanctionsCall = CreateSanctionsCall();
+  static UpdatesanctionsCall updatesanctionsCall = UpdatesanctionsCall();
 }
 
 class LoginCall {
@@ -150,12 +156,16 @@ class GetFinanceDepenseInterneCall {
 }
 
 class GetAllGeneralInfoCall {
-  Future<ApiCallResponse> call() async {
+  Future<ApiCallResponse> call({
+    String? userId = '',
+  }) async {
     final response = await makeCloudCall(
       _kPrivateApiFunctionName,
       {
         'callName': 'GetAllGeneralInfoCall',
-        'variables': {},
+        'variables': {
+          'userId': userId,
+        },
       },
     );
     return ApiCallResponse.fromCloudCallResponse(response);
@@ -189,6 +199,10 @@ class GetAllGeneralInfoCall {
   int? membreInterne(dynamic response) => castToType<int>(getJsonField(
         response,
         r'''$.entity.MEMBRES''',
+      ));
+  double? sanctioncount(dynamic response) => castToType<double>(getJsonField(
+        response,
+        r'''$.entity.SANCTIONS''',
       ));
 }
 
@@ -564,6 +578,200 @@ class DeleteDriveCall {
         'callName': 'DeleteDriveCall',
         'variables': {
           'id': id,
+        },
+      },
+    );
+    return ApiCallResponse.fromCloudCallResponse(response);
+  }
+}
+
+class DeleteSanctionsCall {
+  Future<ApiCallResponse> call({
+    String? id = '',
+  }) async {
+    final response = await makeCloudCall(
+      _kPrivateApiFunctionName,
+      {
+        'callName': 'DeleteSanctionsCall',
+        'variables': {
+          'id': id,
+        },
+      },
+    );
+    return ApiCallResponse.fromCloudCallResponse(response);
+  }
+}
+
+class GetAllSanctionsCall {
+  Future<ApiCallResponse> call() async {
+    final response = await makeCloudCall(
+      _kPrivateApiFunctionName,
+      {
+        'callName': 'GetAllSanctionsCall',
+        'variables': {},
+      },
+    );
+    return ApiCallResponse.fromCloudCallResponse(response);
+  }
+
+  List<int>? sanctionIds(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].id''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  List<int>? userIsd(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].userId''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  List<double>? points(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].points''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<double>(x))
+          .withoutNulls
+          .toList();
+  List<String>? titre(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].titre''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  List<String>? at(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].at''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  List<String>? userNameandFirtName(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].userNameAndLastName''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+}
+
+class GetAllSanctionsforUSERCall {
+  Future<ApiCallResponse> call({
+    String? userid = '',
+  }) async {
+    final response = await makeCloudCall(
+      _kPrivateApiFunctionName,
+      {
+        'callName': 'GetAllSanctionsforUSERCall',
+        'variables': {
+          'userid': userid,
+        },
+      },
+    );
+    return ApiCallResponse.fromCloudCallResponse(response);
+  }
+
+  List<int>? sanctionIds(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].id''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  List<int>? userId(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].userId''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  List<double>? points(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].points''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<double>(x))
+          .withoutNulls
+          .toList();
+  List<String>? titre(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].titre''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  List<String>? at(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].at''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+}
+
+class CreateSanctionsCall {
+  Future<ApiCallResponse> call({
+    String? userId = '',
+    String? point = '',
+    String? titre = '',
+    String? at = '',
+  }) async {
+    final response = await makeCloudCall(
+      _kPrivateApiFunctionName,
+      {
+        'callName': 'CreateSanctionsCall',
+        'variables': {
+          'userId': userId,
+          'point': point,
+          'titre': titre,
+          'at': at,
+        },
+      },
+    );
+    return ApiCallResponse.fromCloudCallResponse(response);
+  }
+}
+
+class UpdatesanctionsCall {
+  Future<ApiCallResponse> call({
+    String? sanctionid = '',
+    String? point = '',
+    String? titre = '',
+    String? at = '',
+  }) async {
+    final response = await makeCloudCall(
+      _kPrivateApiFunctionName,
+      {
+        'callName': 'UpdatesanctionsCall',
+        'variables': {
+          'sanctionid': sanctionid,
+          'point': point,
+          'titre': titre,
+          'at': at,
         },
       },
     );
