@@ -28,6 +28,10 @@ class SynergyGroup {
       UpdateAccompagnementCall();
   static GetcotisationbyuserIdsCall getcotisationbyuserIdsCall =
       GetcotisationbyuserIdsCall();
+  static GetAllDrivesLinkCall getAllDrivesLinkCall = GetAllDrivesLinkCall();
+  static CreateDriveCall createDriveCall = CreateDriveCall();
+  static UpdateDriveCall updateDriveCall = UpdateDriveCall();
+  static DeleteDriveCall deleteDriveCall = DeleteDriveCall();
 }
 
 class LoginCall {
@@ -441,6 +445,130 @@ class GetcotisationbyuserIdsCall {
         response,
         r'''$.entity.total''',
       ));
+}
+
+class GetAllDrivesLinkCall {
+  Future<ApiCallResponse> call() async {
+    final response = await makeCloudCall(
+      _kPrivateApiFunctionName,
+      {
+        'callName': 'GetAllDrivesLinkCall',
+        'variables': {},
+      },
+    );
+    return ApiCallResponse.fromCloudCallResponse(response);
+  }
+
+  List<int>? ids(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].id''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  List<String>? addAt(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].addAt''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  List<String>? links(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].link''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  List<String>? addedby(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].addedBy''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  List<String>? names(dynamic response) => (getJsonField(
+        response,
+        r'''$[:].name''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+}
+
+class CreateDriveCall {
+  Future<ApiCallResponse> call({
+    String? addAt = '',
+    String? link = '',
+    String? addedBy = '',
+    String? name = '',
+  }) async {
+    final response = await makeCloudCall(
+      _kPrivateApiFunctionName,
+      {
+        'callName': 'CreateDriveCall',
+        'variables': {
+          'addAt': addAt,
+          'link': link,
+          'addedBy': addedBy,
+          'name': name,
+        },
+      },
+    );
+    return ApiCallResponse.fromCloudCallResponse(response);
+  }
+}
+
+class UpdateDriveCall {
+  Future<ApiCallResponse> call({
+    String? addAt = '',
+    String? link = '',
+    String? addedBy = '',
+    String? name = '',
+    String? id = '',
+  }) async {
+    final response = await makeCloudCall(
+      _kPrivateApiFunctionName,
+      {
+        'callName': 'UpdateDriveCall',
+        'variables': {
+          'addAt': addAt,
+          'link': link,
+          'addedBy': addedBy,
+          'name': name,
+          'id': id,
+        },
+      },
+    );
+    return ApiCallResponse.fromCloudCallResponse(response);
+  }
+}
+
+class DeleteDriveCall {
+  Future<ApiCallResponse> call({
+    String? id = '',
+  }) async {
+    final response = await makeCloudCall(
+      _kPrivateApiFunctionName,
+      {
+        'callName': 'DeleteDriveCall',
+        'variables': {
+          'id': id,
+        },
+      },
+    );
+    return ApiCallResponse.fromCloudCallResponse(response);
+  }
 }
 
 /// End synergy Group Code

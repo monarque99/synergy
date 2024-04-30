@@ -241,32 +241,41 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 0.0, 6.0, 0.0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              FaIcon(
-                                                FontAwesomeIcons.googleDrive,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                size: 24.0,
-                                              ),
-                                              Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        12.0, 0.0, 0.0, 0.0),
-                                                child: Text(
-                                                  'Drive',
-                                                  style: FlutterFlowTheme.of(
+                                          child: InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              context.pushNamed('DrivePage');
+                                            },
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                FaIcon(
+                                                  FontAwesomeIcons.googleDrive,
+                                                  color: FlutterFlowTheme.of(
                                                           context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                                      .primaryText,
+                                                  size: 24.0,
                                                 ),
-                                              ),
-                                            ],
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          12.0, 0.0, 0.0, 0.0),
+                                                  child: Text(
+                                                    'Drive',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
                                           ),
                                         ),
                                       ),

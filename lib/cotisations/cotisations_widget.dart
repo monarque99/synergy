@@ -211,32 +211,41 @@ class _CotisationsWidgetState extends State<CotisationsWidget> {
                                       child: Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 6.0, 0.0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            FaIcon(
-                                              FontAwesomeIcons.googleDrive,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                              size: 24.0,
-                                            ),
-                                            Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      12.0, 0.0, 0.0, 0.0),
-                                              child: Text(
-                                                'Drive',
-                                                style:
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            context.pushNamed('DrivePage');
+                                          },
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              FaIcon(
+                                                FontAwesomeIcons.googleDrive,
+                                                color:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                        .primaryText,
+                                                size: 24.0,
                                               ),
-                                            ),
-                                          ],
+                                              Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        12.0, 0.0, 0.0, 0.0),
+                                                child: Text(
+                                                  'Drive',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -544,17 +553,20 @@ class _CotisationsWidgetState extends State<CotisationsWidget> {
                                     context: context,
                                     phone: false,
                                   ))
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 16.0, 0.0, 4.0),
-                                      child: Text(
-                                        'Mes cotisations',
-                                        style: FlutterFlowTheme.of(context)
-                                            .headlineMedium
-                                            .override(
-                                              fontFamily: 'Readex Pro',
-                                              letterSpacing: 0.0,
-                                            ),
+                                    Align(
+                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            16.0, 16.0, 0.0, 4.0),
+                                        child: Text(
+                                          'Mes cotisations',
+                                          style: FlutterFlowTheme.of(context)
+                                              .headlineMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
                                       ),
                                     ),
                                   if (responsiveVisibility(
@@ -562,7 +574,8 @@ class _CotisationsWidgetState extends State<CotisationsWidget> {
                                     phone: false,
                                   ))
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment:
+                                          const AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 16.0, 0.0, 4.0),

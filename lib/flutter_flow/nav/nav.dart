@@ -103,6 +103,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Cotisations',
           path: '/Cotisations',
           builder: (context, params) => const CotisationsWidget(),
+        ),
+        FFRoute(
+          name: 'DrivePage',
+          path: '/DrivePage',
+          builder: (context, params) => const DrivePageWidget(),
+        ),
+        FFRoute(
+          name: 'HomePage',
+          path: '/homePage',
+          builder: (context, params) => const HomePageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

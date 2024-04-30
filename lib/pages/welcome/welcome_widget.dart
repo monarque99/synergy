@@ -608,7 +608,16 @@ class _WelcomeWidgetState extends State<WelcomeWidget>
                                   16.0, 12.0, 16.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
-                                  context.pushNamed('AboutUs');
+                                  context.pushNamed(
+                                    'HomePage',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: const TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType:
+                                            PageTransitionType.bottomToTop,
+                                      ),
+                                    },
+                                  );
                                 },
                                 text: 'Nous découvrir !',
                                 options: FFButtonOptions(

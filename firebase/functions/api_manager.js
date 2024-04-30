@@ -230,6 +230,103 @@ async function _getcotisationbyuserIdsCall(context, ffVariables) {
   });
 }
 
+async function _getAllDrivesLinkCall(context, ffVariables) {
+  var url = `${synergyGroup.baseUrl}/drives`;
+  var headers = { "Content-Type": `application/json` };
+  var params = {};
+  var ffApiRequestBody = undefined;
+
+  return makeApiRequest({
+    method: "get",
+    url,
+    headers,
+    params,
+    returnBody: true,
+  });
+}
+
+async function _createDriveCall(context, ffVariables) {
+  var addAt = ffVariables["addAt"];
+  var link = ffVariables["link"];
+  var addedBy = ffVariables["addedBy"];
+  var name = ffVariables["name"];
+
+  var url = `${synergyGroup.baseUrl}/drives`;
+  var headers = { "Content-Type": `application/json` };
+  var params = {};
+  var ffApiRequestBody = `
+{
+  "addAt": "${addAt}",
+  "link": "${link}",
+  "addedBy": "${addedBy}",
+  "name": "${name}"
+}`;
+
+  return makeApiRequest({
+    method: "post",
+    url,
+    headers,
+    params,
+    body: createBody({
+      headers,
+      params,
+      body: ffApiRequestBody,
+      bodyType: "JSON",
+    }),
+    returnBody: true,
+  });
+}
+
+async function _updateDriveCall(context, ffVariables) {
+  var addAt = ffVariables["addAt"];
+  var link = ffVariables["link"];
+  var addedBy = ffVariables["addedBy"];
+  var name = ffVariables["name"];
+  var id = ffVariables["id"];
+
+  var url = `${synergyGroup.baseUrl}/drives/${id}`;
+  var headers = { "Content-Type": `application/json` };
+  var params = {};
+  var ffApiRequestBody = `
+{
+  "addAt": "${addAt}",
+  "link": "${link}",
+  "addedBy": "${addedBy}",
+  "name": "${name}"
+}`;
+
+  return makeApiRequest({
+    method: "put",
+    url,
+    headers,
+    params,
+    body: createBody({
+      headers,
+      params,
+      body: ffApiRequestBody,
+      bodyType: "JSON",
+    }),
+    returnBody: true,
+  });
+}
+
+async function _deleteDriveCall(context, ffVariables) {
+  var id = ffVariables["id"];
+
+  var url = `${synergyGroup.baseUrl}/drives/${id}`;
+  var headers = { "Content-Type": `application/json` };
+  var params = {};
+  var ffApiRequestBody = undefined;
+
+  return makeApiRequest({
+    method: "delete",
+    url,
+    headers,
+    params,
+    returnBody: true,
+  });
+}
+
 /// End synergy Group Code
 
 /// Helper functions to route to the appropriate API Call.
@@ -249,6 +346,10 @@ async function makeApiCall(context, data) {
     CreateAccompagnementCall: _createAccompagnementCall,
     UpdateAccompagnementCall: _updateAccompagnementCall,
     GetcotisationbyuserIdsCall: _getcotisationbyuserIdsCall,
+    GetAllDrivesLinkCall: _getAllDrivesLinkCall,
+    CreateDriveCall: _createDriveCall,
+    UpdateDriveCall: _updateDriveCall,
+    DeleteDriveCall: _deleteDriveCall,
   };
 
   if (!(callName in callMap)) {
