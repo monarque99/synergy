@@ -443,6 +443,100 @@ async function _updatesanctionsCall(context, ffVariables) {
   });
 }
 
+async function _sendRappelleCotisationCall(context, ffVariables) {
+  var url = `${synergyGroup.baseUrl}/user/sendrapelcotisation`;
+  var headers = { "Content-Type": `application/json` };
+  var params = {};
+  var ffApiRequestBody = undefined;
+
+  return makeApiRequest({
+    method: "get",
+    url,
+    headers,
+    params,
+    returnBody: true,
+  });
+}
+
+async function _allFinanceTableInfoCall(context, ffVariables) {
+  var url = `${synergyGroup.baseUrl}/finance/allFinanceTableInfo`;
+  var headers = { "Content-Type": `application/json` };
+  var params = {};
+  var ffApiRequestBody = undefined;
+
+  return makeApiRequest({
+    method: "get",
+    url,
+    headers,
+    params,
+    returnBody: true,
+  });
+}
+
+async function _deleteFinanceByIDCall(context, ffVariables) {
+  var id = ffVariables["id"];
+
+  var url = `${synergyGroup.baseUrl}/finance/${id}`;
+  var headers = { "Content-Type": `application/json` };
+  var params = {};
+  var ffApiRequestBody = undefined;
+
+  return makeApiRequest({
+    method: "delete",
+    url,
+    headers,
+    params,
+    returnBody: true,
+  });
+}
+
+async function _createFinanceCall(context, ffVariables) {
+  var userId = ffVariables["userId"];
+  var amount = ffVariables["amount"];
+  var comment = ffVariables["comment"];
+  var financeType = ffVariables["financeType"];
+
+  var url = `${synergyGroup.baseUrl}/finance/create`;
+  var headers = { "Content-Type": `application/json` };
+  var params = {};
+  var ffApiRequestBody = `
+{
+  "userId": "${userId}",
+  "amount": "${amount}",
+  "comment": "${comment}",
+  "financeType": "${financeType}"
+}`;
+
+  return makeApiRequest({
+    method: "post",
+    url,
+    headers,
+    params,
+    body: createBody({
+      headers,
+      params,
+      body: ffApiRequestBody,
+      bodyType: "JSON",
+    }),
+    returnBody: true,
+  });
+}
+
+async function _getAllInterneUsersCall(context, ffVariables) {
+  var url = `${synergyGroup.baseUrl}/user/allusers/intern`;
+  var headers = { "Content-Type": `application/json` };
+  var params = {};
+  var ffApiRequestBody = undefined;
+
+  return makeApiRequest({
+    method: "get",
+    url,
+    headers,
+    params,
+    returnBody: true,
+  });
+}
+
 /// End synergy Group Code
 
 /// Helper functions to route to the appropriate API Call.
@@ -471,6 +565,11 @@ async function makeApiCall(context, data) {
     GetAllSanctionsforUSERCall: _getAllSanctionsforUSERCall,
     CreateSanctionsCall: _createSanctionsCall,
     UpdatesanctionsCall: _updatesanctionsCall,
+    SendRappelleCotisationCall: _sendRappelleCotisationCall,
+    AllFinanceTableInfoCall: _allFinanceTableInfoCall,
+    DeleteFinanceByIDCall: _deleteFinanceByIDCall,
+    CreateFinanceCall: _createFinanceCall,
+    GetAllInterneUsersCall: _getAllInterneUsersCall,
   };
 
   if (!(callName in callMap)) {

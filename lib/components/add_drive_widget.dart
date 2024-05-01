@@ -418,7 +418,6 @@ class _AddDriveWidgetState extends State<AddDriveWidget> {
                       );
                       if ((_model.apiResult70f?.succeeded ?? true)) {
                         Navigator.pop(context);
-                        _model.updatePage(() {});
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
                             content: Text(
@@ -432,6 +431,8 @@ class _AddDriveWidgetState extends State<AddDriveWidget> {
                                 FlutterFlowTheme.of(context).secondary,
                           ),
                         );
+                        Navigator.pop(context);
+                        _model.updatePage(() {});
                       } else {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(

@@ -38,6 +38,14 @@ class SynergyGroup {
       GetAllSanctionsforUSERCall();
   static CreateSanctionsCall createSanctionsCall = CreateSanctionsCall();
   static UpdatesanctionsCall updatesanctionsCall = UpdatesanctionsCall();
+  static SendRappelleCotisationCall sendRappelleCotisationCall =
+      SendRappelleCotisationCall();
+  static AllFinanceTableInfoCall allFinanceTableInfoCall =
+      AllFinanceTableInfoCall();
+  static DeleteFinanceByIDCall deleteFinanceByIDCall = DeleteFinanceByIDCall();
+  static CreateFinanceCall createFinanceCall = CreateFinanceCall();
+  static GetAllInterneUsersCall getAllInterneUsersCall =
+      GetAllInterneUsersCall();
 }
 
 class LoginCall {
@@ -777,6 +785,173 @@ class UpdatesanctionsCall {
     );
     return ApiCallResponse.fromCloudCallResponse(response);
   }
+}
+
+class SendRappelleCotisationCall {
+  Future<ApiCallResponse> call() async {
+    final response = await makeCloudCall(
+      _kPrivateApiFunctionName,
+      {
+        'callName': 'SendRappelleCotisationCall',
+        'variables': {},
+      },
+    );
+    return ApiCallResponse.fromCloudCallResponse(response);
+  }
+}
+
+class AllFinanceTableInfoCall {
+  Future<ApiCallResponse> call() async {
+    final response = await makeCloudCall(
+      _kPrivateApiFunctionName,
+      {
+        'callName': 'AllFinanceTableInfoCall',
+        'variables': {},
+      },
+    );
+    return ApiCallResponse.fromCloudCallResponse(response);
+  }
+
+  List<int>? ids(dynamic response) => (getJsonField(
+        response,
+        r'''$.entity[:].id''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  List<double>? amount(dynamic response) => (getJsonField(
+        response,
+        r'''$.entity[:].amount''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<double>(x))
+          .withoutNulls
+          .toList();
+  List<String>? payAt(dynamic response) => (getJsonField(
+        response,
+        r'''$.entity[:].paymentDate''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  List<String>? comments(dynamic response) => (getJsonField(
+        response,
+        r'''$.entity[:].comment''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  List<String>? userName(dynamic response) => (getJsonField(
+        response,
+        r'''$.entity[:].userName''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+}
+
+class DeleteFinanceByIDCall {
+  Future<ApiCallResponse> call({
+    String? id = '',
+  }) async {
+    final response = await makeCloudCall(
+      _kPrivateApiFunctionName,
+      {
+        'callName': 'DeleteFinanceByIDCall',
+        'variables': {
+          'id': id,
+        },
+      },
+    );
+    return ApiCallResponse.fromCloudCallResponse(response);
+  }
+}
+
+class CreateFinanceCall {
+  Future<ApiCallResponse> call({
+    String? userId = '',
+    String? amount = '',
+    String? comment = '',
+    String? financeType = '',
+  }) async {
+    final response = await makeCloudCall(
+      _kPrivateApiFunctionName,
+      {
+        'callName': 'CreateFinanceCall',
+        'variables': {
+          'userId': userId,
+          'amount': amount,
+          'comment': comment,
+          'financeType': financeType,
+        },
+      },
+    );
+    return ApiCallResponse.fromCloudCallResponse(response);
+  }
+}
+
+class GetAllInterneUsersCall {
+  Future<ApiCallResponse> call() async {
+    final response = await makeCloudCall(
+      _kPrivateApiFunctionName,
+      {
+        'callName': 'GetAllInterneUsersCall',
+        'variables': {},
+      },
+    );
+    return ApiCallResponse.fromCloudCallResponse(response);
+  }
+
+  List<String>? prenom(dynamic response) => (getJsonField(
+        response,
+        r'''$.entity[:].firstName''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  List<String>? nom(dynamic response) => (getJsonField(
+        response,
+        r'''$.entity[:].lastName''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
+  List<int>? ids(dynamic response) => (getJsonField(
+        response,
+        r'''$.entity[:].userId''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<int>(x))
+          .withoutNulls
+          .toList();
+  List? desc(dynamic response) => getJsonField(
+        response,
+        r'''$.entity[:].description''',
+        true,
+      ) as List?;
+  List<String>? profileimg(dynamic response) => (getJsonField(
+        response,
+        r'''$.entity[:].profileImg''',
+        true,
+      ) as List?)
+          ?.withoutNulls
+          .map((x) => castToType<String>(x))
+          .withoutNulls
+          .toList();
 }
 
 /// End synergy Group Code
