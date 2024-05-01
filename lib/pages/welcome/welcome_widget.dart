@@ -136,33 +136,6 @@ class _WelcomeWidgetState extends State<WelcomeWidget>
       'textOnPageLoadAnimation4': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
-          VisibilityEffect(duration: 300.ms),
-          FadeEffect(
-            curve: Curves.easeInOut,
-            delay: 300.0.ms,
-            duration: 300.0.ms,
-            begin: 0.0,
-            end: 1.0,
-          ),
-          MoveEffect(
-            curve: Curves.easeInOut,
-            delay: 300.0.ms,
-            duration: 300.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
-          ),
-          ScaleEffect(
-            curve: Curves.easeInOut,
-            delay: 300.0.ms,
-            duration: 300.0.ms,
-            begin: const Offset(0.9, 0.9),
-            end: const Offset(1.0, 1.0),
-          ),
-        ],
-      ),
-      'textOnPageLoadAnimation5': AnimationInfo(
-        trigger: AnimationTrigger.onPageLoad,
-        effectsBuilder: () => [
           VisibilityEffect(duration: 200.ms),
           FadeEffect(
             curve: Curves.easeInOut,
@@ -187,7 +160,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget>
           ),
         ],
       ),
-      'textOnPageLoadAnimation6': AnimationInfo(
+      'textOnPageLoadAnimation5': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           VisibilityEffect(duration: 300.ms),
@@ -495,23 +468,6 @@ class _WelcomeWidgetState extends State<WelcomeWidget>
                                                         ),
                                               ).animateOnPageLoad(animationsMap[
                                                   'textOnPageLoadAnimation3']!),
-                                              Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 16.0, 0.0, 0.0),
-                                                child: Text(
-                                                  'Ici pour vous servire !',
-                                                  textAlign: TextAlign.center,
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .labelLarge
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                                ).animateOnPageLoad(animationsMap[
-                                                    'textOnPageLoadAnimation4']!),
-                                              ),
                                             ],
                                           ),
                                         ),
@@ -538,7 +494,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget>
                                                               FontWeight.bold,
                                                         ),
                                               ).animateOnPageLoad(animationsMap[
-                                                  'textOnPageLoadAnimation5']!),
+                                                  'textOnPageLoadAnimation4']!),
                                               Padding(
                                                 padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
@@ -554,7 +510,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget>
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ).animateOnPageLoad(animationsMap[
-                                                    'textOnPageLoadAnimation6']!),
+                                                    'textOnPageLoadAnimation5']!),
                                               ),
                                             ],
                                           ),
@@ -650,7 +606,7 @@ class _WelcomeWidgetState extends State<WelcomeWidget>
                             ),
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 12.0, 16.0, 0.0),
+                                  16.0, 12.0, 16.0, 30.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
                                   context.pushNamed('Login');
@@ -681,40 +637,6 @@ class _WelcomeWidgetState extends State<WelcomeWidget>
                                   borderRadius: BorderRadius.circular(50.0),
                                   hoverColor:
                                       FlutterFlowTheme.of(context).primaryText,
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 12.0, 16.0, 44.0),
-                              child: FFButtonWidget(
-                                onPressed: () async {
-                                  context.pushNamed('Login');
-                                },
-                                text: 'S\'inscrire',
-                                options: FFButtonOptions(
-                                  width: double.infinity,
-                                  height: 60.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .titleLarge
-                                      .override(
-                                        fontFamily: 'Inter',
-                                        letterSpacing: 0.0,
-                                      ),
-                                  elevation: 0.0,
-                                  borderSide: const BorderSide(
-                                    color: Colors.transparent,
-                                    width: 1.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(50.0),
-                                  hoverColor:
-                                      FlutterFlowTheme.of(context).alternate,
                                 ),
                               ),
                             ),

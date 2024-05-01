@@ -266,6 +266,9 @@ class _CotisationsWidgetState extends State<CotisationsWidget> {
                                                 child: Row(
                                                   mainAxisSize:
                                                       MainAxisSize.min,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceEvenly,
                                                   children: [
                                                     Expanded(
                                                       flex: 4,
@@ -279,7 +282,7 @@ class _CotisationsWidgetState extends State<CotisationsWidget> {
                                                                     8.0),
                                                         child: Row(
                                                           mainAxisSize:
-                                                              MainAxisSize.max,
+                                                              MainAxisSize.min,
                                                           children: [
                                                             Text(
                                                               valueOrDefault<
@@ -314,7 +317,7 @@ class _CotisationsWidgetState extends State<CotisationsWidget> {
                                                       flex: 2,
                                                       child: Row(
                                                         mainAxisSize:
-                                                            MainAxisSize.max,
+                                                            MainAxisSize.min,
                                                         children: [
                                                           if (responsiveVisibility(
                                                             context: context,
@@ -357,7 +360,7 @@ class _CotisationsWidgetState extends State<CotisationsWidget> {
                                                             Axis.horizontal,
                                                         child: Row(
                                                           mainAxisSize:
-                                                              MainAxisSize.max,
+                                                              MainAxisSize.min,
                                                           children: [
                                                             Text(
                                                               valueOrDefault<

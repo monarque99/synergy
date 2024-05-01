@@ -158,7 +158,7 @@ class _UpdateDriveWidgetState extends State<UpdateDriveWidget> {
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 4.0, 12.0, 0.0),
                               child: Text(
-                                'Metter à jours votre lien drive',
+                                'Mettez à jour votre lien drive',
                                 style: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(

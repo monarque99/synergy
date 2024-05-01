@@ -113,7 +113,7 @@ class _GestionfinanceWidgetState extends State<GestionfinanceWidget>
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Choir une Options',
+                      'Choisir une option',
                       style: FlutterFlowTheme.of(context).bodySmall.override(
                             fontFamily: 'Inter',
                             fontSize: 12.0,

@@ -160,7 +160,7 @@ class _NavbarWidgetState extends State<NavbarWidget> {
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: Text(
-                                    'Acceuil',
+                                    'Accueil',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(

@@ -1886,7 +1886,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                                                     child: Padding(
                                                                                       padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                       child: Text(
-                                                                                        'Terminer',
+                                                                                        'Terminé',
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                               fontFamily: 'Inter',
                                                                                               letterSpacing: 0.0,

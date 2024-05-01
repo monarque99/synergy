@@ -43,6 +43,7 @@ dependencies:
   firebase_performance_web: 0.1.4+24
   flutter_animate: 4.1.1+1
   flutter_cache_manager: 3.3.1
+  flutter_native_splash: 2.3.1
   flutter_rating_bar: 4.0.1
   flutter_staggered_grid_view: 0.7.0
   font_awesome_flutter: 10.6.0
@@ -69,10 +70,12 @@ dependencies:
   sqflite: 2.2.6
   table_calendar: 3.0.9
   timeago: 3.2.2
+  universal_io: 2.2.2
   url_launcher: 6.2.5
   url_launcher_android: 6.3.0
   url_launcher_ios: 6.2.5
   url_launcher_platform_interface: 2.3.2
+  xml: 6.3.0
 
 
   # The following adds the Cupertino Icons font to your application.
