@@ -109,6 +109,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'HomePage',
           path: '/homePage',
           builder: (context, params) => const HomePageWidget(),
+        ),
+        FFRoute(
+          name: 'Sanctions',
+          path: '/sanction',
+          builder: (context, params) => const SanctionsWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -291,13 +296,15 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? Container(
-                  color: FlutterFlowTheme.of(context).primaryBackground,
-                  child: Image.asset(
-                    'assets/images/logoSynergy.png',
-                    fit: BoxFit.none,
-                  ),
-                )
+              ? isWeb
+                  ? Container()
+                  : Container(
+                      color: FlutterFlowTheme.of(context).primaryBackground,
+                      child: Image.asset(
+                        'assets/images/logoSynergy.png',
+                        fit: BoxFit.none,
+                      ),
+                    )
               : page;
 
           final transitionInfo = state.transitionInfo;

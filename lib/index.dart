@@ -6,3 +6,4 @@ export '/pages/internal_dashboard/internal_dashboard_widget.dart'
 export '/pages/cotisations/cotisations_widget.dart' show CotisationsWidget;
 export '/pages/drive_page/drive_page_widget.dart' show DrivePageWidget;
 export '/pages/home_page/home_page_widget.dart' show HomePageWidget;
+export '/pages/sanctions/sanctions_widget.dart' show SanctionsWidget;

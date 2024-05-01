@@ -282,96 +282,71 @@ class _NavbarWidgetState extends State<NavbarWidget> {
                     Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                      child: AnimatedContainer(
-                        duration: const Duration(milliseconds: 200),
-                        curve: Curves.easeInOut,
-                        width: double.infinity,
-                        height: 44.0,
-                        decoration: BoxDecoration(
-                          color: FlutterFlowTheme.of(context).primaryBackground,
-                          borderRadius: BorderRadius.circular(12.0),
-                          shape: BoxShape.rectangle,
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              8.0, 0.0, 6.0, 0.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Icon(
-                                Icons.work,
-                                color: FlutterFlowTheme.of(context).primaryText,
-                                size: 24.0,
+                      child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          context.pushNamed(
+                            'Sanctions',
+                            extra: <String, dynamic>{
+                              kTransitionInfoKey: const TransitionInfo(
+                                hasTransition: true,
+                                transitionType: PageTransitionType.bottomToTop,
                               ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 0.0, 0.0, 0.0),
-                                child: Text(
-                                  'Accompagnements',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Inter',
-                                        letterSpacing: 0.0,
-                                      ),
+                            },
+                          );
+                        },
+                        child: AnimatedContainer(
+                          duration: const Duration(milliseconds: 200),
+                          curve: Curves.easeInOut,
+                          width: double.infinity,
+                          height: 44.0,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context).alternate,
+                            boxShadow: const [
+                              BoxShadow(
+                                blurRadius: 4.0,
+                                color: Color(0x33000000),
+                                offset: Offset(
+                                  0.0,
+                                  2.0,
                                 ),
-                              ),
+                              )
                             ],
+                            borderRadius: BorderRadius.circular(12.0),
+                            shape: BoxShape.rectangle,
                           ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                      child: AnimatedContainer(
-                        duration: const Duration(milliseconds: 200),
-                        curve: Curves.easeInOut,
-                        width: double.infinity,
-                        height: 44.0,
-                        decoration: BoxDecoration(
-                          color: FlutterFlowTheme.of(context).alternate,
-                          boxShadow: const [
-                            BoxShadow(
-                              blurRadius: 4.0,
-                              color: Color(0x33000000),
-                              offset: Offset(
-                                0.0,
-                                2.0,
-                              ),
-                            )
-                          ],
-                          borderRadius: BorderRadius.circular(12.0),
-                          shape: BoxShape.rectangle,
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              8.0, 0.0, 6.0, 0.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              FaIcon(
-                                FontAwesomeIcons.mixer,
-                                color: FlutterFlowTheme.of(context).primary,
-                                size: 24.0,
-                              ),
-                              Expanded(
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 0.0, 0.0, 0.0),
-                                  child: Text(
-                                    'Mes sanctions',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Inter',
-                                          letterSpacing: 0.0,
-                                        ),
+                          child: Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                8.0, 0.0, 6.0, 0.0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                FaIcon(
+                                  FontAwesomeIcons.mixer,
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  size: 24.0,
+                                ),
+                                Expanded(
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        12.0, 0.0, 0.0, 0.0),
+                                    child: Text(
+                                      'Mes sanctions',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -494,51 +469,6 @@ class _NavbarWidgetState extends State<NavbarWidget> {
                                   ],
                                 ),
                               ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    if (FFAppState().userRole == 'RESSOURCE_INTERNE')
-                      Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            16.0, 0.0, 16.0, 0.0),
-                        child: AnimatedContainer(
-                          duration: const Duration(milliseconds: 200),
-                          curve: Curves.easeInOut,
-                          width: double.infinity,
-                          height: 44.0,
-                          decoration: BoxDecoration(
-                            color:
-                                FlutterFlowTheme.of(context).primaryBackground,
-                            borderRadius: BorderRadius.circular(12.0),
-                            shape: BoxShape.rectangle,
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                8.0, 0.0, 6.0, 0.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                FaIcon(
-                                  FontAwesomeIcons.ellipsisV,
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  size: 25.0,
-                                ),
-                                Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 0.0, 0.0, 0.0),
-                                  child: Text(
-                                    'Gérer les sanctions',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Inter',
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                ),
-                              ],
                             ),
                           ),
                         ),

@@ -78,7 +78,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             25.0, 20.0, 25.0, 20.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             InkWell(
                               splashColor: Colors.transparent,
@@ -165,8 +165,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                   ),
                   Expanded(
                     child: Container(
-                      width: double.infinity,
-                      height: 100.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primaryBackground,
                       ),
@@ -201,8 +199,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                     .fromSTEB(
                                                         30.0, 0.0, 0.0, 0.0),
                                                 child: Container(
-                                                  width: 266.0,
-                                                  height: 306.0,
+                                                  width: 300.0,
+                                                  height: 206.0,
                                                   decoration: BoxDecoration(
                                                     boxShadow: [
                                                       BoxShadow(
@@ -227,8 +225,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             8.0),
                                                     child: Image.asset(
                                                       'assets/images/logoSynergy.png',
-                                                      width: 300.0,
-                                                      height: 139.0,
+                                                      width: 200.0,
+                                                      height: 100.0,
                                                       fit: BoxFit.cover,
                                                     ),
                                                   ),
@@ -242,8 +240,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             15.0, 20.0, 0.0, 0.0),
                                         child: Container(
-                                          width: 266.0,
-                                          height: 333.0,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
@@ -266,7 +262,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                   child: Padding(
                                                     padding:
                                                         const EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
+                                                            .fromSTEB(0.0, 30.0,
                                                                 0.0, 20.0),
                                                     child: Text(
                                                       'Qui sommes nous ?',
@@ -363,7 +359,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           final containerGetAllInterneUsersResponse =
                                               snapshot.data!;
                                           return Container(
-                                            height: 200.0,
+                                            height: 250.0,
                                             decoration: const BoxDecoration(),
                                             child: Builder(
                                               builder: (context) {
@@ -376,8 +372,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                         ?.toList() ??
                                                     [];
                                                 return SizedBox(
-                                                  width: double.infinity,
-                                                  height: 250.0,
+                                                  height: 400.0,
                                                   child: CarouselSlider.builder(
                                                     itemCount:
                                                         userinterids.length,
@@ -386,75 +381,98 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                       final userinteridsItem =
                                                           userinterids[
                                                               userinteridsIndex];
-                                                      return Padding(
-                                                        padding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    150.0,
-                                                                    0.0,
-                                                                    150.0,
-                                                                    0.0),
-                                                        child: Card(
-                                                          clipBehavior: Clip
-                                                              .antiAliasWithSaveLayer,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
-                                                          elevation: 4.0,
-                                                          shape:
-                                                              RoundedRectangleBorder(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        8.0),
-                                                          ),
-                                                          child: Padding(
-                                                            padding:
-                                                                const EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        100.0,
-                                                                        0.0,
-                                                                        100.0,
-                                                                        0.0),
-                                                            child: Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .min,
-                                                              children: [
-                                                                Padding(
-                                                                  padding: const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          5.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  child:
-                                                                      Container(
-                                                                    width:
-                                                                        110.0,
-                                                                    height:
-                                                                        110.0,
-                                                                    clipBehavior:
-                                                                        Clip.antiAlias,
-                                                                    decoration:
-                                                                        const BoxDecoration(
-                                                                      shape: BoxShape
-                                                                          .circle,
-                                                                    ),
-                                                                    child: Image
-                                                                        .network(
-                                                                      SynergyGroup
-                                                                          .getAllInterneUsersCall
-                                                                          .profileimg(
-                                                                        containerGetAllInterneUsersResponse
-                                                                            .jsonBody,
-                                                                      )![userinteridsIndex],
-                                                                      fit: BoxFit
-                                                                          .cover,
-                                                                    ),
+                                                      return Card(
+                                                        clipBehavior: Clip
+                                                            .antiAliasWithSaveLayer,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                        elevation: 4.0,
+                                                        shape:
+                                                            RoundedRectangleBorder(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      8.0),
+                                                        ),
+                                                        child: Padding(
+                                                          padding:
+                                                              const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      100.0,
+                                                                      0.0,
+                                                                      100.0,
+                                                                      0.0),
+                                                          child: Column(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .min,
+                                                            children: [
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            5.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child:
+                                                                    Container(
+                                                                  width: 110.0,
+                                                                  height: 110.0,
+                                                                  clipBehavior:
+                                                                      Clip.antiAlias,
+                                                                  decoration:
+                                                                      const BoxDecoration(
+                                                                    shape: BoxShape
+                                                                        .circle,
+                                                                  ),
+                                                                  child: Image
+                                                                      .network(
+                                                                    SynergyGroup
+                                                                        .getAllInterneUsersCall
+                                                                        .profileimg(
+                                                                      containerGetAllInterneUsersResponse
+                                                                          .jsonBody,
+                                                                    )![userinteridsIndex],
+                                                                    fit: BoxFit
+                                                                        .cover,
                                                                   ),
                                                                 ),
-                                                                Padding(
+                                                              ),
+                                                              Padding(
+                                                                padding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            5.0,
+                                                                            5.0,
+                                                                            5.0,
+                                                                            5.0),
+                                                                child: Text(
+                                                                  '${SynergyGroup.getAllInterneUsersCall.nom(
+                                                                    containerGetAllInterneUsersResponse
+                                                                        .jsonBody,
+                                                                  )?[userinteridsIndex]}  ${SynergyGroup.getAllInterneUsersCall.prenom(
+                                                                    containerGetAllInterneUsersResponse
+                                                                        .jsonBody,
+                                                                  )?[userinteridsIndex]}',
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Inter',
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
+                                                                ),
+                                                              ),
+                                                              Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: Padding(
                                                                   padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           5.0,
@@ -462,13 +480,20 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                           5.0,
                                                                           5.0),
                                                                   child: Text(
-                                                                    '${SynergyGroup.getAllInterneUsersCall.nom(
-                                                                      containerGetAllInterneUsersResponse
-                                                                          .jsonBody,
-                                                                    )?[userinteridsIndex]}  ${SynergyGroup.getAllInterneUsersCall.prenom(
-                                                                      containerGetAllInterneUsersResponse
-                                                                          .jsonBody,
-                                                                    )?[userinteridsIndex]}',
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      (SynergyGroup
+                                                                              .getAllInterneUsersCall
+                                                                              .desc(
+                                                                        containerGetAllInterneUsersResponse
+                                                                            .jsonBody,
+                                                                      )?[userinteridsIndex])
+                                                                          ?.toString(),
+                                                                      '0',
+                                                                    ),
+                                                                    textAlign:
+                                                                        TextAlign
+                                                                            .center,
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyMedium
@@ -477,51 +502,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                               'Inter',
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          fontWeight:
+                                                                              FontWeight.w500,
                                                                         ),
                                                                   ),
                                                                 ),
-                                                                Align(
-                                                                  alignment:
-                                                                      const AlignmentDirectional(
-                                                                          0.0,
-                                                                          0.0),
-                                                                  child:
-                                                                      Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            5.0,
-                                                                            5.0,
-                                                                            5.0,
-                                                                            5.0),
-                                                                    child: Text(
-                                                                      valueOrDefault<
-                                                                          String>(
-                                                                        (SynergyGroup.getAllInterneUsersCall.desc(
-                                                                          containerGetAllInterneUsersResponse
-                                                                              .jsonBody,
-                                                                        )?[userinteridsIndex])
-                                                                            ?.toString(),
-                                                                        '0',
-                                                                      ),
-                                                                      textAlign:
-                                                                          TextAlign
-                                                                              .center,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Inter',
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                            fontWeight:
-                                                                                FontWeight.w500,
-                                                                          ),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ),
+                                                              ),
+                                                            ],
                                                           ),
                                                         ),
                                                       );
@@ -542,7 +529,19 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                           true,
                                                       scrollDirection:
                                                           Axis.horizontal,
-                                                      autoPlay: false,
+                                                      autoPlay: true,
+                                                      autoPlayAnimationDuration:
+                                                          const Duration(
+                                                              milliseconds:
+                                                                  800),
+                                                      autoPlayInterval:
+                                                          const Duration(
+                                                              milliseconds:
+                                                                  (800 + 2000)),
+                                                      autoPlayCurve:
+                                                          Curves.linear,
+                                                      pauseAutoPlayInFiniteScroll:
+                                                          true,
                                                       onPageChanged: (index,
                                                               _) =>
                                                           _model.carouselCurrentIndex =
@@ -569,7 +568,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             child: Padding(
                                               padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
-                                                      15.0, 0.0, 0.0, 0.0),
+                                                      15.0, 40.0, 0.0, 0.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.min,
                                                 mainAxisAlignment:
@@ -613,7 +612,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
-                                                                0.0, 3.0),
+                                                                0.0, 100.0),
                                                     child: Text(
                                                       'Chez Synergy, \nnous croyons en la puissance de l\'innovation et de l\'entrepreneuriat pour transformer le monde. Notre mission est d\'être le catalyseur de votre succès entrepreneurial, en vous offrant bien plus que des services traditionnels aux entreprises. Nous sommes vos partenaires passionnés, vos guides dévoués dans le voyage passionnant de la création d\'entreprise.\n\nChaque entreprise commence par une idée, \nun rêve, un désir de faire une différence. Nous comprenons les défis intimidants auxquels sont confrontés les entrepreneurs et les entreprises, des incertitudes du marché aux questions de financement en passant par la complexité de la stratégie de lancement. C\'est pourquoi nous nous engageons à être à vos côtés à chaque étape du chemin.\n\nDe l\'étude minutieuse du marché à la conception de stratégies innovantes,\n de la mise en œuvre agile à l\'optimisation continue, nous vous offrons un soutien complet à chaque étape de votre parcours entrepreneurial. Notre engagement envers votre succès est inébranlable.',
                                                       textAlign:
