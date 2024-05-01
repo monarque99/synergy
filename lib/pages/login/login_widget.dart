@@ -418,7 +418,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                 },
                                               );
                                             } else {
-                                              context.pushNamed('AboutUs');
+                                              context.pushNamed('HomePage');
                                             }
                                           } else {
                                             await showDialog(

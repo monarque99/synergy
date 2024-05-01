@@ -1,6 +1,5 @@
 import '/backend/api_requests/api_calls.dart';
 import '/components/navbar_widget.dart';
-import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -152,325 +151,247 @@ class _CotisationsWidgetState extends State<CotisationsWidget> {
                                     ),
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 0.0, 16.0, 0.0),
-                                    child: Builder(
-                                      builder: (context) {
-                                        final financeids = SynergyGroup
-                                                .getcotisationbyuserIdsCall
-                                                .ids(
-                                                  mainTeamContentGetcotisationbyuserIdsResponse
-                                                      .jsonBody,
-                                                )
-                                                ?.toList() ??
-                                            [];
-                                        return ListView.separated(
-                                          padding: const EdgeInsets.fromLTRB(
-                                            0,
-                                            16.0,
-                                            0,
-                                            16.0,
-                                          ),
-                                          shrinkWrap: true,
-                                          scrollDirection: Axis.vertical,
-                                          itemCount: financeids.length,
-                                          separatorBuilder: (_, __) =>
-                                              const SizedBox(height: 0.0),
-                                          itemBuilder:
-                                              (context, financeidsIndex) {
-                                            final financeidsItem =
-                                                financeids[financeidsIndex];
-                                            return Container(
-                                              width: double.infinity,
-                                              constraints: const BoxConstraints(
-                                                maxWidth: 570.0,
+                                        0.0, 16.0, 0.0, 0.0),
+                                    child: Container(
+                                      width: double.infinity,
+                                      height: 40.0,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                        borderRadius: const BorderRadius.only(
+                                          bottomLeft: Radius.circular(0.0),
+                                          bottomRight: Radius.circular(0.0),
+                                          topLeft: Radius.circular(8.0),
+                                          topRight: Radius.circular(8.0),
+                                        ),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            16.0, 0.0, 16.0, 0.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Expanded(
+                                              flex: 4,
+                                              child: Text(
+                                                'Date',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodySmall
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                               ),
+                                            ),
+                                            if (responsiveVisibility(
+                                              context: context,
+                                              phone: false,
+                                              tablet: false,
+                                            ))
+                                              Expanded(
+                                                flex: 2,
+                                                child: Text(
+                                                  'Montant',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodySmall
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ),
+                                            Expanded(
+                                              child: Text(
+                                                'Commentaire',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodySmall
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Builder(
+                                    builder: (context) {
+                                      final ids = SynergyGroup
+                                              .getcotisationbyuserIdsCall
+                                              .ids(
+                                                mainTeamContentGetcotisationbyuserIdsResponse
+                                                    .jsonBody,
+                                              )
+                                              ?.toList() ??
+                                          [];
+                                      return ListView.builder(
+                                        padding: EdgeInsets.zero,
+                                        shrinkWrap: true,
+                                        scrollDirection: Axis.vertical,
+                                        itemCount: ids.length,
+                                        itemBuilder: (context, idsIndex) {
+                                          final idsItem = ids[idsIndex];
+                                          return Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 1.0),
+                                            child: Container(
+                                              width: 100.0,
                                               decoration: BoxDecoration(
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
+                                                boxShadow: [
+                                                  BoxShadow(
+                                                    blurRadius: 0.0,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryBackground,
+                                                    offset: const Offset(
+                                                      0.0,
+                                                      1.0,
+                                                    ),
+                                                  )
+                                                ],
                                               ),
-                                              child: Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .spaceBetween,
-                                                    children: [
-                                                      Container(
-                                                        width: 32.0,
-                                                        height: 32.0,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .accent1,
-                                                          shape:
-                                                              BoxShape.circle,
-                                                          border: Border.all(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primary,
-                                                            width: 2.0,
-                                                          ),
-                                                        ),
-                                                        child: Padding(
-                                                          padding:
-                                                              const EdgeInsets.all(
-                                                                  2.0),
-                                                          child: InkWell(
-                                                            splashColor: Colors
-                                                                .transparent,
-                                                            focusColor: Colors
-                                                                .transparent,
-                                                            hoverColor: Colors
-                                                                .transparent,
-                                                            highlightColor:
-                                                                Colors
-                                                                    .transparent,
-                                                            onTap: () async {
-                                                              await Navigator
-                                                                  .push(
-                                                                context,
-                                                                PageTransition(
-                                                                  type:
-                                                                      PageTransitionType
-                                                                          .fade,
-                                                                  child:
-                                                                      FlutterFlowExpandedImageView(
-                                                                    image: Image
-                                                                        .network(
-                                                                      'https://images.unsplash.com/photo-1459257831348-f0cdd359235f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxM3x8bW9uZXl8ZW58MHx8fHwxNzE0Mzk1Nzk5fDA&ixlib=rb-4.0.3&q=80&w=1080',
-                                                                      fit: BoxFit
-                                                                          .contain,
-                                                                    ),
-                                                                    allowRotation:
-                                                                        false,
-                                                                    tag:
-                                                                        'imageTag',
-                                                                    useHeroAnimation:
-                                                                        true,
-                                                                  ),
-                                                                ),
-                                                              );
-                                                            },
-                                                            child: Hero(
-                                                              tag: 'imageTag',
-                                                              transitionOnUserGestures:
-                                                                  true,
-                                                              child: ClipRRect(
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            40.0),
-                                                                child: Image
-                                                                    .network(
-                                                                  'https://images.unsplash.com/photo-1459257831348-f0cdd359235f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxM3x8bW9uZXl8ZW58MHx8fHwxNzE0Mzk1Nzk5fDA&ixlib=rb-4.0.3&q=80&w=1080',
-                                                                  width: 77.0,
-                                                                  height: 99.0,
-                                                                  fit: BoxFit
-                                                                      .cover,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      Expanded(
-                                                        child: Padding(
-                                                          padding:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      12.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          child: Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              SynergyGroup
-                                                                  .getcotisationbyuserIdsCall
-                                                                  .payementDate(
-                                                                mainTeamContentGetcotisationbyuserIdsResponse
-                                                                    .jsonBody,
-                                                              )?[financeidsIndex],
-                                                              '0',
-                                                            ).maybeHandleOverflow(
-                                                                maxChars: 10),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Inter',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(18.0, 0.0,
-                                                                0.0, 0.0),
-                                                    child: Container(
-                                                      width: double.infinity,
-                                                      decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                        boxShadow: [
-                                                          BoxShadow(
-                                                            blurRadius: 0.0,
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primary,
-                                                            offset: const Offset(
-                                                              -2.0,
-                                                              0.0,
-                                                            ),
-                                                          )
-                                                        ],
-                                                        border: Border.all(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
-                                                          width: 1.0,
-                                                        ),
-                                                      ),
+                                              child: Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        16.0, 0.0, 16.0, 0.0),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.min,
+                                                  children: [
+                                                    Expanded(
+                                                      flex: 4,
                                                       child: Padding(
                                                         padding:
                                                             const EdgeInsetsDirectional
                                                                 .fromSTEB(
-                                                                    26.0,
                                                                     0.0,
-                                                                    0.0,
-                                                                    0.0),
-                                                        child: Column(
+                                                                    8.0,
+                                                                    12.0,
+                                                                    8.0),
+                                                        child: Row(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .start,
                                                           children: [
-                                                            Padding(
-                                                              padding:
-                                                                  const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          4.0),
-                                                              child: RichText(
-                                                                textScaler: MediaQuery.of(
-                                                                        context)
-                                                                    .textScaler,
-                                                                text: TextSpan(
-                                                                  children: [
-                                                                    const TextSpan(
-                                                                      text:
-                                                                          'Somme : ',
-                                                                      style:
-                                                                          TextStyle(),
-                                                                    ),
-                                                                    TextSpan(
-                                                                      text: valueOrDefault<
-                                                                          String>(
-                                                                        (SynergyGroup.getcotisationbyuserIdsCall.amounts(
-                                                                          mainTeamContentGetcotisationbyuserIdsResponse
-                                                                              .jsonBody,
-                                                                        )?[financeidsIndex])
-                                                                            ?.toString(),
-                                                                        '1',
-                                                                      ),
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .labelMedium
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Inter',
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).primary,
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                            fontWeight:
-                                                                                FontWeight.bold,
-                                                                          ),
-                                                                    ),
-                                                                    const TextSpan(
-                                                                      text:
-                                                                          ' euros',
-                                                                      style:
-                                                                          TextStyle(),
-                                                                    )
-                                                                  ],
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Inter',
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                      ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            Padding(
-                                                              padding:
-                                                                  const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          12.0),
-                                                              child: Text(
-                                                                'Commentaire : ${SynergyGroup.getcotisationbyuserIdsCall.comments(
+                                                            Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                SynergyGroup
+                                                                    .getcotisationbyuserIdsCall
+                                                                    .payementDate(
                                                                   mainTeamContentGetcotisationbyuserIdsResponse
                                                                       .jsonBody,
-                                                                )?[financeidsIndex]}',
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelSmall
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Inter',
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                    ),
-                                                              ),
-                                                            ),
-                                                            Divider(
-                                                              height: 1.0,
-                                                              thickness: 1.0,
-                                                              indent: 0.0,
-                                                              color: FlutterFlowTheme
+                                                                )?[idsIndex],
+                                                                '0',
+                                                              ).maybeHandleOverflow(
+                                                                  maxChars: 10),
+                                                              style: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .alternate,
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Inter',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                  ),
                                                             ),
-                                                          ].addToEnd(const SizedBox(
-                                                              height: 12.0)),
+                                                          ],
                                                         ),
                                                       ),
                                                     ),
-                                                  ),
-                                                ],
+                                                    Expanded(
+                                                      flex: 2,
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          if (responsiveVisibility(
+                                                            context: context,
+                                                            phone: false,
+                                                            tablet: false,
+                                                          ))
+                                                            Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                (SynergyGroup
+                                                                        .getcotisationbyuserIdsCall
+                                                                        .amounts(
+                                                                  mainTeamContentGetcotisationbyuserIdsResponse
+                                                                      .jsonBody,
+                                                                )?[idsIndex])
+                                                                    ?.toString(),
+                                                                '0',
+                                                              ).maybeHandleOverflow(
+                                                                  maxChars: 10),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Inter',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                            ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    Align(
+                                                      alignment:
+                                                          const AlignmentDirectional(
+                                                              -1.0, 0.0),
+                                                      child:
+                                                          SingleChildScrollView(
+                                                        scrollDirection:
+                                                            Axis.horizontal,
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          children: [
+                                                            Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                SynergyGroup
+                                                                    .getcotisationbyuserIdsCall
+                                                                    .comments(
+                                                                  mainTeamContentGetcotisationbyuserIdsResponse
+                                                                      .jsonBody,
+                                                                )?[idsIndex],
+                                                                '0',
+                                                              ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Inter',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
                                               ),
-                                            );
-                                          },
-                                        );
-                                      },
-                                    ),
+                                            ),
+                                          );
+                                        },
+                                      );
+                                    },
                                   ),
                                 ],
                               ),

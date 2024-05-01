@@ -95,11 +95,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const InternalDashboardWidget(),
         ),
         FFRoute(
-          name: 'AboutUs',
-          path: '/aboutUs',
-          builder: (context, params) => const AboutUsWidget(),
-        ),
-        FFRoute(
           name: 'Cotisations',
           path: '/Cotisations',
           builder: (context, params) => const CotisationsWidget(),
@@ -113,11 +108,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'HomePage',
           path: '/homePage',
           builder: (context, params) => const HomePageWidget(),
-        ),
-        FFRoute(
-          name: 'ManageFinance',
-          path: '/Managefiance',
-          builder: (context, params) => const ManageFinanceWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
