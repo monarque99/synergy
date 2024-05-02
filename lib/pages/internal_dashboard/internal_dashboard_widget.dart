@@ -11,6 +11,8 @@ import 'dart:async';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'internal_dashboard_model.dart';
 export 'internal_dashboard_model.dart';
@@ -110,19 +112,19 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                     ),
                     Expanded(
                       child: Align(
-                        alignment: const AlignmentDirectional(0.0, -1.0),
+                        alignment: AlignmentDirectional(0.0, -1.0),
                         child: Container(
                           width: double.infinity,
-                          constraints: const BoxConstraints(
+                          constraints: BoxConstraints(
                             maxWidth: 1370.0,
                           ),
-                          decoration: const BoxDecoration(),
+                          decoration: BoxDecoration(),
                           child: SingleChildScrollView(
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 16.0, 16.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -156,7 +158,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 12.0, 16.0, 12.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -178,7 +180,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsets.all(2.0),
+                                                padding: EdgeInsets.all(2.0),
                                                 child: InkWell(
                                                   splashColor:
                                                       Colors.transparent,
@@ -199,11 +201,11 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                           image:
                                                               CachedNetworkImage(
                                                             fadeInDuration:
-                                                                const Duration(
+                                                                Duration(
                                                                     milliseconds:
                                                                         500),
                                                             fadeOutDuration:
-                                                                const Duration(
+                                                                Duration(
                                                                     milliseconds:
                                                                         500),
                                                             imageUrl: FFAppState()
@@ -230,11 +232,11 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                               8.0),
                                                       child: CachedNetworkImage(
                                                         fadeInDuration:
-                                                            const Duration(
+                                                            Duration(
                                                                 milliseconds:
                                                                     500),
                                                         fadeOutDuration:
-                                                            const Duration(
+                                                            Duration(
                                                                 milliseconds:
                                                                     500),
                                                         imageUrl: FFAppState()
@@ -249,7 +251,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       12.0, 0.0, 0.0, 0.0),
                                               child: Column(
@@ -312,9 +314,9 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                   ),
                                 ),
                                 Align(
-                                  alignment: const AlignmentDirectional(-1.0, 0.0),
+                                  alignment: AlignmentDirectional(-1.0, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 4.0),
                                     child: SingleChildScrollView(
                                       scrollDirection: Axis.horizontal,
@@ -323,11 +325,11 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 12.0, 0.0, 12.0),
                                             child: Container(
                                               height: 120.0,
-                                              constraints: const BoxConstraints(
+                                              constraints: BoxConstraints(
                                                 maxWidth: 270.0,
                                               ),
                                               decoration: BoxDecoration(
@@ -344,7 +346,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 child: Row(
@@ -353,7 +355,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -399,7 +401,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                             children: [
                                                               Expanded(
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           4.0,
@@ -447,11 +449,11 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 12.0, 0.0, 12.0),
                                             child: Container(
                                               height: 120.0,
-                                              constraints: const BoxConstraints(
+                                              constraints: BoxConstraints(
                                                 maxWidth: 270.0,
                                               ),
                                               decoration: BoxDecoration(
@@ -468,7 +470,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 child: Row(
@@ -477,7 +479,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -523,7 +525,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             4.0,
@@ -572,11 +574,11 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 12.0, 0.0, 12.0),
                                             child: Container(
                                               height: 120.0,
-                                              constraints: const BoxConstraints(
+                                              constraints: BoxConstraints(
                                                 maxWidth: 270.0,
                                               ),
                                               decoration: BoxDecoration(
@@ -593,7 +595,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 child: Row(
@@ -604,7 +606,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -650,11 +652,11 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                             children: [
                                                               Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           4.0,
@@ -697,11 +699,11 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 12.0, 0.0, 12.0),
                                             child: Container(
                                               height: 120.0,
-                                              constraints: const BoxConstraints(
+                                              constraints: BoxConstraints(
                                                 maxWidth: 270.0,
                                               ),
                                               decoration: BoxDecoration(
@@ -718,7 +720,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                 ),
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 child: Row(
@@ -729,7 +731,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -775,11 +777,11 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                             children: [
                                                               Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           4.0,
@@ -821,9 +823,9 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                             ),
                                           ),
                                         ]
-                                            .divide(const SizedBox(width: 16.0))
-                                            .addToStart(const SizedBox(width: 16.0))
-                                            .addToEnd(const SizedBox(width: 16.0)),
+                                            .divide(SizedBox(width: 16.0))
+                                            .addToStart(SizedBox(width: 16.0))
+                                            .addToEnd(SizedBox(width: 16.0)),
                                       ),
                                     ),
                                   ),
@@ -877,10 +879,10 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                               ),
                                             ),
                                             child: Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 child: Row(
@@ -891,7 +893,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -920,7 +922,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                         children: [
                                                           Align(
                                                             alignment:
-                                                                const AlignmentDirectional(
+                                                                AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Text(
                                                               'Dépenses interne',
@@ -942,11 +944,11 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                             children: [
                                                               Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           4.0,
@@ -1033,7 +1035,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 0.0, 16.0, 0.0),
                                               child: Row(
@@ -1041,7 +1043,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 16.0, 0.0),
                                                     child: Icon(
@@ -1066,7 +1068,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                       children: [
                                                         Align(
                                                           alignment:
-                                                              const AlignmentDirectional(
+                                                              AlignmentDirectional(
                                                                   0.0, 0.0),
                                                           child: Text(
                                                             'Chiffre d\'affaire business',
@@ -1090,7 +1092,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           4.0,
@@ -1164,7 +1166,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 0.0, 16.0),
                                               child: Column(
@@ -1176,7 +1178,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(1.0, 1.0,
                                                                 1.0, 0.0),
                                                     child: Container(
@@ -1191,14 +1193,14 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .alternate,
-                                                            offset: const Offset(
+                                                            offset: Offset(
                                                               0.0,
                                                               1.0,
                                                             ),
                                                           )
                                                         ],
                                                         borderRadius:
-                                                            const BorderRadius.only(
+                                                            BorderRadius.only(
                                                           bottomLeft:
                                                               Radius.circular(
                                                                   0.0),
@@ -1215,7 +1217,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     24.0,
                                                                     0.0,
@@ -1227,7 +1229,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                           children: [
                                                             Expanded(
                                                               child: Padding(
-                                                                padding: const EdgeInsetsDirectional
+                                                                padding: EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         16.0,
@@ -1246,7 +1248,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                                   children: [
                                                                     Align(
                                                                       alignment:
-                                                                          const AlignmentDirectional(
+                                                                          AlignmentDirectional(
                                                                               0.0,
                                                                               0.0),
                                                                       child:
@@ -1271,7 +1273,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
                                                                 16.0, 0.0),
                                                     child: Row(
@@ -1283,7 +1285,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -1317,12 +1319,12 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                                 children: [
                                                                   Align(
                                                                     alignment:
-                                                                        const AlignmentDirectional(
+                                                                        AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                     child:
                                                                         Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           4.0,
                                                                           4.0,
@@ -1356,7 +1358,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                               ),
                                             ),
                                           ),
-                                        ].divide(const SizedBox(height: 16.0)),
+                                        ].divide(SizedBox(height: 16.0)),
                                       ),
                                     ),
                                     if (responsiveVisibility(
@@ -1369,7 +1371,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                         flex: 12,
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 5.0, 0.0),
                                           child: FutureBuilder<ApiCallResponse>(
                                             future: SynergyGroup
@@ -1399,7 +1401,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                   snapshot.data!;
                                               return Container(
                                                 width: double.infinity,
-                                                constraints: const BoxConstraints(
+                                                constraints: BoxConstraints(
                                                   maxWidth: 1270.0,
                                                 ),
                                                 decoration: BoxDecoration(
@@ -1417,7 +1419,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                   ),
                                                 ),
                                                 child: Padding(
-                                                  padding: const EdgeInsets.all(16.0),
+                                                  padding: EdgeInsets.all(16.0),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -1445,7 +1447,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                                       .center,
                                                               children: [
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1465,7 +1467,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           4.0,
@@ -1506,7 +1508,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                                       backgroundColor:
                                                                           Colors
                                                                               .transparent,
-                                                                      alignment: const AlignmentDirectional(
+                                                                      alignment: AlignmentDirectional(
                                                                               0.0,
                                                                               0.0)
                                                                           .resolve(
@@ -1517,7 +1519,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                                             ? FocusScope.of(context).requestFocus(_model.unfocusNode)
                                                                             : FocusScope.of(context).unfocus(),
                                                                         child:
-                                                                            const CreateAccompagnementWidget(),
+                                                                            CreateAccompagnementWidget(),
                                                                       ),
                                                                     );
                                                                   },
@@ -1537,14 +1539,14 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                               options:
                                                                   FFButtonOptions(
                                                                 height: 40.0,
-                                                                padding: const EdgeInsetsDirectional
+                                                                padding: EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         0.0,
                                                                         16.0,
                                                                         0.0),
                                                                 iconPadding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1566,7 +1568,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                                     ),
                                                                 elevation: 2.0,
                                                                 borderSide:
-                                                                    const BorderSide(
+                                                                    BorderSide(
                                                                   color: Colors
                                                                       .transparent,
                                                                   width: 1.0,
@@ -1582,7 +1584,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     16.0,
@@ -1598,7 +1600,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                                     .of(context)
                                                                 .primaryBackground,
                                                             borderRadius:
-                                                                const BorderRadius
+                                                                BorderRadius
                                                                     .only(
                                                               bottomLeft: Radius
                                                                   .circular(
@@ -1617,7 +1619,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                           ),
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         0.0,
@@ -1766,7 +1768,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                                           accompagnements[
                                                                               accompagnementsIndex];
                                                                       return Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
@@ -1783,7 +1785,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                                               BoxShadow(
                                                                                 blurRadius: 0.0,
                                                                                 color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                offset: const Offset(
+                                                                                offset: Offset(
                                                                                   0.0,
                                                                                   1.0,
                                                                                 ),
@@ -1792,7 +1794,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                                           ),
                                                                           child:
                                                                               Padding(
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 16.0,
                                                                                 0.0,
                                                                                 16.0,
@@ -1824,13 +1826,13 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                                                 Expanded(
                                                                                   flex: 4,
                                                                                   child: Padding(
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 12.0, 8.0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 12.0, 8.0),
                                                                                     child: Row(
                                                                                       mainAxisSize: MainAxisSize.max,
                                                                                       children: [
                                                                                         Expanded(
                                                                                           child: Padding(
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
                                                                                             child: Column(
                                                                                               mainAxisSize: MainAxisSize.max,
                                                                                               mainAxisAlignment: MainAxisAlignment.center,
@@ -1889,12 +1891,12 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                                                         Container(
                                                                                           height: 32.0,
                                                                                           decoration: BoxDecoration(
-                                                                                            color: const Color(0x4D4150FC),
+                                                                                            color: Color(0x4D4150FC),
                                                                                             borderRadius: BorderRadius.circular(40.0),
                                                                                           ),
-                                                                                          alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                          alignment: AlignmentDirectional(0.0, 0.0),
                                                                                           child: Padding(
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                             child: Text(
                                                                                               'Démarcharge',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1914,9 +1916,9 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                                                             color: FlutterFlowTheme.of(context).accent2,
                                                                                             borderRadius: BorderRadius.circular(40.0),
                                                                                           ),
-                                                                                          alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                          alignment: AlignmentDirectional(0.0, 0.0),
                                                                                           child: Padding(
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                             child: Text(
                                                                                               'En cours',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1936,9 +1938,9 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                                                             color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                             borderRadius: BorderRadius.circular(40.0),
                                                                                           ),
-                                                                                          alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                          alignment: AlignmentDirectional(0.0, 0.0),
                                                                                           child: Padding(
-                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                                                                                             child: Text(
                                                                                               'Terminé',
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1980,7 +1982,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                                                                     elevation: 0,
                                                                                                     insetPadding: EdgeInsets.zero,
                                                                                                     backgroundColor: Colors.transparent,
-                                                                                                    alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                    alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                                                     child: GestureDetector(
                                                                                                       onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                                       child: UpdateAccompagnementWidget(
@@ -2052,10 +2054,10 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                         ),
                                       ),
                                   ]
-                                      .divide(const SizedBox(width: 16.0))
-                                      .addToStart(const SizedBox(width: 16.0)),
+                                      .divide(SizedBox(width: 16.0))
+                                      .addToStart(SizedBox(width: 16.0)),
                                 ),
-                              ].addToEnd(const SizedBox(height: 24.0)),
+                              ].addToEnd(SizedBox(height: 24.0)),
                             ),
                           ),
                         ),

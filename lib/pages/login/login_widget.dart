@@ -3,6 +3,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'login_model.dart';
 export 'login_model.dart';
 
@@ -64,7 +66,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                       ),
-                      alignment: const AlignmentDirectional(0.0, -1.0),
+                      alignment: AlignmentDirectional(0.0, -1.0),
                       child: SingleChildScrollView(
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
@@ -76,14 +78,14 @@ class _LoginWidgetState extends State<LoginWidget> {
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                borderRadius: const BorderRadius.only(
+                                borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(16.0),
                                   bottomRight: Radius.circular(16.0),
                                   topLeft: Radius.circular(0.0),
                                   topRight: Radius.circular(0.0),
                                 ),
                               ),
-                              alignment: const AlignmentDirectional(-1.0, 0.0),
+                              alignment: AlignmentDirectional(-1.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -94,7 +96,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     desktop: false,
                                   ))
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: ClipRRect(
                                         borderRadius:
                                             BorderRadius.circular(8.0),
@@ -103,7 +105,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                           width: 174.0,
                                           height: 200.0,
                                           fit: BoxFit.cover,
-                                          alignment: const Alignment(0.0, 0.0),
+                                          alignment: Alignment(0.0, 0.0),
                                         ),
                                       ),
                                     ),
@@ -111,16 +113,16 @@ class _LoginWidgetState extends State<LoginWidget> {
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              alignment: AlignmentDirectional(0.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsets.all(32.0),
+                                padding: EdgeInsets.all(32.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 20.0),
                                       child: Text(
                                         'Bienvenue sur Synergy',
@@ -134,7 +136,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 12.0, 0.0, 24.0),
                                       child: Text(
                                         'Merci de vous connecter ',
@@ -147,9 +149,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 16.0),
-                                      child: SizedBox(
+                                      child: Container(
                                         width: 370.0,
                                         child: TextFormField(
                                           controller:
@@ -157,7 +159,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                           focusNode:
                                               _model.emailAddressFocusNode,
                                           autofocus: true,
-                                          autofillHints: const [AutofillHints.email],
+                                          autofillHints: [AutofillHints.email],
                                           obscureText: false,
                                           decoration: InputDecoration(
                                             labelText: 'Email',
@@ -229,16 +231,16 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 16.0),
-                                      child: SizedBox(
+                                      child: Container(
                                         width: 370.0,
                                         child: TextFormField(
                                           controller:
                                               _model.passwordTextController,
                                           focusNode: _model.passwordFocusNode,
                                           autofocus: true,
-                                          autofillHints: const [
+                                          autofillHints: [
                                             AutofillHints.password
                                           ],
                                           obscureText:
@@ -330,11 +332,11 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 16.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
-                                          var shouldSetState = false;
+                                          var _shouldSetState = false;
                                           _model.loginresult =
                                               await SynergyGroup.loginCall.call(
                                             email: _model
@@ -343,7 +345,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             password: _model
                                                 .passwordTextController.text,
                                           );
-                                          shouldSetState = true;
+                                          _shouldSetState = true;
                                           if ((_model.loginresult?.succeeded ??
                                               true)) {
                                             if (SynergyGroup.loginCall.userRole(
@@ -409,7 +411,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                 'InternalDashboard',
                                                 extra: <String, dynamic>{
                                                   kTransitionInfoKey:
-                                                      const TransitionInfo(
+                                                      TransitionInfo(
                                                     hasTransition: true,
                                                     transitionType:
                                                         PageTransitionType
@@ -425,37 +427,36 @@ class _LoginWidgetState extends State<LoginWidget> {
                                               context: context,
                                               builder: (alertDialogContext) {
                                                 return AlertDialog(
-                                                  title: const Text('Information'),
-                                                  content: const Text(
+                                                  title: Text('Information'),
+                                                  content: Text(
                                                       'Identifiants incorrecte'),
                                                   actions: [
                                                     TextButton(
                                                       onPressed: () =>
                                                           Navigator.pop(
                                                               alertDialogContext),
-                                                      child: const Text('Ok'),
+                                                      child: Text('Ok'),
                                                     ),
                                                   ],
                                                 );
                                               },
                                             );
-                                            if (shouldSetState) {
+                                            if (_shouldSetState)
                                               setState(() {});
-                                            }
                                             return;
                                           }
 
-                                          if (shouldSetState) setState(() {});
+                                          if (_shouldSetState) setState(() {});
                                         },
                                         text: 'Connexion',
                                         options: FFButtonOptions(
                                           width: 370.0,
                                           height: 44.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
@@ -468,7 +469,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                     letterSpacing: 0.0,
                                                   ),
                                           elevation: 3.0,
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -494,7 +495,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                     Expanded(
                       flex: 6,
                       child: Padding(
-                        padding: const EdgeInsets.all(16.0),
+                        padding: EdgeInsets.all(16.0),
                         child: Container(
                           width: 100.0,
                           height: double.infinity,

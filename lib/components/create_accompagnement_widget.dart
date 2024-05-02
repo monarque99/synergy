@@ -9,8 +9,11 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'create_accompagnement_model.dart';
 export 'create_accompagnement_model.dart';
 
@@ -76,8 +79,8 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
             curve: Curves.easeInOut,
             delay: 250.0.ms,
             duration: 600.0.ms,
-            begin: const Offset(0.0, 70.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 70.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -118,15 +121,15 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.all(12.0),
+                padding: EdgeInsets.all(12.0),
                 child: Container(
                   width: double.infinity,
-                  constraints: const BoxConstraints(
+                  constraints: BoxConstraints(
                     maxWidth: 670.0,
                   ),
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                    boxShadow: const [
+                    boxShadow: [
                       BoxShadow(
                         blurRadius: 3.0,
                         color: Color(0x33000000),
@@ -151,13 +154,13 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                           key: _model.formKey,
                           autovalidateMode: AutovalidateMode.always,
                           child: Padding(
-                            padding: const EdgeInsets.all(24.0),
+                            padding: EdgeInsets.all(24.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 12.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -171,7 +174,7 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                                               CrossAxisAlignment.start,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 4.0),
                                               child: Text(
                                                 'Modifier le projet',
@@ -186,7 +189,7 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 8.0),
                                               child: Text(
                                                 'Merci de modifier seulement les informations qui le doivent',
@@ -228,7 +231,7 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 20.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -237,7 +240,7 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                                           children: [
                                             Expanded(
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 8.0, 0.0, 0.0),
                                                 child: TextFormField(
@@ -346,7 +349,7 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                                                       ),
                                                     ),
                                                     contentPadding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 24.0,
                                                                 0.0, 24.0),
                                                   ),
@@ -369,7 +372,7 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 20.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -378,7 +381,7 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                                           children: [
                                             Expanded(
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 8.0, 0.0, 0.0),
                                                 child: TextFormField(
@@ -487,7 +490,7 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                                                       ),
                                                     ),
                                                     contentPadding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 24.0,
                                                                 0.0, 24.0),
                                                   ),
@@ -508,7 +511,7 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                                             ),
                                             Expanded(
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 8.0, 0.0, 0.0),
                                                 child: TextFormField(
@@ -617,7 +620,7 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                                                       ),
                                                     ),
                                                     contentPadding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 24.0,
                                                                 0.0, 24.0),
                                                   ),
@@ -640,7 +643,7 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 20.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -649,7 +652,7 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                                           children: [
                                             Expanded(
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 8.0, 0.0, 0.0),
                                                 child: TextFormField(
@@ -758,7 +761,7 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                                                       ),
                                                     ),
                                                     contentPadding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 24.0,
                                                                 0.0, 24.0),
                                                   ),
@@ -785,7 +788,7 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 20.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -794,7 +797,7 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                                           children: [
                                             Expanded(
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 8.0, 0.0, 0.0),
                                                 child: TextFormField(
@@ -905,7 +908,7 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                                                       ),
                                                     ),
                                                     contentPadding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 24.0,
                                                                 0.0, 24.0),
                                                   ),
@@ -932,7 +935,7 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 20.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -940,7 +943,7 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 20.0, 0.0),
                                               child: Text(
@@ -956,7 +959,7 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                                             ),
                                             Expanded(
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 8.0, 0.0, 0.0),
                                                 child:
@@ -972,7 +975,7 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                                                     'EN_COURS',
                                                     'TERMINER'
                                                   ]),
-                                                  optionLabels: const [
+                                                  optionLabels: [
                                                     'DEMARCHARGE',
                                                     'EN_COURS',
                                                     'TERMINER'
@@ -1010,7 +1013,7 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                                                           .alternate,
                                                   borderWidth: 2.0,
                                                   borderRadius: 8.0,
-                                                  margin: const EdgeInsetsDirectional
+                                                  margin: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 4.0, 16.0, 4.0),
                                                   hidesUnderline: true,
@@ -1024,7 +1027,7 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 20.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -1032,7 +1035,7 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 20.0, 0.0),
                                               child: Text(
@@ -1132,7 +1135,7 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                                       FFLocalizations.of(context).languageCode,
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 30.0, 0.0, 0.0),
                                   child: Text(
                                     'Date de fin',
@@ -1191,7 +1194,7 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                                       FFLocalizations.of(context).languageCode,
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 20.0),
                                   child: Text(
                                     'Date du paiment',
@@ -1251,14 +1254,14 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                                       FFLocalizations.of(context).languageCode,
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 16.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 4.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -1272,8 +1275,8 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                                               startAt: _model
                                                   .startDateSelectedDay
                                                   ?.start
-                                                  .millisecondsSinceEpoch
-                                                  .toString(),
+                                                  ?.millisecondsSinceEpoch
+                                                  ?.toString(),
                                               linkContrat: _model
                                                   .linkcontartTextController
                                                   .text,
@@ -1289,13 +1292,13 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                                               paymentDate: _model
                                                   .paiementDateSelectedDay
                                                   ?.start
-                                                  .millisecondsSinceEpoch
-                                                  .toString(),
+                                                  ?.millisecondsSinceEpoch
+                                                  ?.toString(),
                                               endAt: _model
                                                   .endAtSelectedDay
                                                   ?.start
-                                                  .millisecondsSinceEpoch
-                                                  .toString(),
+                                                  ?.millisecondsSinceEpoch
+                                                  ?.toString(),
                                             );
                                             if ((_model
                                                     .apiResultf28?.succeeded ??
@@ -1309,15 +1312,15 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                                                 context: context,
                                                 builder: (alertDialogContext) {
                                                   return AlertDialog(
-                                                    title: const Text('Erreur'),
-                                                    content: const Text(
+                                                    title: Text('Erreur'),
+                                                    content: Text(
                                                         'Une erreur c\'est produite, merci de réessayer'),
                                                     actions: [
                                                       TextButton(
                                                         onPressed: () =>
                                                             Navigator.pop(
                                                                 alertDialogContext),
-                                                        child: const Text('Ok'),
+                                                        child: Text('Ok'),
                                                       ),
                                                     ],
                                                   );
@@ -1331,10 +1334,10 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                                           options: FFButtonOptions(
                                             height: 50.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     32.0, 0.0, 32.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
@@ -1347,7 +1350,7 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                                                       letterSpacing: 0.0,
                                                     ),
                                             elevation: 2.0,
-                                            borderSide: const BorderSide(
+                                            borderSide: BorderSide(
                                               color: Colors.transparent,
                                               width: 1.0,
                                             ),

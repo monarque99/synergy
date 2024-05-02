@@ -5,6 +5,8 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'update_drive_model.dart';
 export 'update_drive_model.dart';
 
@@ -67,17 +69,17 @@ class _UpdateDriveWidgetState extends State<UpdateDriveWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(16.0),
         child: Container(
           width: double.infinity,
-          constraints: const BoxConstraints(
+          constraints: BoxConstraints(
             maxWidth: 1170.0,
           ),
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
-            boxShadow: const [
+            boxShadow: [
               BoxShadow(
                 blurRadius: 3.0,
                 color: Color(0x33000000),
@@ -94,7 +96,7 @@ class _UpdateDriveWidgetState extends State<UpdateDriveWidget> {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: EdgeInsets.all(16.0),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -109,16 +111,16 @@ class _UpdateDriveWidgetState extends State<UpdateDriveWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 5.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 12.0, 0.0),
                                     child: Text(
                                       'Liens Drive',
@@ -132,7 +134,7 @@ class _UpdateDriveWidgetState extends State<UpdateDriveWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       30.0, 0.0, 20.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -153,9 +155,9 @@ class _UpdateDriveWidgetState extends State<UpdateDriveWidget> {
                             ),
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 4.0, 12.0, 0.0),
                               child: Text(
                                 'Mettez à jour votre lien drive',
@@ -180,7 +182,7 @@ class _UpdateDriveWidgetState extends State<UpdateDriveWidget> {
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
                       child: Container(
                         width: 100.0,
                         decoration: BoxDecoration(
@@ -191,7 +193,7 @@ class _UpdateDriveWidgetState extends State<UpdateDriveWidget> {
                               blurRadius: 0.0,
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
-                              offset: const Offset(
+                              offset: Offset(
                                 0.0,
                                 1.0,
                               ),
@@ -199,7 +201,7 @@ class _UpdateDriveWidgetState extends State<UpdateDriveWidget> {
                           ],
                         ),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
@@ -208,7 +210,7 @@ class _UpdateDriveWidgetState extends State<UpdateDriveWidget> {
                               Expanded(
                                 flex: 4,
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 8.0, 12.0, 8.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -216,7 +218,7 @@ class _UpdateDriveWidgetState extends State<UpdateDriveWidget> {
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   4.0, 0.0, 0.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -226,7 +228,7 @@ class _UpdateDriveWidgetState extends State<UpdateDriveWidget> {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         8.0, 30.0, 8.0, 30.0),
                                                 child: TextFormField(
@@ -237,7 +239,7 @@ class _UpdateDriveWidgetState extends State<UpdateDriveWidget> {
                                                   onChanged: (_) =>
                                                       EasyDebounce.debounce(
                                                     '_model.textController1',
-                                                    const Duration(
+                                                    Duration(
                                                         milliseconds: 2000),
                                                     () => setState(() {}),
                                                   ),
@@ -345,7 +347,7 @@ class _UpdateDriveWidgetState extends State<UpdateDriveWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         8.0, 0.0, 8.0, 30.0),
                                                 child: TextFormField(
@@ -356,7 +358,7 @@ class _UpdateDriveWidgetState extends State<UpdateDriveWidget> {
                                                   onChanged: (_) =>
                                                       EasyDebounce.debounce(
                                                     '_model.textController2',
-                                                    const Duration(
+                                                    Duration(
                                                         milliseconds: 2000),
                                                     () => setState(() {}),
                                                   ),
@@ -466,7 +468,7 @@ class _UpdateDriveWidgetState extends State<UpdateDriveWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         8.0, 0.0, 8.0, 30.0),
                                                 child: TextFormField(
@@ -477,7 +479,7 @@ class _UpdateDriveWidgetState extends State<UpdateDriveWidget> {
                                                   onChanged: (_) =>
                                                       EasyDebounce.debounce(
                                                     '_model.textController3',
-                                                    const Duration(
+                                                    Duration(
                                                         milliseconds: 2000),
                                                     () => setState(() {}),
                                                   ),
@@ -586,7 +588,7 @@ class _UpdateDriveWidgetState extends State<UpdateDriveWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         8.0, 0.0, 8.0, 30.0),
                                                 child: TextFormField(
@@ -597,7 +599,7 @@ class _UpdateDriveWidgetState extends State<UpdateDriveWidget> {
                                                   onChanged: (_) =>
                                                       EasyDebounce.debounce(
                                                     '_model.textController4',
-                                                    const Duration(
+                                                    Duration(
                                                         milliseconds: 2000),
                                                     () => setState(() {}),
                                                   ),
@@ -723,7 +725,7 @@ class _UpdateDriveWidgetState extends State<UpdateDriveWidget> {
                   ],
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(1.0, 0.0),
+                  alignment: AlignmentDirectional(1.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       _model.apiResult70f =
@@ -745,7 +747,7 @@ class _UpdateDriveWidgetState extends State<UpdateDriveWidget> {
                                 color: FlutterFlowTheme.of(context).primaryText,
                               ),
                             ),
-                            duration: const Duration(milliseconds: 2849),
+                            duration: Duration(milliseconds: 2849),
                             backgroundColor:
                                 FlutterFlowTheme.of(context).secondary,
                           ),
@@ -759,7 +761,7 @@ class _UpdateDriveWidgetState extends State<UpdateDriveWidget> {
                                 color: FlutterFlowTheme.of(context).primaryText,
                               ),
                             ),
-                            duration: const Duration(milliseconds: 2849),
+                            duration: Duration(milliseconds: 2849),
                             backgroundColor: FlutterFlowTheme.of(context).error,
                           ),
                         );
@@ -775,9 +777,9 @@ class _UpdateDriveWidgetState extends State<UpdateDriveWidget> {
                     options: FFButtonOptions(
                       height: 40.0,
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       iconPadding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primaryText,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
@@ -787,7 +789,7 @@ class _UpdateDriveWidgetState extends State<UpdateDriveWidget> {
                                 letterSpacing: 0.0,
                               ),
                       elevation: 3.0,
-                      borderSide: const BorderSide(
+                      borderSide: BorderSide(
                         color: Colors.transparent,
                         width: 1.0,
                       ),

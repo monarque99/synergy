@@ -1,19 +1,19 @@
 const axios = require("axios").default;
-const qs = require("qs");
+const qs = require('qs');
 
 /// Start synergy Group Code
 
 const synergyGroup = {
   baseUrl: "http://217.160.213.124:8089",
-  headers: { "Content-Type": `application/json` },
-};
+  headers: {"Content-Type": `application/json`,},
+}
 
 async function _loginCall(context, ffVariables) {
   var email = ffVariables["email"];
   var password = ffVariables["password"];
 
   var url = `${synergyGroup.baseUrl}/user/login`;
-  var headers = { "Content-Type": `application/json` };
+  var headers = {"Content-Type": `application/json`,};
   var params = {};
   var ffApiRequestBody = `
 {
@@ -26,19 +26,16 @@ async function _loginCall(context, ffVariables) {
     url,
     headers,
     params,
-    body: createBody({
-      headers,
-      params,
-      body: ffApiRequestBody,
-      bodyType: "JSON",
-    }),
+    body: createBody({ headers, params, body: ffApiRequestBody, bodyType: "JSON" }),
     returnBody: true,
   });
 }
 
 async function _getFinanceACCCall(context, ffVariables) {
+
+
   var url = `${synergyGroup.baseUrl}/finance/allacc`;
-  var headers = { "Content-Type": `application/json` };
+  var headers = {"Content-Type": `application/json`,};
   var params = {};
   var ffApiRequestBody = undefined;
 
@@ -52,8 +49,10 @@ async function _getFinanceACCCall(context, ffVariables) {
 }
 
 async function _getFinanceCotisationCall(context, ffVariables) {
+
+
   var url = `${synergyGroup.baseUrl}/finance/allcotisation`;
-  var headers = { "Content-Type": `application/json` };
+  var headers = {"Content-Type": `application/json`,};
   var params = {};
   var ffApiRequestBody = undefined;
 
@@ -67,8 +66,10 @@ async function _getFinanceCotisationCall(context, ffVariables) {
 }
 
 async function _getFinanceBusinessCall(context, ffVariables) {
+
+
   var url = `${synergyGroup.baseUrl}/finance/allbuss`;
-  var headers = { "Content-Type": `application/json` };
+  var headers = {"Content-Type": `application/json`,};
   var params = {};
   var ffApiRequestBody = undefined;
 
@@ -82,8 +83,10 @@ async function _getFinanceBusinessCall(context, ffVariables) {
 }
 
 async function _getFinanceDepenseInterneCall(context, ffVariables) {
+
+
   var url = `${synergyGroup.baseUrl}/finance/alldi`;
-  var headers = { "Content-Type": `application/json` };
+  var headers = {"Content-Type": `application/json`,};
   var params = {};
   var ffApiRequestBody = undefined;
 
@@ -100,7 +103,7 @@ async function _getAllGeneralInfoCall(context, ffVariables) {
   var userId = ffVariables["userId"];
 
   var url = `${synergyGroup.baseUrl}/finance/allfinanceinfos/${userId}`;
-  var headers = { "Content-Type": `application/json` };
+  var headers = {"Content-Type": `application/json`,};
   var params = {};
   var ffApiRequestBody = undefined;
 
@@ -114,8 +117,10 @@ async function _getAllGeneralInfoCall(context, ffVariables) {
 }
 
 async function _getAllAccompagnementCall(context, ffVariables) {
+
+
   var url = `${synergyGroup.baseUrl}/accompagnement/all`;
-  var headers = { "Content-Type": `application/json` };
+  var headers = {"Content-Type": `application/json`,};
   var params = {};
   var ffApiRequestBody = undefined;
 
@@ -140,7 +145,7 @@ async function _createAccompagnementCall(context, ffVariables) {
   var endAt = ffVariables["endAt"];
 
   var url = `${synergyGroup.baseUrl}/accompagnement/create`;
-  var headers = { "Content-Type": `application/json` };
+  var headers = {"Content-Type": `application/json`,};
   var params = {};
   var ffApiRequestBody = `
 {
@@ -160,12 +165,7 @@ async function _createAccompagnementCall(context, ffVariables) {
     url,
     headers,
     params,
-    body: createBody({
-      headers,
-      params,
-      body: ffApiRequestBody,
-      bodyType: "JSON",
-    }),
+    body: createBody({ headers, params, body: ffApiRequestBody, bodyType: "JSON" }),
     returnBody: true,
   });
 }
@@ -184,7 +184,7 @@ async function _updateAccompagnementCall(context, ffVariables) {
   var satisfactionClient = ffVariables["satisfactionClient"];
 
   var url = `${synergyGroup.baseUrl}/accompagnement/update/${accIds}`;
-  var headers = { "Content-Type": `application/json` };
+  var headers = {"Content-Type": `application/json`,};
   var params = {};
   var ffApiRequestBody = `
 {
@@ -205,12 +205,7 @@ async function _updateAccompagnementCall(context, ffVariables) {
     url,
     headers,
     params,
-    body: createBody({
-      headers,
-      params,
-      body: ffApiRequestBody,
-      bodyType: "JSON",
-    }),
+    body: createBody({ headers, params, body: ffApiRequestBody, bodyType: "JSON" }),
     returnBody: true,
   });
 }
@@ -219,7 +214,7 @@ async function _getcotisationbyuserIdsCall(context, ffVariables) {
   var userId = ffVariables["userId"];
 
   var url = `${synergyGroup.baseUrl}/finance/getbyuser/${userId}`;
-  var headers = { "Content-Type": `application/json` };
+  var headers = {"Content-Type": `application/json`,};
   var params = {};
   var ffApiRequestBody = undefined;
 
@@ -233,8 +228,10 @@ async function _getcotisationbyuserIdsCall(context, ffVariables) {
 }
 
 async function _getAllDrivesLinkCall(context, ffVariables) {
+
+
   var url = `${synergyGroup.baseUrl}/drives`;
-  var headers = { "Content-Type": `application/json` };
+  var headers = {"Content-Type": `application/json`,};
   var params = {};
   var ffApiRequestBody = undefined;
 
@@ -254,7 +251,7 @@ async function _createDriveCall(context, ffVariables) {
   var name = ffVariables["name"];
 
   var url = `${synergyGroup.baseUrl}/drives`;
-  var headers = { "Content-Type": `application/json` };
+  var headers = {"Content-Type": `application/json`,};
   var params = {};
   var ffApiRequestBody = `
 {
@@ -269,12 +266,7 @@ async function _createDriveCall(context, ffVariables) {
     url,
     headers,
     params,
-    body: createBody({
-      headers,
-      params,
-      body: ffApiRequestBody,
-      bodyType: "JSON",
-    }),
+    body: createBody({ headers, params, body: ffApiRequestBody, bodyType: "JSON" }),
     returnBody: true,
   });
 }
@@ -287,7 +279,7 @@ async function _updateDriveCall(context, ffVariables) {
   var id = ffVariables["id"];
 
   var url = `${synergyGroup.baseUrl}/drives/${id}`;
-  var headers = { "Content-Type": `application/json` };
+  var headers = {"Content-Type": `application/json`,};
   var params = {};
   var ffApiRequestBody = `
 {
@@ -302,12 +294,7 @@ async function _updateDriveCall(context, ffVariables) {
     url,
     headers,
     params,
-    body: createBody({
-      headers,
-      params,
-      body: ffApiRequestBody,
-      bodyType: "JSON",
-    }),
+    body: createBody({ headers, params, body: ffApiRequestBody, bodyType: "JSON" }),
     returnBody: true,
   });
 }
@@ -316,7 +303,7 @@ async function _deleteDriveCall(context, ffVariables) {
   var id = ffVariables["id"];
 
   var url = `${synergyGroup.baseUrl}/drives/${id}`;
-  var headers = { "Content-Type": `application/json` };
+  var headers = {"Content-Type": `application/json`,};
   var params = {};
   var ffApiRequestBody = undefined;
 
@@ -333,7 +320,7 @@ async function _deleteSanctionsCall(context, ffVariables) {
   var id = ffVariables["id"];
 
   var url = `${synergyGroup.baseUrl}/sanctions/${id}`;
-  var headers = { "Content-Type": `application/json` };
+  var headers = {"Content-Type": `application/json`,};
   var params = {};
   var ffApiRequestBody = undefined;
 
@@ -347,8 +334,10 @@ async function _deleteSanctionsCall(context, ffVariables) {
 }
 
 async function _getAllSanctionsCall(context, ffVariables) {
+
+
   var url = `${synergyGroup.baseUrl}/sanctions`;
-  var headers = { "Content-Type": `application/json` };
+  var headers = {"Content-Type": `application/json`,};
   var params = {};
   var ffApiRequestBody = undefined;
 
@@ -365,7 +354,7 @@ async function _getAllSanctionsforUSERCall(context, ffVariables) {
   var userid = ffVariables["userid"];
 
   var url = `${synergyGroup.baseUrl}/sanctions/user/${userid}`;
-  var headers = { "Content-Type": `application/json` };
+  var headers = {"Content-Type": `application/json`,};
   var params = {};
   var ffApiRequestBody = undefined;
 
@@ -385,7 +374,7 @@ async function _createSanctionsCall(context, ffVariables) {
   var at = ffVariables["at"];
 
   var url = `${synergyGroup.baseUrl}/sanctions`;
-  var headers = { "Content-Type": `application/json` };
+  var headers = {"Content-Type": `application/json`,};
   var params = {};
   var ffApiRequestBody = `
 {
@@ -402,12 +391,7 @@ async function _createSanctionsCall(context, ffVariables) {
     url,
     headers,
     params,
-    body: createBody({
-      headers,
-      params,
-      body: ffApiRequestBody,
-      bodyType: "JSON",
-    }),
+    body: createBody({ headers, params, body: ffApiRequestBody, bodyType: "JSON" }),
     returnBody: true,
   });
 }
@@ -419,7 +403,7 @@ async function _updatesanctionsCall(context, ffVariables) {
   var at = ffVariables["at"];
 
   var url = `${synergyGroup.baseUrl}/sanctions/${sanctionid}`;
-  var headers = { "Content-Type": `application/json` };
+  var headers = {"Content-Type": `application/json`,};
   var params = {};
   var ffApiRequestBody = `
 {
@@ -433,19 +417,16 @@ async function _updatesanctionsCall(context, ffVariables) {
     url,
     headers,
     params,
-    body: createBody({
-      headers,
-      params,
-      body: ffApiRequestBody,
-      bodyType: "JSON",
-    }),
+    body: createBody({ headers, params, body: ffApiRequestBody, bodyType: "JSON" }),
     returnBody: true,
   });
 }
 
 async function _sendRappelleCotisationCall(context, ffVariables) {
+
+
   var url = `${synergyGroup.baseUrl}/user/sendrapelcotisation`;
-  var headers = { "Content-Type": `application/json` };
+  var headers = {"Content-Type": `application/json`,};
   var params = {};
   var ffApiRequestBody = undefined;
 
@@ -459,8 +440,10 @@ async function _sendRappelleCotisationCall(context, ffVariables) {
 }
 
 async function _allFinanceTableInfoCall(context, ffVariables) {
+
+
   var url = `${synergyGroup.baseUrl}/finance/allFinanceTableInfo`;
-  var headers = { "Content-Type": `application/json` };
+  var headers = {"Content-Type": `application/json`,};
   var params = {};
   var ffApiRequestBody = undefined;
 
@@ -477,7 +460,7 @@ async function _deleteFinanceByIDCall(context, ffVariables) {
   var id = ffVariables["id"];
 
   var url = `${synergyGroup.baseUrl}/finance/${id}`;
-  var headers = { "Content-Type": `application/json` };
+  var headers = {"Content-Type": `application/json`,};
   var params = {};
   var ffApiRequestBody = undefined;
 
@@ -497,7 +480,7 @@ async function _createFinanceCall(context, ffVariables) {
   var financeType = ffVariables["financeType"];
 
   var url = `${synergyGroup.baseUrl}/finance/create`;
-  var headers = { "Content-Type": `application/json` };
+  var headers = {"Content-Type": `application/json`,};
   var params = {};
   var ffApiRequestBody = `
 {
@@ -512,19 +495,16 @@ async function _createFinanceCall(context, ffVariables) {
     url,
     headers,
     params,
-    body: createBody({
-      headers,
-      params,
-      body: ffApiRequestBody,
-      bodyType: "JSON",
-    }),
+    body: createBody({ headers, params, body: ffApiRequestBody, bodyType: "JSON" }),
     returnBody: true,
   });
 }
 
 async function _getAllInterneUsersCall(context, ffVariables) {
+
+
   var url = `${synergyGroup.baseUrl}/user/allusers/intern`;
-  var headers = { "Content-Type": `application/json` };
+  var headers = {"Content-Type": `application/json`,};
   var params = {};
   var ffApiRequestBody = undefined;
 
@@ -537,7 +517,10 @@ async function _getAllInterneUsersCall(context, ffVariables) {
   });
 }
 
+
 /// End synergy Group Code
+
+
 
 /// Helper functions to route to the appropriate API Call.
 
@@ -546,30 +529,30 @@ async function makeApiCall(context, data) {
   var variables = data["variables"] || {};
 
   const callMap = {
-    LoginCall: _loginCall,
-    GetFinanceACCCall: _getFinanceACCCall,
-    GetFinanceCotisationCall: _getFinanceCotisationCall,
-    GetFinanceBusinessCall: _getFinanceBusinessCall,
-    GetFinanceDepenseInterneCall: _getFinanceDepenseInterneCall,
-    GetAllGeneralInfoCall: _getAllGeneralInfoCall,
-    GetAllAccompagnementCall: _getAllAccompagnementCall,
-    CreateAccompagnementCall: _createAccompagnementCall,
-    UpdateAccompagnementCall: _updateAccompagnementCall,
-    GetcotisationbyuserIdsCall: _getcotisationbyuserIdsCall,
-    GetAllDrivesLinkCall: _getAllDrivesLinkCall,
-    CreateDriveCall: _createDriveCall,
-    UpdateDriveCall: _updateDriveCall,
-    DeleteDriveCall: _deleteDriveCall,
-    DeleteSanctionsCall: _deleteSanctionsCall,
-    GetAllSanctionsCall: _getAllSanctionsCall,
-    GetAllSanctionsforUSERCall: _getAllSanctionsforUSERCall,
-    CreateSanctionsCall: _createSanctionsCall,
-    UpdatesanctionsCall: _updatesanctionsCall,
-    SendRappelleCotisationCall: _sendRappelleCotisationCall,
-    AllFinanceTableInfoCall: _allFinanceTableInfoCall,
-    DeleteFinanceByIDCall: _deleteFinanceByIDCall,
-    CreateFinanceCall: _createFinanceCall,
-    GetAllInterneUsersCall: _getAllInterneUsersCall,
+    "LoginCall": _loginCall,
+    "GetFinanceACCCall": _getFinanceACCCall,
+    "GetFinanceCotisationCall": _getFinanceCotisationCall,
+    "GetFinanceBusinessCall": _getFinanceBusinessCall,
+    "GetFinanceDepenseInterneCall": _getFinanceDepenseInterneCall,
+    "GetAllGeneralInfoCall": _getAllGeneralInfoCall,
+    "GetAllAccompagnementCall": _getAllAccompagnementCall,
+    "CreateAccompagnementCall": _createAccompagnementCall,
+    "UpdateAccompagnementCall": _updateAccompagnementCall,
+    "GetcotisationbyuserIdsCall": _getcotisationbyuserIdsCall,
+    "GetAllDrivesLinkCall": _getAllDrivesLinkCall,
+    "CreateDriveCall": _createDriveCall,
+    "UpdateDriveCall": _updateDriveCall,
+    "DeleteDriveCall": _deleteDriveCall,
+    "DeleteSanctionsCall": _deleteSanctionsCall,
+    "GetAllSanctionsCall": _getAllSanctionsCall,
+    "GetAllSanctionsforUSERCall": _getAllSanctionsforUSERCall,
+    "CreateSanctionsCall": _createSanctionsCall,
+    "UpdatesanctionsCall": _updatesanctionsCall,
+    "SendRappelleCotisationCall": _sendRappelleCotisationCall,
+    "AllFinanceTableInfoCall": _allFinanceTableInfoCall,
+    "DeleteFinanceByIDCall": _deleteFinanceByIDCall,
+    "CreateFinanceCall": _createFinanceCall,
+    "GetAllInterneUsersCall": _getAllInterneUsersCall,
   };
 
   if (!(callName in callMap)) {

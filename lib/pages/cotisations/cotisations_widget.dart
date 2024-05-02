@@ -2,7 +2,9 @@ import '/backend/api_requests/api_calls.dart';
 import '/components/navbar_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'cotisations_model.dart';
 export 'cotisations_model.dart';
@@ -57,11 +59,11 @@ class _CotisationsWidgetState extends State<CotisationsWidget> {
                   wrapWithModel(
                     model: _model.navbarModel,
                     updateCallback: () => setState(() {}),
-                    child: const NavbarWidget(),
+                    child: NavbarWidget(),
                   ),
                   Expanded(
                     child: Align(
-                      alignment: const AlignmentDirectional(0.0, -1.0),
+                      alignment: AlignmentDirectional(0.0, -1.0),
                       child: FutureBuilder<ApiCallResponse>(
                         future: SynergyGroup.getcotisationbyuserIdsCall.call(
                           userId: FFAppState().userId,
@@ -85,10 +87,10 @@ class _CotisationsWidgetState extends State<CotisationsWidget> {
                               snapshot.data!;
                           return Container(
                             width: double.infinity,
-                            constraints: const BoxConstraints(
+                            constraints: BoxConstraints(
                               maxWidth: 970.0,
                             ),
-                            decoration: const BoxDecoration(),
+                            decoration: BoxDecoration(),
                             child: SingleChildScrollView(
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -102,16 +104,16 @@ class _CotisationsWidgetState extends State<CotisationsWidget> {
                                     Container(
                                       width: double.infinity,
                                       height: 24.0,
-                                      decoration: const BoxDecoration(),
+                                      decoration: BoxDecoration(),
                                     ),
                                   if (responsiveVisibility(
                                     context: context,
                                     phone: false,
                                   ))
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 16.0, 0.0, 4.0),
                                         child: Text(
                                           'Mes cotisations',
@@ -130,9 +132,9 @@ class _CotisationsWidgetState extends State<CotisationsWidget> {
                                   ))
                                     Align(
                                       alignment:
-                                          const AlignmentDirectional(-1.0, 0.0),
+                                          AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 16.0, 0.0, 4.0),
                                         child: Text(
                                           'total  : ${SynergyGroup.getcotisationbyuserIdsCall.total(
@@ -150,7 +152,7 @@ class _CotisationsWidgetState extends State<CotisationsWidget> {
                                       ),
                                     ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 16.0, 0.0, 0.0),
                                     child: Container(
                                       width: double.infinity,
@@ -158,7 +160,7 @@ class _CotisationsWidgetState extends State<CotisationsWidget> {
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .primaryBackground,
-                                        borderRadius: const BorderRadius.only(
+                                        borderRadius: BorderRadius.only(
                                           bottomLeft: Radius.circular(0.0),
                                           bottomRight: Radius.circular(0.0),
                                           topLeft: Radius.circular(8.0),
@@ -166,7 +168,7 @@ class _CotisationsWidgetState extends State<CotisationsWidget> {
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -238,7 +240,7 @@ class _CotisationsWidgetState extends State<CotisationsWidget> {
                                           final idsItem = ids[idsIndex];
                                           return Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 1.0),
                                             child: Container(
                                               width: 100.0,
@@ -252,7 +254,7 @@ class _CotisationsWidgetState extends State<CotisationsWidget> {
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primaryBackground,
-                                                    offset: const Offset(
+                                                    offset: Offset(
                                                       0.0,
                                                       1.0,
                                                     ),
@@ -260,7 +262,7 @@ class _CotisationsWidgetState extends State<CotisationsWidget> {
                                                 ],
                                               ),
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 0.0),
                                                 child: Row(
@@ -274,7 +276,7 @@ class _CotisationsWidgetState extends State<CotisationsWidget> {
                                                       flex: 4,
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     8.0,
@@ -352,7 +354,7 @@ class _CotisationsWidgetState extends State<CotisationsWidget> {
                                                     ),
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               -1.0, 0.0),
                                                       child:
                                                           SingleChildScrollView(

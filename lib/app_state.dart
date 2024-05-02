@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'backend/api_requests/api_manager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'flutter_flow/flutter_flow_util.dart';
 
 class FFAppState extends ChangeNotifier {
   static FFAppState _instance = FFAppState._internal();
@@ -49,51 +51,51 @@ class FFAppState extends ChangeNotifier {
 
   String _userName = '';
   String get userName => _userName;
-  set userName(String value) {
-    _userName = value;
-    prefs.setString('ff_userName', value);
+  set userName(String _value) {
+    _userName = _value;
+    prefs.setString('ff_userName', _value);
   }
 
   String _userFirstName = '';
   String get userFirstName => _userFirstName;
-  set userFirstName(String value) {
-    _userFirstName = value;
-    prefs.setString('ff_userFirstName', value);
+  set userFirstName(String _value) {
+    _userFirstName = _value;
+    prefs.setString('ff_userFirstName', _value);
   }
 
   String _userRole = '';
   String get userRole => _userRole;
-  set userRole(String value) {
-    _userRole = value;
-    prefs.setString('ff_userRole', value);
+  set userRole(String _value) {
+    _userRole = _value;
+    prefs.setString('ff_userRole', _value);
   }
 
   String _userTel = '';
   String get userTel => _userTel;
-  set userTel(String value) {
-    _userTel = value;
-    prefs.setString('ff_userTel', value);
+  set userTel(String _value) {
+    _userTel = _value;
+    prefs.setString('ff_userTel', _value);
   }
 
   String _userEmail = '';
   String get userEmail => _userEmail;
-  set userEmail(String value) {
-    _userEmail = value;
-    prefs.setString('ff_userEmail', value);
+  set userEmail(String _value) {
+    _userEmail = _value;
+    prefs.setString('ff_userEmail', _value);
   }
 
   String _userImageProfile = '';
   String get userImageProfile => _userImageProfile;
-  set userImageProfile(String value) {
-    _userImageProfile = value;
-    prefs.setString('ff_userImageProfile', value);
+  set userImageProfile(String _value) {
+    _userImageProfile = _value;
+    prefs.setString('ff_userImageProfile', _value);
   }
 
   String _userId = '';
   String get userId => _userId;
-  set userId(String value) {
-    _userId = value;
-    prefs.setString('ff_userId', value);
+  set userId(String _value) {
+    _userId = _value;
+    prefs.setString('ff_userId', _value);
   }
 }
 

@@ -2,6 +2,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'contact_us_model.dart';
 export 'contact_us_model.dart';
 
@@ -52,7 +54,7 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Padding(
-          padding: const EdgeInsets.all(15.0),
+          padding: EdgeInsets.all(15.0),
           child: Container(
             width: 1300.0,
             height: 703.0,
@@ -62,7 +64,7 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
                 BoxShadow(
                   blurRadius: 10.0,
                   color: FlutterFlowTheme.of(context).secondaryText,
-                  offset: const Offset(
+                  offset: Offset(
                     0.0,
                     2.0,
                   ),
@@ -79,7 +81,7 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(35.0, 35.0, 35.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(35.0, 35.0, 35.0, 0.0),
                       child: Text(
                         'Nous contacter',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -93,7 +95,7 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 30.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 30.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -112,7 +114,7 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(35.0),
+                  padding: EdgeInsets.all(35.0),
                   child: TextFormField(
                     controller: _model.textController1,
                     focusNode: _model.textFieldFocusNode1,
@@ -140,7 +142,7 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
                         borderRadius: BorderRadius.circular(12.0),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Color(0xFFE4E3F6),
                           width: 1.0,
                         ),
@@ -174,7 +176,7 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
                 ),
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(35.0, 0.0, 35.0, 35.0),
+                      EdgeInsetsDirectional.fromSTEB(35.0, 0.0, 35.0, 35.0),
                   child: TextFormField(
                     controller: _model.textController2,
                     focusNode: _model.textFieldFocusNode2,
@@ -202,7 +204,7 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
                         borderRadius: BorderRadius.circular(12.0),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Color(0xFFE4E3F6),
                           width: 1.0,
                         ),
@@ -235,10 +237,10 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(35.0, 0.0, 35.0, 35.0),
+                        EdgeInsetsDirectional.fromSTEB(35.0, 0.0, 35.0, 35.0),
                     child: TextFormField(
                       controller: _model.textController3,
                       focusNode: _model.textFieldFocusNode3,
@@ -266,7 +268,7 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
                           borderRadius: BorderRadius.circular(12.0),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             color: Color(0xFFE4E3F6),
                             width: 1.0,
                           ),
@@ -308,9 +310,9 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
                   options: FFButtonOptions(
                     height: 40.0,
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                     iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primaryText,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Inter',
@@ -318,7 +320,7 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
                           letterSpacing: 0.0,
                         ),
                     elevation: 3.0,
-                    borderSide: const BorderSide(
+                    borderSide: BorderSide(
                       width: 1.0,
                     ),
                     borderRadius: BorderRadius.circular(24.0),

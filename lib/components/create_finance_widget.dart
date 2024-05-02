@@ -5,6 +5,8 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'create_finance_model.dart';
 export 'create_finance_model.dart';
 
@@ -54,9 +56,9 @@ class _CreateFinanceWidgetState extends State<CreateFinanceWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(16.0),
         child: FutureBuilder<ApiCallResponse>(
           future: SynergyGroup.getAllInterneUsersCall.call(),
           builder: (context, snapshot) {
@@ -77,12 +79,12 @@ class _CreateFinanceWidgetState extends State<CreateFinanceWidget> {
             final cardTable3GetAllInterneUsersResponse = snapshot.data!;
             return Container(
               width: double.infinity,
-              constraints: const BoxConstraints(
+              constraints: BoxConstraints(
                 maxWidth: 1170.0,
               ),
               decoration: BoxDecoration(
                 color: FlutterFlowTheme.of(context).secondaryBackground,
-                boxShadow: const [
+                boxShadow: [
                   BoxShadow(
                     blurRadius: 3.0,
                     color: Color(0x33000000),
@@ -99,7 +101,7 @@ class _CreateFinanceWidgetState extends State<CreateFinanceWidget> {
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(16.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -114,7 +116,7 @@ class _CreateFinanceWidgetState extends State<CreateFinanceWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 5.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -122,9 +124,9 @@ class _CreateFinanceWidgetState extends State<CreateFinanceWidget> {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 12.0, 0.0),
                                         child: Text(
                                           'Ajouter une finance',
@@ -138,7 +140,7 @@ class _CreateFinanceWidgetState extends State<CreateFinanceWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           30.0, 0.0, 20.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
@@ -159,9 +161,9 @@ class _CreateFinanceWidgetState extends State<CreateFinanceWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 4.0, 12.0, 0.0),
                                   child: Text(
                                     'Ajouter en base un finance',
@@ -185,7 +187,7 @@ class _CreateFinanceWidgetState extends State<CreateFinanceWidget> {
                       scrollDirection: Axis.vertical,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 1.0),
                           child: Container(
                             width: 100.0,
@@ -197,7 +199,7 @@ class _CreateFinanceWidgetState extends State<CreateFinanceWidget> {
                                   blurRadius: 0.0,
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBackground,
-                                  offset: const Offset(
+                                  offset: Offset(
                                     0.0,
                                     1.0,
                                   ),
@@ -205,7 +207,7 @@ class _CreateFinanceWidgetState extends State<CreateFinanceWidget> {
                               ],
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
@@ -214,14 +216,14 @@ class _CreateFinanceWidgetState extends State<CreateFinanceWidget> {
                                   Expanded(
                                     flex: 4,
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 8.0, 12.0, 8.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Expanded(
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(4.0, 0.0, 0.0, 0.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
@@ -232,7 +234,7 @@ class _CreateFinanceWidgetState extends State<CreateFinanceWidget> {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(8.0, 30.0,
                                                                 8.0, 30.0),
                                                     child: TextFormField(
@@ -243,7 +245,7 @@ class _CreateFinanceWidgetState extends State<CreateFinanceWidget> {
                                                       onChanged: (_) =>
                                                           EasyDebounce.debounce(
                                                         '_model.textController1',
-                                                        const Duration(
+                                                        Duration(
                                                             milliseconds: 2000),
                                                         () => setState(() {}),
                                                       ),
@@ -366,7 +368,7 @@ class _CreateFinanceWidgetState extends State<CreateFinanceWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(8.0, 0.0,
                                                                 8.0, 30.0),
                                                     child: TextFormField(
@@ -377,7 +379,7 @@ class _CreateFinanceWidgetState extends State<CreateFinanceWidget> {
                                                       onChanged: (_) =>
                                                           EasyDebounce.debounce(
                                                         '_model.textController2',
-                                                        const Duration(
+                                                        Duration(
                                                             milliseconds: 2000),
                                                         () => setState(() {}),
                                                       ),
@@ -500,7 +502,7 @@ class _CreateFinanceWidgetState extends State<CreateFinanceWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(8.0, 0.0,
                                                                 8.0, 30.0),
                                                     child: TextFormField(
@@ -511,7 +513,7 @@ class _CreateFinanceWidgetState extends State<CreateFinanceWidget> {
                                                       onChanged: (_) =>
                                                           EasyDebounce.debounce(
                                                         '_model.textController3',
-                                                        const Duration(
+                                                        Duration(
                                                             milliseconds: 2000),
                                                         () => setState(() {}),
                                                       ),
@@ -634,7 +636,7 @@ class _CreateFinanceWidgetState extends State<CreateFinanceWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(8.0, 0.0,
                                                                 8.0, 30.0),
                                                     child: TextFormField(
@@ -645,7 +647,7 @@ class _CreateFinanceWidgetState extends State<CreateFinanceWidget> {
                                                       onChanged: (_) =>
                                                           EasyDebounce.debounce(
                                                         '_model.textController4',
-                                                        const Duration(
+                                                        Duration(
                                                             milliseconds: 2000),
                                                         () => setState(() {}),
                                                       ),
@@ -783,7 +785,7 @@ class _CreateFinanceWidgetState extends State<CreateFinanceWidget> {
                       ],
                     ),
                     Align(
-                      alignment: const AlignmentDirectional(1.0, 0.0),
+                      alignment: AlignmentDirectional(1.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           _model.apiResulter3 =
@@ -806,7 +808,7 @@ class _CreateFinanceWidgetState extends State<CreateFinanceWidget> {
                                         .primaryText,
                                   ),
                                 ),
-                                duration: const Duration(milliseconds: 4000),
+                                duration: Duration(milliseconds: 4000),
                                 backgroundColor:
                                     FlutterFlowTheme.of(context).secondary,
                               ),
@@ -822,7 +824,7 @@ class _CreateFinanceWidgetState extends State<CreateFinanceWidget> {
                                         .primaryText,
                                   ),
                                 ),
-                                duration: const Duration(milliseconds: 4000),
+                                duration: Duration(milliseconds: 4000),
                                 backgroundColor:
                                     FlutterFlowTheme.of(context).secondary,
                               ),
@@ -839,9 +841,9 @@ class _CreateFinanceWidgetState extends State<CreateFinanceWidget> {
                         ),
                         options: FFButtonOptions(
                           height: 40.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primaryText,
                           textStyle:
@@ -852,7 +854,7 @@ class _CreateFinanceWidgetState extends State<CreateFinanceWidget> {
                                     letterSpacing: 0.0,
                                   ),
                           elevation: 3.0,
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),

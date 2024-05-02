@@ -2,8 +2,11 @@ import '/backend/api_requests/api_calls.dart';
 import '/components/contact_us_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'home_page_model.dart';
 export 'home_page_model.dart';
 
@@ -51,11 +54,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(18.0),
+                    padding: EdgeInsets.all(18.0),
                     child: Container(
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryText,
-                        boxShadow: const [
+                        boxShadow: [
                           BoxShadow(
                             blurRadius: 12.0,
                             color: Color(0x33000000),
@@ -65,7 +68,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             ),
                           )
                         ],
-                        borderRadius: const BorderRadius.only(
+                        borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(20.0),
                           bottomRight: Radius.circular(20.0),
                           topLeft: Radius.circular(20.0),
@@ -74,7 +77,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         shape: BoxShape.rectangle,
                       ),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             25.0, 20.0, 25.0, 20.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -89,7 +92,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 context.pushNamed(
                                   'HomePage',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
+                                    kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                       duration: Duration(milliseconds: 0),
@@ -126,7 +129,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         insetPadding: EdgeInsets.zero,
                                         backgroundColor: Colors.transparent,
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0)
+                                            AlignmentDirectional(0.0, 0.0)
                                                 .resolve(
                                                     Directionality.of(context)),
                                         child: GestureDetector(
@@ -137,7 +140,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                       _model.unfocusNode)
                                               : FocusScope.of(context)
                                                   .unfocus(),
-                                          child: const ContactUsWidget(),
+                                          child: ContactUsWidget(),
                                         ),
                                       );
                                     },
@@ -158,7 +161,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 ),
                               ),
                             ),
-                          ].divide(const SizedBox(width: 55.0)),
+                          ].divide(SizedBox(width: 55.0)),
                         ),
                       ),
                     ),
@@ -173,9 +176,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Align(
-                              alignment: const AlignmentDirectional(-1.0, 0.0),
+                              alignment: AlignmentDirectional(-1.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 0.0),
                                 child: SingleChildScrollView(
                                   child: Column(
@@ -185,14 +188,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     children: [
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.min,
                                           mainAxisAlignment:
                                               MainAxisAlignment.start,
                                           children: [
                                             Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Container(
                                                 width: 500.0,
@@ -205,7 +208,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primaryText,
-                                                      offset: const Offset(
+                                                      offset: Offset(
                                                         0.0,
                                                         5.0,
                                                       ),
@@ -232,7 +235,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             15.0, 20.0, 0.0, 0.0),
                                         child: Container(
                                           decoration: BoxDecoration(
@@ -241,7 +244,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           ),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     15.0, 0.0, 0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.min,
@@ -252,11 +255,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               children: [
                                                 Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 30.0,
                                                                 0.0, 20.0),
                                                     child: Text(
@@ -278,7 +281,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsets.all(24.0),
+                                                  padding: EdgeInsets.all(24.0),
                                                   child: Text(
                                                     'Synergy est bien plus qu\'une société de services aux entreprises. Nous sommes vos partenaires dans le voyage entrepreneurial, offrant une gamme complète de services allant de l\'étude de marché à la stratégie de lancement. Nous comprenons les défis uniques auxquels sont confrontés les entrepreneurs et les entreprises, et nous sommes là pour les aider à réussir.',
                                                     textAlign: TextAlign.center,
@@ -297,11 +300,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(
                                                                 30.0,
                                                                 20.0,
@@ -355,7 +358,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               snapshot.data!;
                                           return Container(
                                             height: 250.0,
-                                            decoration: const BoxDecoration(),
+                                            decoration: BoxDecoration(),
                                             child: Builder(
                                               builder: (context) {
                                                 final userinterids = SynergyGroup
@@ -366,7 +369,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                         )
                                                         ?.toList() ??
                                                     [];
-                                                return SizedBox(
+                                                return Container(
                                                   height: 400.0,
                                                   child: CarouselSlider.builder(
                                                     itemCount:
@@ -392,7 +395,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       100.0,
                                                                       0.0,
@@ -405,7 +408,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             children: [
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             5.0,
@@ -418,7 +421,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                   clipBehavior:
                                                                       Clip.antiAlias,
                                                                   decoration:
-                                                                      const BoxDecoration(
+                                                                      BoxDecoration(
                                                                     shape: BoxShape
                                                                         .circle,
                                                                   ),
@@ -437,7 +440,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             5.0,
                                                                             5.0,
@@ -464,11 +467,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                               ),
                                                               Align(
                                                                 alignment:
-                                                                    const AlignmentDirectional(
+                                                                    AlignmentDirectional(
                                                                         0.0,
                                                                         0.0),
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           5.0,
                                                                           5.0,
@@ -526,11 +529,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                           Axis.horizontal,
                                                       autoPlay: true,
                                                       autoPlayAnimationDuration:
-                                                          const Duration(
+                                                          Duration(
                                                               milliseconds:
                                                                   800),
                                                       autoPlayInterval:
-                                                          const Duration(
+                                                          Duration(
                                                               milliseconds:
                                                                   (800 + 2000)),
                                                       autoPlayCurve:
@@ -550,7 +553,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         },
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             15.0, 20.0, 0.0, 10.0),
                                         child: SafeArea(
                                           child: Container(
@@ -561,7 +564,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               shape: BoxShape.rectangle,
                                             ),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       15.0, 40.0, 0.0, 0.0),
                                               child: Column(
@@ -573,11 +576,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 children: [
                                                   Align(
                                                     alignment:
-                                                        const AlignmentDirectional(
+                                                        AlignmentDirectional(
                                                             0.0, 0.0),
                                                     child: Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -605,7 +608,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 100.0),
                                                     child: Text(
