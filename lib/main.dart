@@ -10,6 +10,7 @@ import 'auth/custom_auth/custom_auth_user_provider.dart';
 import 'backend/firebase/firebase_config.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
+import 'flutter_flow/internationalization.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -42,6 +43,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  Locale? _locale;
   ThemeMode _themeMode = FlutterFlowTheme.themeMode;
 
   late Stream<SynergyAuthUser> userStream;
@@ -64,6 +66,10 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
+  void setLocale(String language) {
+    setState(() => _locale = createLocale(language));
+  }
+
   void setThemeMode(ThemeMode mode) => setState(() {
         _themeMode = mode;
         FlutterFlowTheme.saveThemeMode(mode);
@@ -74,11 +80,15 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp.router(
       title: 'Synergy',
       localizationsDelegates: const [
+        FFLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      supportedLocales: const [Locale('en', '')],
+      locale: _locale,
+      supportedLocales: const [
+        Locale('fr'),
+      ],
       theme: ThemeData(
         brightness: Brightness.light,
         useMaterial3: false,

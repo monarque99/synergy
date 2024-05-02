@@ -1128,6 +1128,8 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                                             fontFamily: 'Inter',
                                             letterSpacing: 0.0,
                                           ),
+                                  locale:
+                                      FFLocalizations.of(context).languageCode,
                                 ),
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
@@ -1185,6 +1187,8 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                                             fontFamily: 'Inter',
                                             letterSpacing: 0.0,
                                           ),
+                                  locale:
+                                      FFLocalizations.of(context).languageCode,
                                 ),
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
@@ -1243,6 +1247,8 @@ class _CreateAccompagnementWidgetState extends State<CreateAccompagnementWidget>
                                             fontFamily: 'Inter',
                                             letterSpacing: 0.0,
                                           ),
+                                  locale:
+                                      FFLocalizations.of(context).languageCode,
                                 ),
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(

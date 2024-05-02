@@ -2,6 +2,7 @@ import '/backend/api_requests/api_calls.dart';
 import '/components/create_accompagnement_widget.dart';
 import '/components/navbar_widget.dart';
 import '/components/update_accompagnement_widget.dart';
+import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -178,20 +179,71 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                               ),
                                               child: Padding(
                                                 padding: const EdgeInsets.all(2.0),
-                                                child: ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                  child: CachedNetworkImage(
-                                                    fadeInDuration: const Duration(
-                                                        milliseconds: 500),
-                                                    fadeOutDuration: const Duration(
-                                                        milliseconds: 500),
-                                                    imageUrl: FFAppState()
+                                                child: InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    await Navigator.push(
+                                                      context,
+                                                      PageTransition(
+                                                        type: PageTransitionType
+                                                            .fade,
+                                                        child:
+                                                            FlutterFlowExpandedImageView(
+                                                          image:
+                                                              CachedNetworkImage(
+                                                            fadeInDuration:
+                                                                const Duration(
+                                                                    milliseconds:
+                                                                        500),
+                                                            fadeOutDuration:
+                                                                const Duration(
+                                                                    milliseconds:
+                                                                        500),
+                                                            imageUrl: FFAppState()
+                                                                .userImageProfile,
+                                                            fit: BoxFit.contain,
+                                                          ),
+                                                          allowRotation: false,
+                                                          tag: FFAppState()
+                                                              .userImageProfile,
+                                                          useHeroAnimation:
+                                                              true,
+                                                        ),
+                                                      ),
+                                                    );
+                                                  },
+                                                  child: Hero(
+                                                    tag: FFAppState()
                                                         .userImageProfile,
-                                                    width: 44.0,
-                                                    height: 44.0,
-                                                    fit: BoxFit.cover,
+                                                    transitionOnUserGestures:
+                                                        true,
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                      child: CachedNetworkImage(
+                                                        fadeInDuration:
+                                                            const Duration(
+                                                                milliseconds:
+                                                                    500),
+                                                        fadeOutDuration:
+                                                            const Duration(
+                                                                milliseconds:
+                                                                    500),
+                                                        imageUrl: FFAppState()
+                                                            .userImageProfile,
+                                                        width: 44.0,
+                                                        height: 44.0,
+                                                        fit: BoxFit.cover,
+                                                      ),
+                                                    ),
                                                   ),
                                                 ),
                                               ),
@@ -854,17 +906,22 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                             CrossAxisAlignment
                                                                 .start,
                                                         children: [
-                                                          Text(
-                                                            'Dépenses interne',
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .labelMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Inter',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
+                                                          Align(
+                                                            alignment:
+                                                                const AlignmentDirectional(
+                                                                    0.0, 0.0),
+                                                            child: Text(
+                                                              'Dépenses interne',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .labelMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Inter',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                            ),
                                                           ),
                                                           Row(
                                                             mainAxisSize:
@@ -995,17 +1052,22 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                           CrossAxisAlignment
                                                               .start,
                                                       children: [
-                                                        Text(
-                                                          'Chiffre d\'affaire business',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .labelMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Inter',
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
+                                                        Align(
+                                                          alignment:
+                                                              const AlignmentDirectional(
+                                                                  0.0, 0.0),
+                                                          child: Text(
+                                                            'Chiffre d\'affaire business',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .labelMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Inter',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                          ),
                                                         ),
                                                         Row(
                                                           mainAxisSize:
@@ -1170,42 +1232,23 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                                       CrossAxisAlignment
                                                                           .start,
                                                                   children: [
-                                                                    Text(
-                                                                      'Satisfaction clients / 10',
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleLarge
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Inter',
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                          ),
+                                                                    Align(
+                                                                      alignment:
+                                                                          const AlignmentDirectional(
+                                                                              0.0,
+                                                                              0.0),
+                                                                      child:
+                                                                          Text(
+                                                                        'Satisfaction clients / 10',
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .titleLarge
+                                                                            .override(
+                                                                              fontFamily: 'Inter',
+                                                                              letterSpacing: 0.0,
+                                                                            ),
+                                                                      ),
                                                                     ),
                                                                   ],
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            Align(
-                                                              alignment:
-                                                                  const AlignmentDirectional(
-                                                                      0.0,
-                                                                      -1.0),
-                                                              child: Padding(
-                                                                padding:
-                                                                    const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            20.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                child: Icon(
-                                                                  Icons
-                                                                      .more_vert,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryText,
-                                                                  size: 20.0,
                                                                 ),
                                                               ),
                                                             ),

@@ -248,7 +248,7 @@ class _CreatesanctionWidgetState extends State<CreatesanctionWidget> {
                                                       obscureText: false,
                                                       decoration:
                                                           InputDecoration(
-                                                        labelText: 'titre',
+                                                        labelText: 'Motif',
                                                         labelStyle:
                                                             FlutterFlowTheme.of(
                                                                     context)
