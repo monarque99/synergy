@@ -305,7 +305,7 @@ class _GestionfinanceWidgetState extends State<GestionfinanceWidget>
                                               .secondary,
                                     ),
                                   );
-                                  _model.updatePage(() {});
+                                  FFAppState().update(() {});
                                 } else {
                                   Navigator.pop(context);
                                   ScaffoldMessenger.of(context).showSnackBar(

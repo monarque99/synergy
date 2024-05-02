@@ -67,9 +67,9 @@ class _UpdateAccompagnementWidgetState extends State<UpdateAccompagnementWidget>
         TextEditingController(text: widget.nomAcc);
     _model.projectNameFocusNode ??= FocusNode();
 
-    _model.porteurNameTextController ??=
+    _model.porteurNamefamTextController ??=
         TextEditingController(text: widget.nomPorteurProjet);
-    _model.porteurNameFocusNode ??= FocusNode();
+    _model.porteurNamefamFocusNode ??= FocusNode();
 
     _model.porteurPRENameTextController ??=
         TextEditingController(text: widget.prenomPoteurProjet);
@@ -424,9 +424,9 @@ class _UpdateAccompagnementWidgetState extends State<UpdateAccompagnementWidget>
                                                         0.0, 8.0, 0.0, 0.0),
                                                 child: TextFormField(
                                                   controller: _model
-                                                      .porteurNameTextController,
+                                                      .porteurNamefamTextController,
                                                   focusNode: _model
-                                                      .porteurNameFocusNode,
+                                                      .porteurNamefamFocusNode,
                                                   autofocus: true,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
@@ -542,7 +542,7 @@ class _UpdateAccompagnementWidgetState extends State<UpdateAccompagnementWidget>
                                                         letterSpacing: 0.0,
                                                       ),
                                                   validator: _model
-                                                      .porteurNameTextControllerValidator
+                                                      .porteurNamefamTextControllerValidator
                                                       .asValidator(context),
                                                 ),
                                               ),
@@ -1504,7 +1504,7 @@ class _UpdateAccompagnementWidgetState extends State<UpdateAccompagnementWidget>
                                                   .ratingBarValue
                                                   .toString(),
                                               accompagnementLastName: _model
-                                                  .porteurNameTextController
+                                                  .porteurNamefamTextController
                                                   .text,
                                             );
                                             if ((_model

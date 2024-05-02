@@ -13,10 +13,11 @@ class UpdateAccompagnementModel
   FocusNode? projectNameFocusNode;
   TextEditingController? projectNameTextController;
   String? Function(BuildContext, String?)? projectNameTextControllerValidator;
-  // State field(s) for porteurName widget.
-  FocusNode? porteurNameFocusNode;
-  TextEditingController? porteurNameTextController;
-  String? Function(BuildContext, String?)? porteurNameTextControllerValidator;
+  // State field(s) for porteurNamefam widget.
+  FocusNode? porteurNamefamFocusNode;
+  TextEditingController? porteurNamefamTextController;
+  String? Function(BuildContext, String?)?
+      porteurNamefamTextControllerValidator;
   // State field(s) for porteurPREName widget.
   FocusNode? porteurPRENameFocusNode;
   TextEditingController? porteurPRENameTextController;
@@ -58,8 +59,8 @@ class UpdateAccompagnementModel
     projectNameFocusNode?.dispose();
     projectNameTextController?.dispose();
 
-    porteurNameFocusNode?.dispose();
-    porteurNameTextController?.dispose();
+    porteurNamefamFocusNode?.dispose();
+    porteurNamefamTextController?.dispose();
 
     porteurPRENameFocusNode?.dispose();
     porteurPRENameTextController?.dispose();

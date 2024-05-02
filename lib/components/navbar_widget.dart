@@ -74,11 +74,20 @@ class _NavbarWidgetState extends State<NavbarWidget> {
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Icon(
-                      Icons.add_task_rounded,
-                      color: FlutterFlowTheme.of(context).primary,
-                      size: 32.0,
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 15.0, 0.0),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8.0),
+                        child: Image.asset(
+                          'assets/images/logo2.png',
+                          width: 83.0,
+                          height: 73.0,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
                     Align(
                       alignment: const AlignmentDirectional(-1.0, 0.0),
@@ -86,7 +95,7 @@ class _NavbarWidgetState extends State<NavbarWidget> {
                         padding:
                             const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
                         child: Text(
-                          'Synergy Dashboard',
+                          'Synergy',
                           textAlign: TextAlign.start,
                           style: FlutterFlowTheme.of(context)
                               .headlineMedium

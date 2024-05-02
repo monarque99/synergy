@@ -194,41 +194,36 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             Align(
                                               alignment: const AlignmentDirectional(
                                                   -1.0, 0.0),
-                                              child: Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        30.0, 0.0, 0.0, 0.0),
-                                                child: Container(
-                                                  width: 300.0,
-                                                  height: 206.0,
-                                                  decoration: BoxDecoration(
-                                                    boxShadow: [
-                                                      BoxShadow(
-                                                        blurRadius: 12.0,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
-                                                        offset: const Offset(
-                                                          0.0,
-                                                          5.0,
-                                                        ),
-                                                      )
-                                                    ],
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            4.0),
-                                                  ),
-                                                  child: ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
-                                                    child: Image.asset(
-                                                      'assets/images/logoSynergy.png',
-                                                      width: 200.0,
-                                                      height: 100.0,
-                                                      fit: BoxFit.cover,
-                                                    ),
+                                              child: Container(
+                                                width: 500.0,
+                                                height: 250.0,
+                                                decoration: BoxDecoration(
+                                                  boxShadow: [
+                                                    BoxShadow(
+                                                      blurRadius: 12.0,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      offset: const Offset(
+                                                        0.0,
+                                                        5.0,
+                                                      ),
+                                                    )
+                                                  ],
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          4.0),
+                                                ),
+                                                child: ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                  child: Image.asset(
+                                                    'assets/images/logo_sy.png',
+                                                    width: 347.0,
+                                                    height: 100.0,
+                                                    fit: BoxFit.cover,
                                                   ),
                                                 ),
                                               ),

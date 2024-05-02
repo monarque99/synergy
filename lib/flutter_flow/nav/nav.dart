@@ -296,15 +296,17 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? isWeb
-                  ? Container()
-                  : Container(
-                      color: FlutterFlowTheme.of(context).primaryBackground,
-                      child: Image.asset(
-                        'assets/images/logoSynergy.png',
-                        fit: BoxFit.none,
+              ? Center(
+                  child: SizedBox(
+                    width: 50.0,
+                    height: 50.0,
+                    child: CircularProgressIndicator(
+                      valueColor: AlwaysStoppedAnimation<Color>(
+                        FlutterFlowTheme.of(context).primary,
                       ),
-                    )
+                    ),
+                  ),
+                )
               : page;
 
           final transitionInfo = state.transitionInfo;

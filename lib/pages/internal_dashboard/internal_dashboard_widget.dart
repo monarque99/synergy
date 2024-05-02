@@ -141,7 +141,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                               tablet: false,
                                             ))
                                               Text(
-                                                'Vue d\'ensemble',
+                                                'Dashboard',
                                                 textAlign: TextAlign.center,
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -378,7 +378,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                                 .center,
                                                         crossAxisAlignment:
                                                             CrossAxisAlignment
-                                                                .start,
+                                                                .center,
                                                         children: [
                                                           Text(
                                                             'Cotisations total',
@@ -502,7 +502,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                                 .center,
                                                         crossAxisAlignment:
                                                             CrossAxisAlignment
-                                                                .start,
+                                                                .center,
                                                         children: [
                                                           Text(
                                                             'Accompagnements',
@@ -599,6 +599,8 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                 child: Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
                                                   children: [
                                                     Padding(
                                                       padding:
@@ -646,37 +648,41 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                                 MainAxisSize
                                                                     .max,
                                                             children: [
-                                                              Padding(
-                                                                padding:
-                                                                    const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            4.0,
-                                                                            4.0,
-                                                                            0.0),
-                                                                child: Text(
-                                                                  valueOrDefault<
-                                                                      String>(
-                                                                    SynergyGroup
-                                                                        .getAllGeneralInfoCall
-                                                                        .nombreAcc(
-                                                                          internalDashboardGetAllGeneralInfoResponse
-                                                                              .jsonBody,
-                                                                        )
-                                                                        ?.toString(),
-                                                                    '0',
+                                                              Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: Padding(
+                                                                  padding: const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          4.0,
+                                                                          4.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      SynergyGroup
+                                                                          .getAllGeneralInfoCall
+                                                                          .nombreAcc(
+                                                                            internalDashboardGetAllGeneralInfoResponse.jsonBody,
+                                                                          )
+                                                                          ?.toString(),
+                                                                      '0',
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .displaySmall
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Readex Pro',
+                                                                          fontSize:
+                                                                              30.0,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
                                                                   ),
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .displaySmall
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Readex Pro',
-                                                                        fontSize:
-                                                                            30.0,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                      ),
                                                                 ),
                                                               ),
                                                             ],
@@ -718,6 +724,8 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                 child: Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
                                                   children: [
                                                     Padding(
                                                       padding:
@@ -746,7 +754,7 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                                 .center,
                                                         crossAxisAlignment:
                                                             CrossAxisAlignment
-                                                                .start,
+                                                                .center,
                                                         children: [
                                                           Text(
                                                             'Membres',
@@ -765,37 +773,41 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                                 MainAxisSize
                                                                     .max,
                                                             children: [
-                                                              Padding(
-                                                                padding:
-                                                                    const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            4.0,
-                                                                            4.0,
-                                                                            0.0),
-                                                                child: Text(
-                                                                  valueOrDefault<
-                                                                      String>(
-                                                                    SynergyGroup
-                                                                        .getAllGeneralInfoCall
-                                                                        .membreInterne(
-                                                                          internalDashboardGetAllGeneralInfoResponse
-                                                                              .jsonBody,
-                                                                        )
-                                                                        ?.toString(),
-                                                                    '0',
+                                                              Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0),
+                                                                child: Padding(
+                                                                  padding: const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          4.0,
+                                                                          4.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      SynergyGroup
+                                                                          .getAllGeneralInfoCall
+                                                                          .membreInterne(
+                                                                            internalDashboardGetAllGeneralInfoResponse.jsonBody,
+                                                                          )
+                                                                          ?.toString(),
+                                                                      '0',
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .displaySmall
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Readex Pro',
+                                                                          fontSize:
+                                                                              30.0,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
                                                                   ),
-                                                                  style: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .displaySmall
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Readex Pro',
-                                                                        fontSize:
-                                                                            30.0,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                      ),
                                                                 ),
                                                               ),
                                                             ],
@@ -1303,29 +1315,33 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                                     MainAxisSize
                                                                         .max,
                                                                 children: [
-                                                                  Padding(
-                                                                    padding: const EdgeInsetsDirectional
-                                                                        .fromSTEB(
+                                                                  Align(
+                                                                    alignment:
+                                                                        const AlignmentDirectional(
                                                                             0.0,
-                                                                            4.0,
-                                                                            4.0,
                                                                             0.0),
-                                                                    child: Text(
-                                                                      SynergyGroup
-                                                                          .getAllGeneralInfoCall
-                                                                          .satisfactionClient(
-                                                                            internalDashboardGetAllGeneralInfoResponse.jsonBody,
-                                                                          )!
-                                                                          .toString(),
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .displaySmall
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Readex Pro',
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                          ),
+                                                                    child:
+                                                                        Padding(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          4.0,
+                                                                          4.0,
+                                                                          0.0),
+                                                                      child:
+                                                                          Text(
+                                                                        SynergyGroup
+                                                                            .getAllGeneralInfoCall
+                                                                            .satisfactionClient(
+                                                                              internalDashboardGetAllGeneralInfoResponse.jsonBody,
+                                                                            )!
+                                                                            .toString(),
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .displaySmall
+                                                                            .override(
+                                                                              fontFamily: 'Readex Pro',
+                                                                              letterSpacing: 0.0,
+                                                                            ),
+                                                                      ),
                                                                     ),
                                                                   ),
                                                                 ],
@@ -1421,9 +1437,12 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                               mainAxisSize:
                                                                   MainAxisSize
                                                                       .max,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .start,
                                                               crossAxisAlignment:
                                                                   CrossAxisAlignment
-                                                                      .start,
+                                                                      .center,
                                                               children: [
                                                                 Padding(
                                                                   padding: const EdgeInsetsDirectional
@@ -1703,333 +1722,326 @@ class _InternalDashboardWidgetState extends State<InternalDashboardWidget> {
                                                           ),
                                                         ),
                                                       ),
-                                                      Builder(
-                                                        builder: (context) {
-                                                          final accompagnements =
-                                                              SynergyGroup
-                                                                      .getAllAccompagnementCall
-                                                                      .ids(
-                                                                        cardTable6GetAllAccompagnementResponse
-                                                                            .jsonBody,
-                                                                      )
-                                                                      ?.toList() ??
-                                                                  [];
-                                                          return RefreshIndicator(
-                                                            onRefresh:
-                                                                () async {
-                                                              setState(() =>
-                                                                  _model.apiRequestCompleter =
-                                                                      null);
-                                                              await _model
-                                                                  .waitForApiRequestCompleted();
-                                                            },
-                                                            child: ListView
-                                                                .builder(
-                                                              padding:
-                                                                  EdgeInsets
-                                                                      .zero,
-                                                              shrinkWrap: true,
-                                                              scrollDirection:
-                                                                  Axis.vertical,
-                                                              itemCount:
-                                                                  accompagnements
-                                                                      .length,
-                                                              itemBuilder: (context,
-                                                                  accompagnementsIndex) {
-                                                                final accompagnementsItem =
-                                                                    accompagnements[
-                                                                        accompagnementsIndex];
-                                                                return Padding(
-                                                                  padding: const EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          1.0),
-                                                                  child:
-                                                                      Container(
-                                                                    width:
-                                                                        100.0,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryBackground,
-                                                                      boxShadow: [
-                                                                        BoxShadow(
-                                                                          blurRadius:
-                                                                              0.0,
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primaryBackground,
-                                                                          offset:
-                                                                              const Offset(
+                                                      SingleChildScrollView(
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          children: [
+                                                            Builder(
+                                                              builder:
+                                                                  (context) {
+                                                                final accompagnements =
+                                                                    SynergyGroup
+                                                                            .getAllAccompagnementCall
+                                                                            .ids(
+                                                                              cardTable6GetAllAccompagnementResponse.jsonBody,
+                                                                            )
+                                                                            ?.toList() ??
+                                                                        [];
+                                                                return RefreshIndicator(
+                                                                  onRefresh:
+                                                                      () async {
+                                                                    setState(() =>
+                                                                        _model.apiRequestCompleter =
+                                                                            null);
+                                                                    await _model
+                                                                        .waitForApiRequestCompleted();
+                                                                  },
+                                                                  child: ListView
+                                                                      .builder(
+                                                                    padding:
+                                                                        EdgeInsets
+                                                                            .zero,
+                                                                    shrinkWrap:
+                                                                        true,
+                                                                    scrollDirection:
+                                                                        Axis.vertical,
+                                                                    itemCount:
+                                                                        accompagnements
+                                                                            .length,
+                                                                    itemBuilder:
+                                                                        (context,
+                                                                            accompagnementsIndex) {
+                                                                      final accompagnementsItem =
+                                                                          accompagnements[
+                                                                              accompagnementsIndex];
+                                                                      return Padding(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
-                                                                            1.0,
-                                                                          ),
-                                                                        )
-                                                                      ],
-                                                                    ),
-                                                                    child:
-                                                                        Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                                                          16.0,
-                                                                          0.0,
-                                                                          16.0,
-                                                                          0.0),
-                                                                      child:
-                                                                          Row(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        children: [
-                                                                          if (responsiveVisibility(
-                                                                            context:
-                                                                                context,
-                                                                            phone:
-                                                                                false,
-                                                                            tablet:
-                                                                                false,
-                                                                          ))
-                                                                            Expanded(
-                                                                              flex: 2,
-                                                                              child: Text(
-                                                                                valueOrDefault<String>(
-                                                                                  SynergyGroup.getAllAccompagnementCall.projectName(
-                                                                                    cardTable6GetAllAccompagnementResponse.jsonBody,
-                                                                                  )?[accompagnementsIndex],
-                                                                                  '0',
+                                                                            0.0,
+                                                                            0.0,
+                                                                            1.0),
+                                                                        child:
+                                                                            Container(
+                                                                          width:
+                                                                              100.0,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            boxShadow: [
+                                                                              BoxShadow(
+                                                                                blurRadius: 0.0,
+                                                                                color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                offset: const Offset(
+                                                                                  0.0,
+                                                                                  1.0,
                                                                                 ),
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Inter',
-                                                                                      letterSpacing: 0.0,
-                                                                                    ),
-                                                                              ),
-                                                                            ),
-                                                                          Expanded(
-                                                                            flex:
-                                                                                4,
+                                                                              )
+                                                                            ],
+                                                                          ),
+                                                                          child:
+                                                                              Padding(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                                16.0,
+                                                                                0.0,
+                                                                                16.0,
+                                                                                0.0),
                                                                             child:
-                                                                                Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 12.0, 8.0),
-                                                                              child: Row(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                children: [
+                                                                                Row(
+                                                                              mainAxisSize: MainAxisSize.max,
+                                                                              children: [
+                                                                                if (responsiveVisibility(
+                                                                                  context: context,
+                                                                                  phone: false,
+                                                                                  tablet: false,
+                                                                                ))
                                                                                   Expanded(
-                                                                                    child: Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
-                                                                                      child: Column(
-                                                                                        mainAxisSize: MainAxisSize.max,
-                                                                                        mainAxisAlignment: MainAxisAlignment.center,
-                                                                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                        children: [
-                                                                                          Text(
-                                                                                            '${SynergyGroup.getAllAccompagnementCall.userName(
-                                                                                              cardTable6GetAllAccompagnementResponse.jsonBody,
-                                                                                            )?[accompagnementsIndex]}  ${SynergyGroup.getAllAccompagnementCall.userFirstName(
-                                                                                              cardTable6GetAllAccompagnementResponse.jsonBody,
-                                                                                            )?[accompagnementsIndex]}',
-                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                  fontFamily: 'Inter',
-                                                                                                  letterSpacing: 0.0,
-                                                                                                  fontWeight: FontWeight.bold,
-                                                                                                ),
+                                                                                    flex: 2,
+                                                                                    child: Text(
+                                                                                      valueOrDefault<String>(
+                                                                                        SynergyGroup.getAllAccompagnementCall.projectName(
+                                                                                          cardTable6GetAllAccompagnementResponse.jsonBody,
+                                                                                        )?[accompagnementsIndex],
+                                                                                        '0',
+                                                                                      ),
+                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                            fontFamily: 'Inter',
+                                                                                            letterSpacing: 0.0,
                                                                                           ),
-                                                                                        ],
-                                                                                      ),
                                                                                     ),
                                                                                   ),
-                                                                                ],
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                          if (responsiveVisibility(
-                                                                            context:
-                                                                                context,
-                                                                            phone:
-                                                                                false,
-                                                                          ))
-                                                                            Expanded(
-                                                                              flex: 2,
-                                                                              child: Text(
-                                                                                valueOrDefault<String>(
-                                                                                  (SynergyGroup.getAllAccompagnementCall.amount(
-                                                                                    cardTable6GetAllAccompagnementResponse.jsonBody,
-                                                                                  )?[accompagnementsIndex])
-                                                                                      ?.toString(),
-                                                                                  '0',
-                                                                                ),
-                                                                                style: FlutterFlowTheme.of(context).titleLarge.override(
-                                                                                      fontFamily: 'Inter',
-                                                                                      fontSize: 15.0,
-                                                                                      letterSpacing: 0.0,
-                                                                                    ),
-                                                                              ),
-                                                                            ),
-                                                                          Expanded(
-                                                                            flex:
-                                                                                2,
-                                                                            child:
-                                                                                Row(
-                                                                              mainAxisSize: MainAxisSize.max,
-                                                                              children: [
-                                                                                if ((SynergyGroup.getAllAccompagnementCall.status(
-                                                                                      cardTable6GetAllAccompagnementResponse.jsonBody,
-                                                                                    )?[accompagnementsIndex]) ==
-                                                                                    'DEMARCHARGE')
-                                                                                  Container(
-                                                                                    height: 32.0,
-                                                                                    decoration: BoxDecoration(
-                                                                                      color: const Color(0x4D4150FC),
-                                                                                      borderRadius: BorderRadius.circular(40.0),
-                                                                                    ),
-                                                                                    alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                    child: Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
-                                                                                      child: Text(
-                                                                                        'Démarcharge',
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: 'Inter',
-                                                                                              letterSpacing: 0.0,
-                                                                                            ),
-                                                                                      ),
-                                                                                    ),
-                                                                                  ),
-                                                                                if ((SynergyGroup.getAllAccompagnementCall.status(
-                                                                                      cardTable6GetAllAccompagnementResponse.jsonBody,
-                                                                                    )?[accompagnementsIndex]) ==
-                                                                                    'EN_COURS')
-                                                                                  Container(
-                                                                                    height: 32.0,
-                                                                                    decoration: BoxDecoration(
-                                                                                      color: FlutterFlowTheme.of(context).accent2,
-                                                                                      borderRadius: BorderRadius.circular(40.0),
-                                                                                    ),
-                                                                                    alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                    child: Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
-                                                                                      child: Text(
-                                                                                        'En cours',
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: 'Inter',
-                                                                                              letterSpacing: 0.0,
-                                                                                            ),
-                                                                                      ),
-                                                                                    ),
-                                                                                  ),
-                                                                                if ((SynergyGroup.getAllAccompagnementCall.status(
-                                                                                      cardTable6GetAllAccompagnementResponse.jsonBody,
-                                                                                    )?[accompagnementsIndex]) ==
-                                                                                    'TERMINER')
-                                                                                  Container(
-                                                                                    height: 32.0,
-                                                                                    decoration: BoxDecoration(
-                                                                                      color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                      borderRadius: BorderRadius.circular(40.0),
-                                                                                    ),
-                                                                                    alignment: const AlignmentDirectional(0.0, 0.0),
-                                                                                    child: Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
-                                                                                      child: Text(
-                                                                                        'Terminé',
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: 'Inter',
-                                                                                              letterSpacing: 0.0,
-                                                                                            ),
-                                                                                      ),
-                                                                                    ),
-                                                                                  ),
-                                                                              ],
-                                                                            ),
-                                                                          ),
-                                                                          Expanded(
-                                                                            flex:
-                                                                                1,
-                                                                            child:
-                                                                                Row(
-                                                                              mainAxisSize: MainAxisSize.max,
-                                                                              mainAxisAlignment: MainAxisAlignment.end,
-                                                                              children: [
-                                                                                if ((SynergyGroup.getAllAccompagnementCall.status(
-                                                                                      cardTable6GetAllAccompagnementResponse.jsonBody,
-                                                                                    )?[accompagnementsIndex]) !=
-                                                                                    'TERMINER')
-                                                                                  Builder(
-                                                                                    builder: (context) => FlutterFlowIconButton(
-                                                                                      borderColor: Colors.transparent,
-                                                                                      borderRadius: 30.0,
-                                                                                      borderWidth: 1.0,
-                                                                                      buttonSize: 44.0,
-                                                                                      icon: FaIcon(
-                                                                                        FontAwesomeIcons.pencilAlt,
-                                                                                        color: FlutterFlowTheme.of(context).error,
-                                                                                        size: 20.0,
-                                                                                      ),
-                                                                                      onPressed: () async {
-                                                                                        await showDialog(
-                                                                                          context: context,
-                                                                                          builder: (dialogContext) {
-                                                                                            return Dialog(
-                                                                                              elevation: 0,
-                                                                                              insetPadding: EdgeInsets.zero,
-                                                                                              backgroundColor: Colors.transparent,
-                                                                                              alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                              child: GestureDetector(
-                                                                                                onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
-                                                                                                child: UpdateAccompagnementWidget(
-                                                                                                  nomAcc: SynergyGroup.getAllAccompagnementCall.projectName(
+                                                                                Expanded(
+                                                                                  flex: 4,
+                                                                                  child: Padding(
+                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 12.0, 8.0),
+                                                                                    child: Row(
+                                                                                      mainAxisSize: MainAxisSize.max,
+                                                                                      children: [
+                                                                                        Expanded(
+                                                                                          child: Padding(
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
+                                                                                            child: Column(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              mainAxisAlignment: MainAxisAlignment.center,
+                                                                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                              children: [
+                                                                                                Text(
+                                                                                                  '${SynergyGroup.getAllAccompagnementCall.userName(
                                                                                                     cardTable6GetAllAccompagnementResponse.jsonBody,
-                                                                                                  )?[accompagnementsIndex],
-                                                                                                  nomPorteurProjet: SynergyGroup.getAllAccompagnementCall.userName(
+                                                                                                  )?[accompagnementsIndex]}  ${SynergyGroup.getAllAccompagnementCall.userFirstName(
                                                                                                     cardTable6GetAllAccompagnementResponse.jsonBody,
-                                                                                                  )?[accompagnementsIndex],
-                                                                                                  prenomPoteurProjet: SynergyGroup.getAllAccompagnementCall.userFirstName(
-                                                                                                    cardTable6GetAllAccompagnementResponse.jsonBody,
-                                                                                                  )?[accompagnementsIndex],
-                                                                                                  amount: SynergyGroup.getAllAccompagnementCall.amount(
-                                                                                                    cardTable6GetAllAccompagnementResponse.jsonBody,
-                                                                                                  )?[accompagnementsIndex],
-                                                                                                  statut: SynergyGroup.getAllAccompagnementCall.status(
-                                                                                                    cardTable6GetAllAccompagnementResponse.jsonBody,
-                                                                                                  )?[accompagnementsIndex],
-                                                                                                  paiementDate: SynergyGroup.getAllAccompagnementCall.paymentDate(
-                                                                                                    cardTable6GetAllAccompagnementResponse.jsonBody,
-                                                                                                  )?[accompagnementsIndex],
-                                                                                                  accId: (SynergyGroup.getAllAccompagnementCall.ids(
-                                                                                                    cardTable6GetAllAccompagnementResponse.jsonBody,
-                                                                                                  )![accompagnementsIndex])
-                                                                                                      .toString(),
-                                                                                                  linkcontrat: SynergyGroup.getAllAccompagnementCall.linkContrat(
-                                                                                                    cardTable6GetAllAccompagnementResponse.jsonBody,
-                                                                                                  )?[accompagnementsIndex],
-                                                                                                  satisfactionClient: SynergyGroup.getAllAccompagnementCall.satisfactionClient(
-                                                                                                    cardTable6GetAllAccompagnementResponse.jsonBody,
-                                                                                                  )?[accompagnementsIndex],
-                                                                                                  startDate: SynergyGroup.getAllAccompagnementCall.startAt(
-                                                                                                    cardTable6GetAllAccompagnementResponse.jsonBody,
-                                                                                                  )?[accompagnementsIndex],
-                                                                                                  endDate: (SynergyGroup.getAllAccompagnementCall.endAt(
-                                                                                                    cardTable6GetAllAccompagnementResponse.jsonBody,
-                                                                                                  )?[accompagnementsIndex])
-                                                                                                      ?.toString(),
+                                                                                                  )?[accompagnementsIndex]}',
+                                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                        fontFamily: 'Inter',
+                                                                                                        letterSpacing: 0.0,
+                                                                                                        fontWeight: FontWeight.bold,
+                                                                                                      ),
                                                                                                 ),
-                                                                                              ),
-                                                                                            );
-                                                                                          },
-                                                                                        ).then((value) => setState(() {}));
-                                                                                      },
+                                                                                              ],
+                                                                                            ),
+                                                                                          ),
+                                                                                        ),
+                                                                                      ],
                                                                                     ),
                                                                                   ),
+                                                                                ),
+                                                                                if (responsiveVisibility(
+                                                                                  context: context,
+                                                                                  phone: false,
+                                                                                ))
+                                                                                  Expanded(
+                                                                                    flex: 2,
+                                                                                    child: Text(
+                                                                                      valueOrDefault<String>(
+                                                                                        (SynergyGroup.getAllAccompagnementCall.amount(
+                                                                                          cardTable6GetAllAccompagnementResponse.jsonBody,
+                                                                                        )?[accompagnementsIndex])
+                                                                                            ?.toString(),
+                                                                                        '0',
+                                                                                      ),
+                                                                                      style: FlutterFlowTheme.of(context).titleLarge.override(
+                                                                                            fontFamily: 'Inter',
+                                                                                            fontSize: 15.0,
+                                                                                            letterSpacing: 0.0,
+                                                                                          ),
+                                                                                    ),
+                                                                                  ),
+                                                                                Expanded(
+                                                                                  flex: 2,
+                                                                                  child: Row(
+                                                                                    mainAxisSize: MainAxisSize.max,
+                                                                                    children: [
+                                                                                      if ((SynergyGroup.getAllAccompagnementCall.status(
+                                                                                            cardTable6GetAllAccompagnementResponse.jsonBody,
+                                                                                          )?[accompagnementsIndex]) ==
+                                                                                          'DEMARCHARGE')
+                                                                                        Container(
+                                                                                          height: 32.0,
+                                                                                          decoration: BoxDecoration(
+                                                                                            color: const Color(0x4D4150FC),
+                                                                                            borderRadius: BorderRadius.circular(40.0),
+                                                                                          ),
+                                                                                          alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                          child: Padding(
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                            child: Text(
+                                                                                              'Démarcharge',
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    fontFamily: 'Inter',
+                                                                                                    letterSpacing: 0.0,
+                                                                                                  ),
+                                                                                            ),
+                                                                                          ),
+                                                                                        ),
+                                                                                      if ((SynergyGroup.getAllAccompagnementCall.status(
+                                                                                            cardTable6GetAllAccompagnementResponse.jsonBody,
+                                                                                          )?[accompagnementsIndex]) ==
+                                                                                          'EN_COURS')
+                                                                                        Container(
+                                                                                          height: 32.0,
+                                                                                          decoration: BoxDecoration(
+                                                                                            color: FlutterFlowTheme.of(context).accent2,
+                                                                                            borderRadius: BorderRadius.circular(40.0),
+                                                                                          ),
+                                                                                          alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                          child: Padding(
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                            child: Text(
+                                                                                              'En cours',
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    fontFamily: 'Inter',
+                                                                                                    letterSpacing: 0.0,
+                                                                                                  ),
+                                                                                            ),
+                                                                                          ),
+                                                                                        ),
+                                                                                      if ((SynergyGroup.getAllAccompagnementCall.status(
+                                                                                            cardTable6GetAllAccompagnementResponse.jsonBody,
+                                                                                          )?[accompagnementsIndex]) ==
+                                                                                          'TERMINER')
+                                                                                        Container(
+                                                                                          height: 32.0,
+                                                                                          decoration: BoxDecoration(
+                                                                                            color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                            borderRadius: BorderRadius.circular(40.0),
+                                                                                          ),
+                                                                                          alignment: const AlignmentDirectional(0.0, 0.0),
+                                                                                          child: Padding(
+                                                                                            padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                                                                                            child: Text(
+                                                                                              'Terminé',
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    fontFamily: 'Inter',
+                                                                                                    letterSpacing: 0.0,
+                                                                                                  ),
+                                                                                            ),
+                                                                                          ),
+                                                                                        ),
+                                                                                    ],
+                                                                                  ),
+                                                                                ),
+                                                                                Expanded(
+                                                                                  flex: 1,
+                                                                                  child: Row(
+                                                                                    mainAxisSize: MainAxisSize.max,
+                                                                                    mainAxisAlignment: MainAxisAlignment.end,
+                                                                                    children: [
+                                                                                      if ((SynergyGroup.getAllAccompagnementCall.status(
+                                                                                            cardTable6GetAllAccompagnementResponse.jsonBody,
+                                                                                          )?[accompagnementsIndex]) !=
+                                                                                          'TERMINER')
+                                                                                        Builder(
+                                                                                          builder: (context) => FlutterFlowIconButton(
+                                                                                            borderColor: Colors.transparent,
+                                                                                            borderRadius: 30.0,
+                                                                                            borderWidth: 1.0,
+                                                                                            buttonSize: 44.0,
+                                                                                            icon: FaIcon(
+                                                                                              FontAwesomeIcons.pencilAlt,
+                                                                                              color: FlutterFlowTheme.of(context).error,
+                                                                                              size: 20.0,
+                                                                                            ),
+                                                                                            onPressed: () async {
+                                                                                              await showDialog(
+                                                                                                context: context,
+                                                                                                builder: (dialogContext) {
+                                                                                                  return Dialog(
+                                                                                                    elevation: 0,
+                                                                                                    insetPadding: EdgeInsets.zero,
+                                                                                                    backgroundColor: Colors.transparent,
+                                                                                                    alignment: const AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                    child: GestureDetector(
+                                                                                                      onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                                      child: UpdateAccompagnementWidget(
+                                                                                                        nomAcc: SynergyGroup.getAllAccompagnementCall.projectName(
+                                                                                                          cardTable6GetAllAccompagnementResponse.jsonBody,
+                                                                                                        )?[accompagnementsIndex],
+                                                                                                        nomPorteurProjet: SynergyGroup.getAllAccompagnementCall.userName(
+                                                                                                          cardTable6GetAllAccompagnementResponse.jsonBody,
+                                                                                                        )?[accompagnementsIndex],
+                                                                                                        prenomPoteurProjet: SynergyGroup.getAllAccompagnementCall.userFirstName(
+                                                                                                          cardTable6GetAllAccompagnementResponse.jsonBody,
+                                                                                                        )?[accompagnementsIndex],
+                                                                                                        amount: SynergyGroup.getAllAccompagnementCall.amount(
+                                                                                                          cardTable6GetAllAccompagnementResponse.jsonBody,
+                                                                                                        )?[accompagnementsIndex],
+                                                                                                        statut: SynergyGroup.getAllAccompagnementCall.status(
+                                                                                                          cardTable6GetAllAccompagnementResponse.jsonBody,
+                                                                                                        )?[accompagnementsIndex],
+                                                                                                        paiementDate: SynergyGroup.getAllAccompagnementCall.paymentDate(
+                                                                                                          cardTable6GetAllAccompagnementResponse.jsonBody,
+                                                                                                        )?[accompagnementsIndex],
+                                                                                                        accId: (SynergyGroup.getAllAccompagnementCall.ids(
+                                                                                                          cardTable6GetAllAccompagnementResponse.jsonBody,
+                                                                                                        )![accompagnementsIndex])
+                                                                                                            .toString(),
+                                                                                                        linkcontrat: SynergyGroup.getAllAccompagnementCall.linkContrat(
+                                                                                                          cardTable6GetAllAccompagnementResponse.jsonBody,
+                                                                                                        )?[accompagnementsIndex],
+                                                                                                        satisfactionClient: SynergyGroup.getAllAccompagnementCall.satisfactionClient(
+                                                                                                          cardTable6GetAllAccompagnementResponse.jsonBody,
+                                                                                                        )?[accompagnementsIndex],
+                                                                                                        startDate: SynergyGroup.getAllAccompagnementCall.startAt(
+                                                                                                          cardTable6GetAllAccompagnementResponse.jsonBody,
+                                                                                                        )?[accompagnementsIndex],
+                                                                                                        endDate: (SynergyGroup.getAllAccompagnementCall.endAt(
+                                                                                                          cardTable6GetAllAccompagnementResponse.jsonBody,
+                                                                                                        )?[accompagnementsIndex])
+                                                                                                            ?.toString(),
+                                                                                                      ),
+                                                                                                    ),
+                                                                                                  );
+                                                                                                },
+                                                                                              ).then((value) => setState(() {}));
+                                                                                            },
+                                                                                          ),
+                                                                                        ),
+                                                                                    ],
+                                                                                  ),
+                                                                                ),
                                                                               ],
                                                                             ),
                                                                           ),
-                                                                        ],
-                                                                      ),
-                                                                    ),
+                                                                        ),
+                                                                      );
+                                                                    },
                                                                   ),
                                                                 );
                                                               },
                                                             ),
-                                                          );
-                                                        },
+                                                          ],
+                                                        ),
                                                       ),
                                                     ],
                                                   ),

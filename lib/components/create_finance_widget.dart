@@ -796,7 +796,7 @@ class _CreateFinanceWidgetState extends State<CreateFinanceWidget> {
                           if ((_model.apiResulter3?.succeeded ?? true)) {
                             Navigator.pop(context);
                             Navigator.pop(context);
-                            _model.updatePage(() {});
+                            FFAppState().update(() {});
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
                                 content: Text(

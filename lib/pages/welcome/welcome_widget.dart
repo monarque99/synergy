@@ -297,10 +297,10 @@ class _WelcomeWidgetState extends State<WelcomeWidget>
                                   ),
                               () => ClipRRect(
                                     borderRadius: BorderRadius.circular(16.0),
-                                    child: Image.network(
-                                      'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bW91bnRhaW5zfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60',
+                                    child: Image.asset(
+                                      'assets/images/logo_sy.png',
                                       width: 120.0,
-                                      height: 180.0,
+                                      height: 257.0,
                                       fit: BoxFit.cover,
                                     ),
                                   ),
