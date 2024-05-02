@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:typed_data';
 import '../cloud_functions/cloud_functions.dart';
 
 import '/flutter_flow/flutter_flow_util.dart';
@@ -47,6 +46,7 @@ class SynergyGroup {
   static CreateFinanceCall createFinanceCall = CreateFinanceCall();
   static GetAllInterneUsersCall getAllInterneUsersCall =
       GetAllInterneUsersCall();
+  static ContactusCall contactusCall = ContactusCall();
 }
 
 class LoginCall {
@@ -953,6 +953,27 @@ class GetAllInterneUsersCall {
           .map((x) => castToType<String>(x))
           .withoutNulls
           .toList();
+}
+
+class ContactusCall {
+  Future<ApiCallResponse> call({
+    String? mail = '',
+    String? desc = '',
+    String? name = '',
+  }) async {
+    final response = await makeCloudCall(
+      _kPrivateApiFunctionName,
+      {
+        'callName': 'ContactusCall',
+        'variables': {
+          'mail': mail,
+          'desc': desc,
+          'name': name,
+        },
+      },
+    );
+    return ApiCallResponse.fromCloudCallResponse(response);
+  }
 }
 
 /// End synergy Group Code

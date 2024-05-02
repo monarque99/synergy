@@ -1,9 +1,8 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'contact_us_model.dart';
 export 'contact_us_model.dart';
 
@@ -54,7 +53,7 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Padding(
-          padding: EdgeInsets.all(15.0),
+          padding: const EdgeInsets.all(15.0),
           child: Container(
             width: 1300.0,
             height: 703.0,
@@ -64,7 +63,7 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
                 BoxShadow(
                   blurRadius: 10.0,
                   color: FlutterFlowTheme.of(context).secondaryText,
-                  offset: Offset(
+                  offset: const Offset(
                     0.0,
                     2.0,
                   ),
@@ -81,7 +80,7 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(35.0, 35.0, 35.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(35.0, 35.0, 35.0, 0.0),
                       child: Text(
                         'Nous contacter',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -95,7 +94,7 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 30.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 30.0, 0.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -114,7 +113,7 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
                   ],
                 ),
                 Padding(
-                  padding: EdgeInsets.all(35.0),
+                  padding: const EdgeInsets.all(35.0),
                   child: TextFormField(
                     controller: _model.textController1,
                     focusNode: _model.textFieldFocusNode1,
@@ -142,7 +141,7 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
                         borderRadius: BorderRadius.circular(12.0),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Color(0xFFE4E3F6),
                           width: 1.0,
                         ),
@@ -176,7 +175,7 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
                 ),
                 Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(35.0, 0.0, 35.0, 35.0),
+                      const EdgeInsetsDirectional.fromSTEB(35.0, 0.0, 35.0, 35.0),
                   child: TextFormField(
                     controller: _model.textController2,
                     focusNode: _model.textFieldFocusNode2,
@@ -204,7 +203,7 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
                         borderRadius: BorderRadius.circular(12.0),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Color(0xFFE4E3F6),
                           width: 1.0,
                         ),
@@ -237,10 +236,10 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
                   ),
                 ),
                 Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
+                  alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(35.0, 0.0, 35.0, 35.0),
+                        const EdgeInsetsDirectional.fromSTEB(35.0, 0.0, 35.0, 35.0),
                     child: TextFormField(
                       controller: _model.textController3,
                       focusNode: _model.textFieldFocusNode3,
@@ -268,7 +267,7 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
                           borderRadius: BorderRadius.circular(12.0),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Color(0xFFE4E3F6),
                             width: 1.0,
                           ),
@@ -303,16 +302,56 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
                   ),
                 ),
                 FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
+                  onPressed: () async {
+                    _model.apiResultmua = await SynergyGroup.contactusCall.call(
+                      mail: _model.textController2.text,
+                      desc: _model.textController3.text,
+                      name: _model.textController1.text,
+                    );
+                    if ((_model.apiResultmua?.succeeded ?? true)) {
+                      Navigator.pop(context);
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(
+                            'Votre émail a été envoyé, nous prendrons contact prochainement',
+                            style: TextStyle(
+                              color: FlutterFlowTheme.of(context).primaryText,
+                            ),
+                          ),
+                          duration: const Duration(milliseconds: 4000),
+                          backgroundColor:
+                              FlutterFlowTheme.of(context).secondary,
+                        ),
+                      );
+                    } else {
+                      await showDialog(
+                        context: context,
+                        builder: (alertDialogContext) {
+                          return AlertDialog(
+                            title: const Text('erreur'),
+                            content: const Text(
+                                'Impossible d\'envoyer l\'email, merci d\'écrire à : ezechielouattara99@gmail.com'),
+                            actions: [
+                              TextButton(
+                                onPressed: () =>
+                                    Navigator.pop(alertDialogContext),
+                                child: const Text('Ok'),
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                    }
+
+                    setState(() {});
                   },
                   text: 'Envoyer',
                   options: FFButtonOptions(
                     height: 40.0,
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                     iconPadding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primaryText,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Inter',
@@ -320,7 +359,7 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
                           letterSpacing: 0.0,
                         ),
                     elevation: 3.0,
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       width: 1.0,
                     ),
                     borderRadius: BorderRadius.circular(24.0),

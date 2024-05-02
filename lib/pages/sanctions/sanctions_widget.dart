@@ -4,9 +4,7 @@ import '/components/navbar_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'sanctions_model.dart';
 export 'sanctions_model.dart';
@@ -61,11 +59,11 @@ class _SanctionsWidgetState extends State<SanctionsWidget> {
                   wrapWithModel(
                     model: _model.navbarModel,
                     updateCallback: () => setState(() {}),
-                    child: NavbarWidget(),
+                    child: const NavbarWidget(),
                   ),
                   Expanded(
                     child: Align(
-                      alignment: AlignmentDirectional(0.0, -1.0),
+                      alignment: const AlignmentDirectional(0.0, -1.0),
                       child: FutureBuilder<ApiCallResponse>(
                         future: SynergyGroup.getAllSanctionsforUSERCall.call(
                           userid: FFAppState().userId,
@@ -89,10 +87,10 @@ class _SanctionsWidgetState extends State<SanctionsWidget> {
                               snapshot.data!;
                           return Container(
                             width: double.infinity,
-                            constraints: BoxConstraints(
+                            constraints: const BoxConstraints(
                               maxWidth: 970.0,
                             ),
-                            decoration: BoxDecoration(),
+                            decoration: const BoxDecoration(),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
@@ -117,7 +115,7 @@ class _SanctionsWidgetState extends State<SanctionsWidget> {
                                           Container(
                                             width: double.infinity,
                                             height: 24.0,
-                                            decoration: BoxDecoration(),
+                                            decoration: const BoxDecoration(),
                                           ),
                                         if (responsiveVisibility(
                                           context: context,
@@ -125,9 +123,9 @@ class _SanctionsWidgetState extends State<SanctionsWidget> {
                                         ))
                                           Align(
                                             alignment:
-                                                AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(0.0, 0.0),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 16.0, 0.0, 4.0),
                                               child: Text(
@@ -153,17 +151,17 @@ class _SanctionsWidgetState extends State<SanctionsWidget> {
                                               phone: false,
                                             ))
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     -1.0, 0.0),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 16.0, 0.0, 4.0),
                                                   child: Text(
                                                     'total  : ${SynergyGroup.getAllSanctionsforUSERCall.sanctionIds(
                                                           mainTeamContentGetAllSanctionsforUSERResponse
                                                               .jsonBody,
-                                                        )?.length?.toString()}',
+                                                        )?.length.toString()}',
                                                     textAlign: TextAlign.center,
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -209,7 +207,7 @@ class _SanctionsWidgetState extends State<SanctionsWidget> {
                                                           backgroundColor:
                                                               Colors
                                                                   .transparent,
-                                                          alignment: AlignmentDirectional(
+                                                          alignment: const AlignmentDirectional(
                                                                   0.0, 0.0)
                                                               .resolve(
                                                                   Directionality.of(
@@ -228,7 +226,7 @@ class _SanctionsWidgetState extends State<SanctionsWidget> {
                                                                         context)
                                                                     .unfocus(),
                                                             child:
-                                                                CreatesanctionWidget(),
+                                                                const CreatesanctionWidget(),
                                                           ),
                                                         );
                                                       },
@@ -243,7 +241,7 @@ class _SanctionsWidgetState extends State<SanctionsWidget> {
                                     ),
                                   ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 16.0, 0.0, 0.0),
                                   child: Container(
                                     width: double.infinity,
@@ -251,7 +249,7 @@ class _SanctionsWidgetState extends State<SanctionsWidget> {
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBackground,
-                                      borderRadius: BorderRadius.only(
+                                      borderRadius: const BorderRadius.only(
                                         bottomLeft: Radius.circular(0.0),
                                         bottomRight: Radius.circular(0.0),
                                         topLeft: Radius.circular(8.0),
@@ -259,7 +257,7 @@ class _SanctionsWidgetState extends State<SanctionsWidget> {
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -331,7 +329,7 @@ class _SanctionsWidgetState extends State<SanctionsWidget> {
                                         final idsItem = ids[idsIndex];
                                         return Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 1.0),
                                           child: Container(
                                             width: 100.0,
@@ -345,7 +343,7 @@ class _SanctionsWidgetState extends State<SanctionsWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryBackground,
-                                                  offset: Offset(
+                                                  offset: const Offset(
                                                     0.0,
                                                     1.0,
                                                   ),
@@ -353,7 +351,7 @@ class _SanctionsWidgetState extends State<SanctionsWidget> {
                                               ],
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 0.0, 16.0, 0.0),
                                               child: Row(
@@ -363,7 +361,7 @@ class _SanctionsWidgetState extends State<SanctionsWidget> {
                                                     flex: 4,
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   8.0,
@@ -376,7 +374,7 @@ class _SanctionsWidgetState extends State<SanctionsWidget> {
                                                           Expanded(
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
+                                                                  const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           4.0,
                                                                           0.0,
@@ -469,7 +467,7 @@ class _SanctionsWidgetState extends State<SanctionsWidget> {
                                                   ),
                                                   Align(
                                                     alignment:
-                                                        AlignmentDirectional(
+                                                        const AlignmentDirectional(
                                                             -1.0, 0.0),
                                                     child:
                                                         SingleChildScrollView(
@@ -529,7 +527,7 @@ class _SanctionsWidgetState extends State<SanctionsWidget> {
                                         ?.length ==
                                     null)
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 100.0, 0.0, 0.0),
                                     child: Text(
                                       'PAS DE SANCTIONS',

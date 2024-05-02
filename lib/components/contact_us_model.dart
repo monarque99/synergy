@@ -1,10 +1,7 @@
-import '/flutter_flow/flutter_flow_theme.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'contact_us_widget.dart' show ContactUsWidget;
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 class ContactUsModel extends FlutterFlowModel<ContactUsWidget> {
   ///  State fields for stateful widgets in this component.
@@ -21,6 +18,8 @@ class ContactUsModel extends FlutterFlowModel<ContactUsWidget> {
   FocusNode? textFieldFocusNode3;
   TextEditingController? textController3;
   String? Function(BuildContext, String?)? textController3Validator;
+  // Stores action output result for [Backend Call - API (contactus)] action in Button widget.
+  ApiCallResponse? apiResultmua;
 
   @override
   void initState(BuildContext context) {}
